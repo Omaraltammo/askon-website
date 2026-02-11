@@ -41,7 +41,7 @@ body {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+    background: 
                 url('web1.jpg');
     background-size: cover;
     background-position: center;
