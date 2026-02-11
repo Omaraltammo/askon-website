@@ -1,6 +1,6 @@
 :root {
     --burgundy: #6A1B2E;
-    --gold: #C6A96B;
+    --gold: #c8a65d;
     --dark: #0F0F0F;
     --soft-dark: #1A1A1A;
     --light: #F5F5F5;
@@ -36,7 +36,7 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--gold);
+    color: var(--burgundy);
 }
 
 .hero {
