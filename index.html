@@ -110,22 +110,33 @@
     </form>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 
 <script>
-(function(){
+document.addEventListener("DOMContentLoaded", function() {
+
     emailjs.init("GftFuwSnM1vwu3SlK");
-})();
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("contact-form")
+    .addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    emailjs.sendForm("service_6t9szgi", "template_p1id64k", this)
-        .then(function() {
-            alert("Message Sent Successfully!");
-        }, function(error) {
-            alert("Failed to send message.");
-        });
+        emailjs.sendForm(
+            "service_6t9szgi",
+            "template_1fs4hrl",
+            this
+        ).then(
+            function() {
+                alert("Message Sent Successfully!");
+            },
+            function(error) {
+                console.error("EmailJS Error:", error);
+                alert("Failed to send message.");
+            }
+        );
+    });
+
 });
 </script>
 
