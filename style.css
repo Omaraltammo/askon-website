@@ -53,7 +53,7 @@ body {
 
 .hero h1 {
     font-size: 48px;
-    color: var(--gold);
+    color: var(--burgundy);
 }
 
 .hero p {
@@ -63,7 +63,7 @@ body {
 
 .btn-gold {
     padding: 12px 30px;
-    background-color: var(--gold);
+    background-color: var(--burgundy);
     color: black;
     text-decoration: none;
     font-weight: bold;
