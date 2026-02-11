@@ -42,7 +42,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('https://images.unsplash.com/photo-1503424886307-b090341d25d1');
+                url('web1.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -53,7 +53,7 @@ body {
 
 .hero h1 {
     font-size: 48px;
-    color: var(--burgundy);
+    color: var(--gold);
 }
 
 .hero p {
@@ -63,7 +63,7 @@ body {
 
 .btn-gold {
     padding: 12px 30px;
-    background-color: var(--burgundy);
+    background-color: var(--gold);
     color: black;
     text-decoration: none;
     font-weight: bold;
