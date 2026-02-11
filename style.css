@@ -1,0 +1,131 @@
+:root {
+    --burgundy: #6A1B2E;
+    --gold: #C6A96B;
+    --dark: #0F0F0F;
+    --soft-dark: #1A1A1A;
+    --light: #F5F5F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 1000;
+}
+
+.navbar a {
+    color: var(--light);
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1503424886307-b090341d25d1');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: var(--gold);
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.btn-gold {
+    padding: 12px 30px;
+    background-color: var(--gold);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: var(--burgundy);
+    color: white;
+}
+
+.section {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.dark-section {
+    background-color: var(--soft-dark);
+}
+
+.black-section {
+    background-color: black;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--soft-dark);
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--gold);
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+}
