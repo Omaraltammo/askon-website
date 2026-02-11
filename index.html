@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Askon for Consultancies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">ASKON</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Askon for Consultancies</h1>
+        <p>Integrated Event, Media & Interpretation Services</p>
+        <a href="#contact" class="btn-gold">Contact Us</a>
+    </div>
+</section>
+
+<section id="about" class="section dark-section">
+    <h2>Who We Are</h2>
+    <p>
+        Askon for Consultancies is a specialized team providing professional 
+        solutions for events, conferences, and media production. 
+        We combine interpretation expertise, audio engineering, 
+        visual production, and logistics to deliver fully coordinated services 
+        with precision and excellence.
+    </p>
+</section>
+
+<section id="services" class="section">
+    <h2>Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <div class="service-icon">🎤</div>
+            <h3>Event Planning & Coordination</h3>
+            <p>Professional planning and execution for conferences and events.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Interpretation & Conference Solutions</h3>
+            <p>Simultaneous and consecutive interpretation services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🔊</div>
+            <h3>Audio & Acoustic Services</h3>
+            <p>High-end sound systems and technical supervision.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📸</div>
+            <h3>Photography</h3>
+            <p>Professional event and corporate photography.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎥</div>
+            <h3>Video Production</h3>
+            <p>Event coverage, interviews, and post-production.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🖨️</div>
+            <h3>Graphic Design & Printing</h3>
+            <p>Branding, brochures, and promotional materials.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="approach" class="section dark-section">
+    <h2>Our Approach</h2>
+    <p>
+        We combine technical accuracy, creative quality, and organized execution 
+        to ensure events run smoothly and communication is delivered clearly and professionally.
+    </p>
+</section>
+
+<section id="vision" class="section black-section">
+    <h2>Our Vision</h2>
+    <p>
+        To provide integrated event and media solutions that elevate communication, 
+        ensure clarity across languages, and create a strong professional visual presence.
+    </p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-gold">Send Message</button>
+    </form>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("YGftFuwSnM1vwu3SlK");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_y50hk51", "template_6udt5za", this)
+        .then(function() {
+            alert("Message Sent Successfully!");
+        }, function(error) {
+            alert("Failed to send message.");
+        });
+});
+</script>
+
+</body>
+</html>
