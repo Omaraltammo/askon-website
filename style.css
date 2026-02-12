@@ -1,6 +1,6 @@
 :root {
-    --primary: #6D1B35;   /* Burgundy */
-    --accent: #B9A67B;    /* Gold */
+    --primary: #6D1B35;
+    --accent: #B9A67B;
     --gray: #999999;
     --white: #FFFFFF;
 }
@@ -18,7 +18,7 @@ body {
     color: #1f1f1f;
 }
 
-/* ================= NAVBAR (Curtain Style) ================= */
+/* ================= NAVBAR (CURTAIN FINAL) ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -32,14 +32,14 @@ body {
     background-color: rgba(255,255,255,0.6);
     backdrop-filter: blur(10px);
 
-    /* ✅ ظاهر افتراضيًا */
-    transform: translateY(0);
-    transition: transform 0.4s ease, background-color 0.3s ease;
+    /* مخفي افتراضيًا */
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
 }
 
-/* ❗ الإخفاء يتم فقط بهذا الكلاس */
-.navbar.hide {
-    transform: translateY(-100%);
+/* يظهر فقط عند الماوس */
+.navbar.visible {
+    transform: translateY(0);
 }
 
 .navbar a {
@@ -47,7 +47,6 @@ body {
     margin-left: 20px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 .navbar a:hover {
@@ -78,7 +77,6 @@ body {
 .hero h1 {
     font-size: 48px;
     color: var(--primary);
-    position: relative;
     opacity: 0;
     animation: heroFadeUp 1.2s ease-out forwards;
 }
@@ -102,40 +100,10 @@ body {
     animation-delay: 0.3s;
 }
 
-/* ================= BUTTON ================= */
-.btn-gold {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.hero .btn-gold {
-    opacity: 0;
-    animation: heroFadeUp 1.2s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-.btn-gold:hover {
-    background: linear-gradient(135deg, var(--accent), var(--primary));
-    color: var(--white);
-}
-
 /* ================= SECTIONS ================= */
 .section {
     padding: 120px 10%;
     text-align: center;
-}
-
-.dark-section {
-    background-color: #ffffff;
-}
-
-.black-section {
-    background-color: #f1f1f1;
 }
 
 .section h2 {
@@ -154,71 +122,10 @@ body {
     width: 60px;
     height: 3px;
     background-color: var(--accent);
-    border-radius: 2px;
-}
-
-/* ================= SERVICES ================= */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-card {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 16px;
-    border-top: 6px solid var(--primary);
-    transition: 0.4s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-top-color: var(--accent);
-    box-shadow: 0 15px 35px rgba(185,166,123,0.35);
-}
-
-.service-icon {
-    font-size: 38px;
-    margin-bottom: 15px;
-    color: var(--accent);
-}
-
-.service-card h3 {
-    color: var(--primary);
-}
-
-.service-card p {
-    color: var(--gray);
-}
-
-/* ================= CONTACT FORM ================= */
-#contact-form {
-    max-width: 500px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-#contact-form input,
-#contact-form textarea {
-    padding: 14px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
 }
 
 /* ================= ANIMATIONS ================= */
 @keyframes heroFadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
