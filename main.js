@@ -47,18 +47,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* REVEAL */
-    const reveals = document.querySelectorAll(".section, .service-card");
+    
+const reveals = document.querySelectorAll(".section, .service-card, .hero-content");
 
-    function revealOnScroll() {
-        reveals.forEach(el => {
-            const top = el.getBoundingClientRect().top;
-            if (top < window.innerHeight - 100) {
-                el.classList.add("active");
-            }
-        });
-    }
+function revealOnScroll() {
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 120) {
+            el.classList.add("active");
+        }
+    });
+}
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 
 });
