@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ================= CSP (FINAL & FIXED) ================= -->
     <meta http-equiv="Content-Security-Policy"
-      content="
-        default-src 'self';
-        img-src 'self' https:;
-        script-src 'self' https://cdn.jsdelivr.net;
-        connect-src 'self' https://api.emailjs.com;
-        style-src 'self' 'unsafe-inline';
-      ">
+          content="
+            default-src 'self';
+            img-src 'self' https:;
+            script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+            connect-src 'self' https://api.emailjs.com;
+            style-src 'self' 'unsafe-inline';
+          ">
 
     <meta charset="UTF-8">
     <title>Askon for Consultancies</title>
@@ -126,8 +127,8 @@
             <p><strong>Phone 1:</strong> +963 959 654 951</p>
             <p><strong>Phone 2:</strong> +963 959 401 656</p>
             <p><strong>Office Address:</strong><br>
-                Al-Adawi <br>
-                Damascus, Syria 
+                Al-Adawi<br>
+                Damascus, Syria
             </p>
         </div>
 
@@ -156,12 +157,23 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contact-form")
         .addEventListener("submit", function (event) {
             event.preventDefault();
-            emailjs.sendForm("service_6t9szgi", "template_1fs4hrl", this)
-                .then(() => alert("Message Sent Successfully!"))
-                .catch(() => alert("Failed to send message."));
+
+            emailjs.sendForm(
+                "service_6t9szgi",
+                "template_1fs4hrl",
+                this
+            )
+            .then(() => {
+                alert("Message Sent Successfully!");
+                this.reset();
+            })
+            .catch(error => {
+                console.error("EmailJS Error:", error);
+                alert("Failed to send message.");
+            });
         });
 
-    /* Navbar curtain (mouse top) */
+    /* Navbar curtain */
     const navbar = document.querySelector(".navbar");
 
     setTimeout(() => {
