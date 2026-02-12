@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   img-src 'self' https:;
+                   script-src 'self' https://cdn.jsdelivr.net;
+                   style-src 'self' 'unsafe-inline';">
+
     <meta charset="UTF-8">
     <title>Askon for Consultancies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="logo">ASKON</div>
     <nav>
@@ -21,25 +28,27 @@
     </nav>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-content">
         <h1>Askon for Consultancies</h1>
         <p>Integrated Event, Media & Interpretation Services</p>
-        
     </div>
 </section>
 
+<!-- ================= ABOUT ================= -->
 <section id="about" class="section dark-section">
     <h2>Who We Are</h2>
     <p>
-        Askon for Consultancies is a specialized team providing professional 
-        solutions for events, conferences, and media production. 
-        We combine interpretation expertise, audio engineering, 
-        visual production, and logistics to deliver fully coordinated services 
+        Askon for Consultancies is a specialized team providing professional
+        solutions for events, conferences, and media production.
+        We combine interpretation expertise, audio engineering,
+        visual production, and logistics to deliver fully coordinated services
         with precision and excellence.
     </p>
 </section>
 
+<!-- ================= SERVICES ================= -->
 <section id="services" class="section">
     <h2>Our Services</h2>
 
@@ -84,39 +93,41 @@
     </div>
 </section>
 
+<!-- ================= APPROACH ================= -->
 <section id="approach" class="section dark-section">
     <h2>Our Approach</h2>
     <p>
-        We combine technical accuracy, creative quality, and organized execution 
+        We combine technical accuracy, creative quality, and organized execution
         to ensure events run smoothly and communication is delivered clearly and professionally.
     </p>
 </section>
 
+<!-- ================= VISION ================= -->
 <section id="vision" class="section black-section">
     <h2>Our Vision</h2>
     <p>
-        To provide integrated event and media solutions that elevate communication, 
+        To provide integrated event and media solutions that elevate communication,
         ensure clarity across languages, and create a strong professional visual presence.
     </p>
 </section>
 
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="section contact-section">
     <h2>Contact Us</h2>
 
     <div class="contact-container">
 
-        <!-- Contact Info -->
         <div class="contact-info">
             <h3>Get In Touch</h3>
             <p><strong>Email:</strong> info@askonltd.com</p>
             <p><strong>Phone 1:</strong> +963 959 654 951</p>
             <p><strong>Phone 2:</strong> +963 959 401 656</p>
             <p><strong>Office Address:</strong><br>
-            Damascus, Syria<br>
-            Business District</p>
+                Damascus, Syria<br>
+                Business District
+            </p>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact-form-wrapper">
             <form id="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -129,32 +140,43 @@
     </div>
 </section>
 
-
+<!-- ================= EMAILJS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
+    /* EmailJS */
     emailjs.init("Hfom3ZLXXLSCkZRcL");
 
     document.getElementById("contact-form")
-    .addEventListener("submit", function(event) {
-        event.preventDefault();
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        emailjs.sendForm(
-            "service_6t9szgi",
-            "template_1fs4hrl",
-            this
-        ).then(
-            function() {
-                alert("Message Sent Successfully!");
-            },
-            function(error) {
-                console.error("EmailJS Error:", error);
-                alert("Failed to send message.");
-            }
-        );
+            emailjs.sendForm(
+                "service_6t9szgi",
+                "template_1fs4hrl",
+                this
+            ).then(
+                function () {
+                    alert("Message Sent Successfully!");
+                },
+                function (error) {
+                    console.error("EmailJS Error:", error);
+                    alert("Failed to send message.");
+                }
+            );
+        });
+
+    /* Navbar curtain – mouse top */
+    const navbar = document.querySelector(".navbar");
+
+    document.addEventListener("mousemove", function (e) {
+        if (e.clientY < 80) {
+            navbar.classList.add("show");
+        } else {
+            navbar.classList.remove("show");
+        }
     });
 
 });
