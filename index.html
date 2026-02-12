@@ -7,7 +7,6 @@ default-src 'self';
 img-src 'self' https:;
 script-src 'self'
 https://cdn.jsdelivr.net
-https://unpkg.com
 https://www.google.com
 https://www.gstatic.com;
 connect-src 'self'
@@ -21,7 +20,6 @@ style-src 'self';
 <meta charset="UTF-8">
 <title>Askon for Consultancies</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,98 +30,71 @@ style-src 'self';
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#vision">Vision</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<!-- VIDEO HERO -->
 <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="hero.mp4" type="video/mp4">
-    </video>
-
     <div class="hero-overlay"></div>
-
     <div class="hero-content reveal">
         <h1>Askon for Consultancies</h1>
         <p>Integrated Event, Media & Interpretation Services</p>
     </div>
 </section>
 
-<section id="about" class="section dark-section reveal">
+<section id="about" class="section reveal">
     <h2>Who We Are</h2>
-    <p>Professional integrated solutions for events and media.</p>
+    <p>
+        Professional integrated solutions for conferences, media production,
+        interpretation and corporate events with precision and elegance.
+    </p>
 </section>
 
 <section id="services" class="section">
     <h2 class="reveal">Our Services</h2>
 
-    <!-- LOTTIE -->
-    <div id="lottie" class="lottie-box reveal"></div>
-
-    <div class="services-container stagger">
+    <div class="services-container">
 
         <div class="service-card reveal">
-            <div class="service-icon">🎤</div>
+            <div class="icon">🎤</div>
             <h3>Event Planning & Coordination</h3>
-            <p>
-                End-to-end planning and professional coordination of conferences,
-                forums, workshops, and corporate events with precision and elegance.
-            </p>
+            <p>Venue sourcing, logistics, technical coordination & on-site management.</p>
         </div>
 
         <div class="service-card reveal">
-            <div class="service-icon">🌐</div>
-            <h3>Interpretation & Conference Solutions</h3>
-            <p>
-                Simultaneous and consecutive interpretation services supported by
-                professional booths, headsets, and multilingual technical setups.
-            </p>
+            <div class="icon">🌐</div>
+            <h3>Interpretation Services</h3>
+            <p>Simultaneous & consecutive interpretation solutions.</p>
         </div>
 
         <div class="service-card reveal">
-            <div class="service-icon">🔊</div>
-            <h3>Audio & Acoustic Services</h3>
-            <p>
-                High-quality sound systems, acoustic design, and on-site technical
-                supervision to ensure flawless audio performance.
-            </p>
+            <div class="icon">🔊</div>
+            <h3>Audio & Acoustic</h3>
+            <p>Professional sound systems and conference audio engineering.</p>
         </div>
 
         <div class="service-card reveal">
-            <div class="service-icon">📸</div>
+            <div class="icon">📸</div>
             <h3>Photography</h3>
-            <p>
-                Professional photography for events, conferences, and corporate
-                branding with a focus on detail and storytelling.
-            </p>
+            <p>Corporate event photography with premium quality.</p>
         </div>
 
         <div class="service-card reveal">
-            <div class="service-icon">🎥</div>
+            <div class="icon">🎥</div>
             <h3>Video Production</h3>
-            <p>
-                Event coverage, interviews, promotional videos, and post-production
-                services delivered with cinematic quality.
-            </p>
+            <p>Coverage, interviews and cinematic production.</p>
         </div>
 
         <div class="service-card reveal">
-            <div class="service-icon">🖨️</div>
+            <div class="icon">🖌</div>
             <h3>Graphic Design & Printing</h3>
-            <p>
-                Creative graphic design, branding materials, and high-quality printing
-                solutions tailored for professional events and campaigns.
-            </p>
+            <p>Branding, print materials and visual identity design.</p>
         </div>
 
     </div>
 </section>
 
-
-<section id="contact" class="section contact-section reveal">
+<section id="contact" class="section reveal">
     <h2>Contact Us</h2>
 
     <form id="contact-form">
@@ -135,10 +106,8 @@ style-src 'self';
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei" defer></script>
-<script src="https://unpkg.com/lottie-web/build/player/lottie.min.js" defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_KEY" defer></script>
 <script src="main.js" defer></script>
 
 </body>
 </html>
-
