@@ -67,6 +67,8 @@ body {
     font-size: 48px;
     color: var(--primary);
     position: relative;
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease-out forwards;
 }
 
 .hero h1::after {
@@ -83,7 +85,11 @@ body {
     margin: 20px 0;
     font-size: 20px;
     color: var(--gray);
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
 }
+
 
 /* ================= BUTTON ================= */
 .btn-gold {
@@ -95,6 +101,12 @@ body {
     border-radius: 30px;
     transition: 0.3s;
 }
+.hero .btn-gold {
+    opacity: 0;
+    animation: heroFadeUp 1.2s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
 
 .btn-gold:hover {
     background: linear-gradient(135deg, var(--accent), var(--primary));
@@ -187,4 +199,14 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 14px;
+}
+@keyframes heroFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
