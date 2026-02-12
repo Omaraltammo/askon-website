@@ -1,26 +1,14 @@
 :root {
     /* Brand Colors */
-    --primary: #6D1B35;
-    --accent: #B9A67B;
+    --primary: #6D1B35;   /* Burgundy */
+    --accent: #B9A67B;    /* Gold */
 
     /* Neutrals */
     --gray: #999999;
     --white: #FFFFFF;
-
-    /* Backgrounds */
-    --bg-main: #F7F6F6;
-    --bg-soft: #EFE9EC;
-
-    /* Text */
-    --text-main: #1F1F1F;
-    --text-muted: #666666;
-
-    /* Cards / Borders */
-    --card-bg: #FFFFFF;
-    --border-soft: #E2DADF;
 }
 
-/* ========== GLOBAL ========== */
+/* ================= GLOBAL ================= */
 * {
     margin: 0;
     padding: 0;
@@ -29,24 +17,24 @@
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
+    background-color: var(--white);
+    color: var(--primary);
 }
 
-/* ========== NAVBAR ========== */
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 10%;
     position: fixed;
     width: 100%;
-    background-color: rgba(255,255,255,0.9);
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-soft);
 }
 
 .navbar a {
-    color: var(--text-main);
+    color: var(--primary);
     margin-left: 20px;
     text-decoration: none;
     transition: 0.3s;
@@ -54,10 +42,10 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
-/* ========== HERO ========== */
+/* ================= HERO ================= */
 .hero {
     height: 100vh;
     background: url('web1.jpg');
@@ -82,10 +70,10 @@ body {
 .hero p {
     margin: 20px 0;
     font-size: 20px;
-    color: var(--text-muted);
+    color: var(--gray);
 }
 
-/* ========== BUTTON ========== */
+/* ================= BUTTON ================= */
 .btn-gold {
     padding: 12px 30px;
     background-color: var(--primary);
@@ -98,24 +86,25 @@ body {
 
 .btn-gold:hover {
     background-color: var(--accent);
-    color: var(--text-main);
+    color: var(--primary);
 }
 
-/* ========== SECTIONS ========== */
+/* ================= SECTIONS ================= */
 .section {
     padding: 120px 10%;
     text-align: center;
+    background-color: var(--white);
 }
 
 .dark-section {
-    background-color: var(--bg-soft);
+    background-color: var(--white);
 }
 
 .black-section {
     background-color: var(--white);
 }
 
-/* ========== SERVICES ========== */
+/* ================= SERVICES ================= */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,16 +113,16 @@ body {
 }
 
 .service-card {
-    background-color: var(--card-bg);
+    background-color: var(--white);
     padding: 25px;
     border-radius: 12px;
     transition: 0.4s ease;
-    border: 1px solid var(--border-soft);
+    border: 1px solid #eee;
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: var(--primary);
+    border-color: var(--accent);
 }
 
 .service-icon {
@@ -143,14 +132,14 @@ body {
 }
 
 .service-card h3 {
-    color: var(--text-main);
+    color: var(--primary);
 }
 
 .service-card p {
-    color: var(--text-muted);
+    color: var(--gray);
 }
 
-/* ========== CONTACT FORM ========== */
+/* ================= CONTACT FORM ================= */
 #contact-form {
     max-width: 500px;
     margin: 30px auto;
@@ -162,7 +151,7 @@ body {
 #contact-form textarea {
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid var(--border-soft);
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 14px;
 }
