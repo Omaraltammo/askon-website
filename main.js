@@ -1,35 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    emailjs.init("Hfom3ZLXXLSCkZRcL");
 
     const form = document.getElementById("contact-form");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        grecaptcha.ready(() => {
-            grecaptcha.execute("YOUR_RECAPTCHA_KEY", { action: "submit" })
-            .then(token => {
+            if (typeof grecaptcha === "undefined") return;
 
-                emailjs.sendForm(
-                    "YOUR_SERVICE_ID",
-                    "YOUR_TEMPLATE_ID",
-                    form,
-                    { 'g-recaptcha-response': token }
-                )
-                .then(() => {
-                    alert("Message Sent Successfully!");
-                    form.reset();
-                })
-                .catch(() => {
-                    alert("Failed to send message.");
+            grecaptcha.ready(() => {
+                grecaptcha.execute("6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei", { action: "submit" })
+                .then(token => {
+
+                    emailjs.sendForm(
+                        "service_6t9szgi",
+                        "template_1fs4hrl",
+                        form,
+                        { 'g-recaptcha-response': token }
+                    )
+                    .then(() => {
+                        alert("Message Sent Successfully!");
+                        form.reset();
+                    })
+                    .catch(() => {
+                        alert("Failed to send message.");
+                    });
+
                 });
-
             });
         });
-    });
+    }
 
-    // NAVBAR CURTAIN
+    /* NAVBAR CURTAIN */
     const navbar = document.querySelector(".navbar");
 
     setTimeout(() => navbar.classList.add("hide"), 800);
@@ -42,15 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // REVEAL ON SCROLL
-    const reveals = document.querySelectorAll(".reveal");
+    /* REVEAL */
+    const reveals = document.querySelectorAll(".section, .service-card");
 
     function revealOnScroll() {
-        const trigger = window.innerHeight - 100;
-
         reveals.forEach(el => {
             const top = el.getBoundingClientRect().top;
-            if (top < trigger) {
+            if (top < window.innerHeight - 100) {
                 el.classList.add("active");
             }
         });
@@ -58,4 +60,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
+
 });
