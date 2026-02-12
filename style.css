@@ -18,16 +18,28 @@ body {
     color: #1f1f1f;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (Curtain Style) ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 10%;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(255,255,255,0.85);
-    backdrop-filter: blur(8px);
     z-index: 1000;
+
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+
+    /* Curtain behavior */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+/* When visible */
+.navbar.show {
+    transform: translateY(0);
 }
 
 .navbar a {
@@ -90,7 +102,6 @@ body {
     animation-delay: 0.3s;
 }
 
-
 /* ================= BUTTON ================= */
 .btn-gold {
     padding: 12px 30px;
@@ -101,12 +112,12 @@ body {
     border-radius: 30px;
     transition: 0.3s;
 }
+
 .hero .btn-gold {
     opacity: 0;
     animation: heroFadeUp 1.2s ease-out forwards;
     animation-delay: 0.6s;
 }
-
 
 .btn-gold:hover {
     background: linear-gradient(135deg, var(--accent), var(--primary));
@@ -131,7 +142,7 @@ body {
     position: relative;
     display: inline-block;
     color: var(--primary);
-    margin-bottom: 40px; /* مسافة آمنة تحت العنوان */
+    margin-bottom: 40px;
 }
 
 .section h2::after {
@@ -145,7 +156,6 @@ body {
     background-color: var(--accent);
     border-radius: 2px;
 }
-
 
 /* ================= SERVICES ================= */
 .services-container {
@@ -200,6 +210,8 @@ body {
     border-radius: 10px;
     font-size: 14px;
 }
+
+/* ================= ANIMATIONS ================= */
 @keyframes heroFadeUp {
     0% {
         opacity: 0;
