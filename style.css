@@ -53,12 +53,13 @@ body {
 
 .hero h1 {
     font-size: 48px;
-    color: var(--gold);
+    color: var(--dark);
 }
 
 .hero p {
     margin: 20px 0;
     font-size: 20px;
+    color: var(--dark);
 }
 .hero-content {
     text-align: center;
