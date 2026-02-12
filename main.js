@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* ================= EMAILJS ================= */
+
     emailjs.init("Hfom3ZLXXLSCkZRcL");
 
     const form = document.getElementById("contact-form");
@@ -33,10 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* NAVBAR CURTAIN */
+    /* ================= NAVBAR CURTAIN ================= */
+
     const navbar = document.querySelector(".navbar");
 
-    setTimeout(() => navbar.classList.add("hide"), 800);
+    setTimeout(() => {
+        navbar.classList.add("hide");
+    }, 800);
 
     document.addEventListener("mousemove", function (e) {
         if (e.clientY <= 80) {
@@ -46,20 +51,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* REVEAL */
-    
-const reveals = document.querySelectorAll(".section, .service-card, .hero-content");
+    /* ================= REVEAL ON SCROLL ================= */
 
-function revealOnScroll() {
-    reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 120) {
-            el.classList.add("active");
-        }
+    const reveals = document.querySelectorAll(".section, .service-card, .hero-content");
+
+    function revealOnScroll() {
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 120) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    /* ================= ICON PARALLAX ================= */
+
+    const cards = document.querySelectorAll("[data-parallax]");
+
+    cards.forEach(card => {
+
+        const icon = card.querySelector(".icon-svg");
+        const strength = parseFloat(card.dataset.parallax) || 0.05;
+
+        card.addEventListener("mousemove", (e) => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const moveX = (x - rect.width / 2) * strength;
+            const moveY = (y - rect.height / 2) * strength;
+
+            icon.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            icon.style.transform = "translate(0,0)";
+        });
+
     });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
 
 });
