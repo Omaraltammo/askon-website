@@ -1,59 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    console.log("MAIN.JS LOADED");
+/* EMAIL */
+emailjs.init("Hfom3ZLXXLSCkZRcL");
+const form=document.getElementById("contact-form");
+if(form){
+form.addEventListener("submit",e=>{
+e.preventDefault();
+grecaptcha.ready(()=>{
+grecaptcha.execute("6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei",{action:"submit"})
+.then(token=>{
+emailjs.sendForm("service_6t9szgi","template_1fs4hrl",form,{
+"g-recaptcha-response":token
+}).then(()=>{alert("Message Sent");form.reset();});
+});
+});
+});
+}
 
-    /* ================= EMAILJS ================= */
-    emailjs.init("Hfom3ZLXXLSCkZRcL");
+/* NAVBAR */
+const navbar=document.querySelector(".navbar");
+setTimeout(()=>navbar.classList.add("hide"),900);
+document.addEventListener("mousemove",e=>{
+e.clientY<80?navbar.classList.remove("hide"):navbar.classList.add("hide");
+});
 
-    const form = document.getElementById("contact-form");
+/* REVEAL + STAGGER */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach((entry,i)=>{
+if(entry.isIntersecting){
+setTimeout(()=>entry.target.classList.add("visible"),i*120);
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.18});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-    if (!form) {
-        console.error("Contact form not found");
-        return;
-    }
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        console.log("FORM SUBMIT TRIGGERED");
-
-        grecaptcha.ready(() => {
-            grecaptcha.execute('6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei', { action: 'submit' })
-            .then(token => {
-
-                return emailjs.sendForm(
-                    "service_6t9szgi",
-                    "template_1fs4hrl",
-                    this,
-                    {
-                        'g-recaptcha-response': token
-                    }
-                );
-
-            })
-            .then(() => {
-                alert("Message Sent Successfully!");
-                form.reset();
-            })
-            .catch(error => {
-                console.error("EmailJS Error:", error);
-                alert("Failed to send message.");
-            });
-        });
-    });
-
-    /* ================= NAVBAR ================= */
-    const navbar = document.querySelector(".navbar");
-
-    setTimeout(() => {
-        navbar.classList.add("hide");
-    }, 800);
-
-    document.addEventListener("mousemove", function (e) {
-        if (e.clientY <= 80) {
-            navbar.classList.remove("hide");
-        } else {
-            navbar.classList.add("hide");
-        }
-    });
+/* LOTTIE */
+lottie.loadAnimation({
+container:document.getElementById("lottie"),
+renderer:"svg",
+loop:true,
+autoplay:true,
+path:"https://assets9.lottiefiles.com/packages/lf20_yd8fbnml.json"
+});
 
 });
