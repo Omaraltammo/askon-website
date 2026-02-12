@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- ================= CSP (WORKING & SAFE) ================= -->
-   <meta http-equiv="Content-Security-Policy"
+  <meta http-equiv="Content-Security-Policy"
 content="
 default-src 'self';
 img-src 'self' https:;
@@ -14,8 +14,10 @@ connect-src 'self'
              https://api.emailjs.com
              https://www.google.com
              https://www.gstatic.com;
+frame-src https://www.google.com;
 style-src 'self';
 ">
+
 
 
 
@@ -154,3 +156,4 @@ style-src 'self';
 
 </body>
 </html>
+
