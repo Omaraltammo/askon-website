@@ -287,3 +287,39 @@ body {
     .hero h1 { font-size: 36px; }
     .section { padding: 100px 8%; }
 }
+/* ================= SECTION TITLE FIX ================= */
+
+.section h2 {
+    position: relative;
+    color: var(--primary);
+    margin-bottom: 80px; /* رفع العنوان أكثر */
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    z-index: 2;
+}
+
+/* Contact title spacing */
+#contact h2 {
+    color: var(--accent);
+    margin-bottom: 90px;
+}
+
+/* ================= SOFT DIVIDER FIX ================= */
+
+.section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(185,166,123,.25),
+        transparent
+    );
+    pointer-events: none;
+}
+
