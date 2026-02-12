@@ -53,14 +53,16 @@ body {
 
 .hero h1 {
     font-size: 48px;
-    color: black;
-    margin-top: -20px;
+    color: var(--gold);
 }
-
 
 .hero p {
     margin: 20px 0;
     font-size: 20px;
+}
+.hero-content {
+    text-align: center;
+    transform: translateY(-40px);
 }
 
 .btn-gold {
