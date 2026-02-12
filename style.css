@@ -119,19 +119,21 @@ body {
     position: relative;
     display: inline-block;
     color: var(--primary);
+    margin-bottom: 40px; /* مسافة آمنة تحت العنوان */
 }
 
 .section h2::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -15px;
+    bottom: -18px;
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
     background-color: var(--accent);
     border-radius: 2px;
 }
+
 
 /* ================= SERVICES ================= */
 .services-container {
