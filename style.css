@@ -1,11 +1,11 @@
 :root {
-    --primary: #6D1B35;
-    --accent: #B9A67B;
+    --primary: #6D1B35;   /* Burgundy */
+    --accent: #B9A67B;    /* Gold */
     --gray: #999999;
     --white: #FFFFFF;
 }
 
-/* ===== GLOBAL ===== */
+/* ================= GLOBAL ================= */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
     color: #1f1f1f;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -42,7 +42,7 @@ body {
     color: var(--accent);
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero {
     height: 100vh;
     background: url('web1.jpg');
@@ -55,16 +55,28 @@ body {
 }
 
 .hero-content {
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     padding: 60px 70px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-top: 6px solid var(--accent);
     transform: translateY(-40px);
 }
 
 .hero h1 {
     font-size: 48px;
     color: var(--primary);
+    position: relative;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
 }
 
 .hero p {
@@ -73,10 +85,10 @@ body {
     color: var(--gray);
 }
 
-/* ===== BUTTON ===== */
+/* ================= BUTTON ================= */
 .btn-gold {
     padding: 12px 30px;
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
@@ -85,17 +97,16 @@ body {
 }
 
 .btn-gold:hover {
-    background-color: var(--accent);
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: var(--white);
 }
 
-/* ===== SECTIONS ===== */
+/* ================= SECTIONS ================= */
 .section {
     padding: 120px 10%;
     text-align: center;
 }
 
-/* أقسام متبادلة */
 .dark-section {
     background-color: #ffffff;
 }
@@ -104,7 +115,25 @@ body {
     background-color: #f1f1f1;
 }
 
-/* ===== SERVICES ===== */
+.section h2 {
+    position: relative;
+    display: inline-block;
+    color: var(--primary);
+}
+
+.section h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* ================= SERVICES ================= */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,6 +153,7 @@ body {
 .service-card:hover {
     transform: translateY(-10px);
     border-top-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(185,166,123,0.35);
 }
 
 .service-icon {
@@ -140,7 +170,7 @@ body {
     color: var(--gray);
 }
 
-/* ===== CONTACT FORM ===== */
+/* ================= CONTACT FORM ================= */
 #contact-form {
     max-width: 500px;
     margin: 30px auto;
