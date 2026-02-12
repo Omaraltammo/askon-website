@@ -51,45 +51,37 @@
 <!-- ================= SERVICES ================= -->
 <section id="services" class="section">
     <h2>Our Services</h2>
-
     <div class="services-container">
-
         <div class="service-card">
             <div class="service-icon">🎤</div>
             <h3>Event Planning & Coordination</h3>
             <p>Professional planning and execution for conferences and events.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🌐</div>
             <h3>Interpretation & Conference Solutions</h3>
             <p>Simultaneous and consecutive interpretation services.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🔊</div>
             <h3>Audio & Acoustic Services</h3>
             <p>High-end sound systems and technical supervision.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">📸</div>
             <h3>Photography</h3>
             <p>Professional event and corporate photography.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🎥</div>
             <h3>Video Production</h3>
             <p>Event coverage, interviews, and post-production.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🖨️</div>
             <h3>Graphic Design & Printing</h3>
             <p>Branding, brochures, and promotional materials.</p>
         </div>
-
     </div>
 </section>
 
@@ -114,9 +106,7 @@
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="section contact-section">
     <h2>Contact Us</h2>
-
     <div class="contact-container">
-
         <div class="contact-info">
             <h3>Get In Touch</h3>
             <p><strong>Email:</strong> info@askonltd.com</p>
@@ -136,13 +126,13 @@
                 <button type="submit" class="btn-gold">Send Message</button>
             </form>
         </div>
-
     </div>
 </section>
 
 <!-- ================= EMAILJS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<!-- ================= FINAL JS ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -152,33 +142,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contact-form")
         .addEventListener("submit", function (event) {
             event.preventDefault();
-
-            emailjs.sendForm(
-                "service_6t9szgi",
-                "template_1fs4hrl",
-                this
-            ).then(
-                function () {
-                    alert("Message Sent Successfully!");
-                },
-                function (error) {
-                    console.error("EmailJS Error:", error);
-                    alert("Failed to send message.");
-                }
-            );
+            emailjs.sendForm("service_6t9szgi", "template_1fs4hrl", this)
+                .then(() => alert("Message Sent Successfully!"))
+                .catch(() => alert("Failed to send message."));
         });
 
-    /* Navbar curtain – mouse top */
+    /* Navbar curtain */
     const navbar = document.querySelector(".navbar");
+
+    setTimeout(() => {
+        navbar.classList.add("hide");
+    }, 800);
 
     document.addEventListener("mousemove", function (e) {
         if (e.clientY < 80) {
-            navbar.classList.add("show");
+            navbar.classList.remove("hide");
         } else {
-            navbar.classList.remove("show");
+            navbar.classList.add("hide");
         }
     });
-
 });
 </script>
 
