@@ -41,7 +41,7 @@ container:document.getElementById("lottie"),
 renderer:"svg",
 loop:true,
 autoplay:true,
-path:"https://assets9.lottiefiles.com/packages/lf20_yd8fbnml.json"
+path:"lottie.json"
 });
 
 });
