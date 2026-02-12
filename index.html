@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ================= CSP (FINAL & FIXED) ================= -->
+    <!-- ================= CSP (WORKING & SAFE) ================= -->
     <meta http-equiv="Content-Security-Policy"
           content="
             default-src 'self';
             img-src 'self' https:;
-            script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
-            connect-src 'self' https://api.emailjs.com;
+            script-src 'self' https://cdn.jsdelivr.net https://www.google.com;
+            connect-src 'self' https://api.emailjs.com https://www.google.com;
             style-src 'self' 'unsafe-inline';
           ">
 
@@ -17,8 +17,6 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-
-<script src="main.js" defer></script>
 
 <body>
 
@@ -59,43 +57,36 @@
     <h2>Our Services</h2>
 
     <div class="services-container">
-
         <div class="service-card">
             <div class="service-icon">🎤</div>
             <h3>Event Planning & Coordination</h3>
             <p>Professional planning and execution for conferences and events.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🌐</div>
             <h3>Interpretation & Conference Solutions</h3>
             <p>Simultaneous and consecutive interpretation services.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🔊</div>
             <h3>Audio & Acoustic Services</h3>
             <p>High-end sound systems and technical supervision.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">📸</div>
             <h3>Photography</h3>
             <p>Professional event and corporate photography.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🎥</div>
             <h3>Video Production</h3>
             <p>Event coverage, interviews, and post-production.</p>
         </div>
-
         <div class="service-card">
             <div class="service-icon">🖨️</div>
             <h3>Graphic Design & Printing</h3>
             <p>Branding, brochures, and promotional materials.</p>
         </div>
-
     </div>
 </section>
 
@@ -122,7 +113,6 @@
     <h2>Contact Us</h2>
 
     <div class="contact-container">
-
         <div class="contact-info">
             <h3>Get In Touch</h3>
             <p><strong>Email:</strong> info@askonltd.com</p>
@@ -142,13 +132,17 @@
                 <button type="submit" class="btn-gold">Send Message</button>
             </form>
         </div>
-
     </div>
 </section>
 
 <!-- ================= EMAILJS ================= -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 
+<!-- ================= RECAPTCHA (LOADED, OPTIONAL) ================= -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei" defer></script>
+
+<!-- ================= MAIN JS ================= -->
+<script src="main.js" defer></script>
 
 </body>
 </html>
