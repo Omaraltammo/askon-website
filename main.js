@@ -1,47 +1,61 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", function () {
 
-/* EMAIL */
-emailjs.init("Hfom3ZLXXLSCkZRcL");
-const form=document.getElementById("contact-form");
-if(form){
-form.addEventListener("submit",e=>{
-e.preventDefault();
-grecaptcha.ready(()=>{
-grecaptcha.execute("6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei",{action:"submit"})
-.then(token=>{
-emailjs.sendForm("service_6t9szgi","template_1fs4hrl",form,{
-"g-recaptcha-response":token
-}).then(()=>{alert("Message Sent");form.reset();});
-});
-});
-});
-}
+    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
 
-/* NAVBAR */
-const navbar=document.querySelector(".navbar");
-setTimeout(()=>navbar.classList.add("hide"),900);
-document.addEventListener("mousemove",e=>{
-e.clientY<80?navbar.classList.remove("hide"):navbar.classList.add("hide");
-});
+    const form = document.getElementById("contact-form");
 
-/* REVEAL + STAGGER */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach((entry,i)=>{
-if(entry.isIntersecting){
-setTimeout(()=>entry.target.classList.add("visible"),i*120);
-observer.unobserve(entry.target);
-}
-});
-},{threshold:.18});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-/* LOTTIE */
-lottie.loadAnimation({
-container:document.getElementById("lottie"),
-renderer:"svg",
-loop:true,
-autoplay:true,
-path:"lottie.json"
-});
+        grecaptcha.ready(() => {
+            grecaptcha.execute("YOUR_RECAPTCHA_KEY", { action: "submit" })
+            .then(token => {
 
+                emailjs.sendForm(
+                    "YOUR_SERVICE_ID",
+                    "YOUR_TEMPLATE_ID",
+                    form,
+                    { 'g-recaptcha-response': token }
+                )
+                .then(() => {
+                    alert("Message Sent Successfully!");
+                    form.reset();
+                })
+                .catch(() => {
+                    alert("Failed to send message.");
+                });
+
+            });
+        });
+    });
+
+    // NAVBAR CURTAIN
+    const navbar = document.querySelector(".navbar");
+
+    setTimeout(() => navbar.classList.add("hide"), 800);
+
+    document.addEventListener("mousemove", function (e) {
+        if (e.clientY <= 80) {
+            navbar.classList.remove("hide");
+        } else {
+            navbar.classList.add("hide");
+        }
+    });
+
+    // REVEAL ON SCROLL
+    const reveals = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+        const trigger = window.innerHeight - 100;
+
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < trigger) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
 });
