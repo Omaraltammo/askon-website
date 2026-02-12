@@ -36,7 +36,7 @@ body {
 }
 
 .navbar a:hover {
-    color: var(--gold);
+    color: var(--burgundy);
 }
 
 .hero {
