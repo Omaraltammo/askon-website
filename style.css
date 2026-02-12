@@ -32,14 +32,14 @@ body {
     background-color: rgba(255,255,255,0.6);
     backdrop-filter: blur(10px);
 
-    /* Curtain behavior */
-    transform: translateY(-100%);
+    /* ✅ ظاهر افتراضيًا */
+    transform: translateY(0);
     transition: transform 0.4s ease, background-color 0.3s ease;
 }
 
-/* When visible */
-.navbar.show {
-    transform: translateY(0);
+/* ❗ الإخفاء يتم فقط بهذا الكلاس */
+.navbar.hide {
+    transform: translateY(-100%);
 }
 
 .navbar a {
