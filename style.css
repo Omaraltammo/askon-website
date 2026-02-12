@@ -1,11 +1,26 @@
 :root {
-    --burgundy: #6A1B2E;
-    --gold: #C6A96B;
-    --dark: #0F0F0F;
-    --soft-dark: #1A1A1A;
-    --light: #F5F5F5;
+    /* Brand Colors */
+    --primary: #6D1B35;
+    --accent: #B9A67B;
+
+    /* Neutrals */
+    --gray: #999999;
+    --white: #FFFFFF;
+
+    /* Backgrounds */
+    --bg-main: #F7F6F6;
+    --bg-soft: #EFE9EC;
+
+    /* Text */
+    --text-main: #1F1F1F;
+    --text-muted: #666666;
+
+    /* Cards / Borders */
+    --card-bg: #FFFFFF;
+    --border-soft: #E2DADF;
 }
 
+/* ========== GLOBAL ========== */
 * {
     margin: 0;
     padding: 0;
@@ -14,35 +29,38 @@
 }
 
 body {
-    background-color: var(--burgundy);
-    color: var(--light);
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 
+/* ========== NAVBAR ========== */
 .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 10%;
     position: fixed;
     width: 100%;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(255,255,255,0.9);
     z-index: 1000;
+    border-bottom: 1px solid var(--border-soft);
 }
 
 .navbar a {
-    color: var(--light);
+    color: var(--text-main);
     margin-left: 20px;
     text-decoration: none;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .navbar a:hover {
-    color: var(--burgundy);
+    color: var(--primary);
 }
 
+/* ========== HERO ========== */
 .hero {
     height: 100vh;
-    background: 
-                url('web1.jpg');
+    background: url('web1.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -51,25 +69,27 @@ body {
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 48px;
-    color: var(--dark);
-}
-
-.hero p {
-    margin: 20px 0;
-    font-size: 20px;
-    color: var(--dark);
-}
 .hero-content {
     text-align: center;
     transform: translateY(-60px);
 }
 
+.hero h1 {
+    font-size: 48px;
+    color: var(--primary);
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 20px;
+    color: var(--text-muted);
+}
+
+/* ========== BUTTON ========== */
 .btn-gold {
     padding: 12px 30px;
-    background-color: var(--gold);
-    color: black;
+    background-color: var(--primary);
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
     border-radius: 30px;
@@ -77,23 +97,25 @@ body {
 }
 
 .btn-gold:hover {
-    background-color: var(--burgundy);
-    color: white;
+    background-color: var(--accent);
+    color: var(--text-main);
 }
 
+/* ========== SECTIONS ========== */
 .section {
     padding: 120px 10%;
     text-align: center;
 }
 
 .dark-section {
-    background-color: var(--soft-dark);
+    background-color: var(--bg-soft);
 }
 
 .black-section {
-    background-color: black;
+    background-color: var(--white);
 }
 
+/* ========== SERVICES ========== */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -102,24 +124,33 @@ body {
 }
 
 .service-card {
-    background-color: var(--soft-dark);
+    background-color: var(--card-bg);
     padding: 25px;
     border-radius: 12px;
     transition: 0.4s ease;
-    border: 2px solid transparent;
+    border: 1px solid var(--border-soft);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: var(--gold);
+    border-color: var(--primary);
 }
 
 .service-icon {
     font-size: 40px;
     margin-bottom: 10px;
-    color: var(--gold);
+    color: var(--accent);
 }
 
+.service-card h3 {
+    color: var(--text-main);
+}
+
+.service-card p {
+    color: var(--text-muted);
+}
+
+/* ========== CONTACT FORM ========== */
 #contact-form {
     max-width: 500px;
     margin: 30px auto;
@@ -131,6 +162,7 @@ body {
 #contact-form textarea {
     padding: 12px;
     margin-bottom: 15px;
-    border: none;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
+    font-size: 14px;
 }
