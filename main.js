@@ -31,49 +31,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     window.addEventListener("scroll",reveal);
     reveal();
-    /* ICON PARALLAX INSIDE CARD */
-    const cards = document.querySelectorAll(".service-card");
-    
-    cards.forEach(card => {
-    
-        const icon = card.querySelector(".icon-svg");
-    
-        card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-    
+
+    /* ICON PARALLAX */
+    const cards=document.querySelectorAll(".service-card");
+    cards.forEach(card=>{
+        const icon=card.querySelector(".icon-svg");
+        card.addEventListener("mousemove",e=>{
+            const rect=card.getBoundingClientRect();
+            const x=e.clientX-rect.left-rect.width/2;
+            const y=e.clientY-rect.top-rect.height/2;
             if(icon){
-                icon.style.transform =
-                    `translate(${x * 0.06}px, ${y * 0.06}px)`;
+                icon.style.transform=
+                    `translate(${x*0.05}px, ${y*0.05}px)`;
             }
         });
-
-    card.addEventListener("mouseleave", () => {
-        if(icon) icon.style.transform = "";
-    });
-
-});
-
-    /* SMOOTH ANCHOR (بصمتي الخاصة 👑) */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-        anchor.addEventListener("click",function(e){
-            e.preventDefault();
-            const target=document.querySelector(this.getAttribute("href"));
-            window.scrollTo({
-                top:target.offsetTop-60,
-                behavior:"smooth"
-            });
+        card.addEventListener("mouseleave",()=>{
+            if(icon) icon.style.transform="";
         });
     });
 
-    /* AMBIENT LIGHT FOLLOW */
-    const ambient=document.querySelector(".ambient-light");
-    document.addEventListener("mousemove",e=>{
-        const x=(e.clientX/window.innerWidth)*100;
-        const y=(e.clientY/window.innerHeight)*100;
-        ambient.style.background=
-        `radial-gradient(circle at ${x}% ${y}%, rgba(185,166,123,.1), transparent 60%)`;
+    /* STAGGER TITLE SPLIT */
+    document.querySelectorAll(".reveal-title").forEach(title=>{
+        const text=title.innerText;
+        title.innerHTML="";
+        text.split("").forEach((char,i)=>{
+            const span=document.createElement("span");
+            span.innerText=char;
+            span.style.transitionDelay=(i*0.04)+"s";
+            title.appendChild(span);
+        });
     });
 
 });
