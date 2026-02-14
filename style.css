@@ -547,53 +547,64 @@ body{
     opacity:.6;
 }
 /* ===============================
-   ABOUT SECTION REFINED DESIGN
+   ABOUT SECTION – ELEGANT BLOCK
 ================================ */
 
 .about-section{
     background:#f7f5f3;
 }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:80px;
-    max-width:1100px;
+.about-container{
+    max-width:1000px;
     margin:auto;
-    align-items:start;
     text-align:left;
 }
 
-.about-left h2{
-    margin-bottom:30px;
+.about-header{
+    margin-bottom:50px;
+    position:relative;
 }
 
-.about-lead{
-    font-size:20px;
-    line-height:1.7;
-    font-weight:500;
-    color:var(--primary);
+.about-header h2{
+    font-weight:600;
+    letter-spacing:-0.3px;
 }
 
-.about-right{
+/* الخط الذهبي العمودي */
+.about-header::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-18px;
+    width:60px;
+    height:2px;
+    background:var(--accent);
+}
+
+.about-content{
     background:white;
-    padding:40px;
-    border-radius:12px;
+    padding:60px;
+    border-radius:14px;
     box-shadow:
-        0 20px 40px rgba(0,0,0,.06),
+        0 30px 60px rgba(0,0,0,.06),
         0 10px 20px rgba(185,166,123,.08);
+
+    line-height:1.9;
+    font-size:17px;
+    color:#444;
 }
 
-.about-right p{
-    margin-bottom:20px;
-    line-height:1.7;
-    color:#555;
+.about-content p{
+    margin-bottom:25px;
+}
+
+.about-content p:last-child{
+    margin-bottom:0;
 }
 
 /* Responsive */
-@media (max-width:900px){
-    .about-grid{
-        grid-template-columns:1fr;
-        gap:50px;
+@media (max-width:768px){
+    .about-content{
+        padding:40px;
     }
 }
