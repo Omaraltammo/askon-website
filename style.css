@@ -317,3 +317,45 @@
     }
 }
 
+/* ===============================
+   VERTICAL MOTION SPINE
+================================ */
+
+.motion-spine{
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:2px;
+    height:100vh;
+
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        rgba(185,166,123,.15),
+        rgba(185,166,123,.25),
+        rgba(185,166,123,.15),
+        transparent
+    );
+
+    opacity:.4;
+    pointer-events:none;
+    z-index:0;
+
+    animation:spineMove 12s ease-in-out infinite;
+}
+
+@keyframes spineMove{
+    0%{
+        opacity:.25;
+        transform:translateX(-50%) scaleY(.9);
+    }
+    50%{
+        opacity:.5;
+        transform:translateX(-50%) scaleY(1.05);
+    }
+    100%{
+        opacity:.25;
+        transform:translateX(-50%) scaleY(.9);
+    }
+}
