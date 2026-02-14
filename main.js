@@ -1,16 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* NAVBAR CURTAIN */
-    const navbar = document.querySelector(".navbar");
-    setTimeout(()=>navbar.classList.add("hide"),800);
+    /* =====================================================
+   SMART NAVBAR SYSTEM (Curtain + Blur Premium)
+===================================================== */
 
-    document.addEventListener("mousemove",e=>{
-        if(e.clientY<=80){
-            navbar.classList.remove("hide");
-        }else{
-            navbar.classList.add("hide");
-        }
-    });
+const navbar = document.querySelector(".navbar");
+
+/* إخفاء مبدئي بعد تحميل الصفحة */
+setTimeout(() => {
+    navbar.classList.add("hide");
+}, 800);
+
+/* نظام Curtain (يظهر عند تحريك الماوس للأعلى) */
+document.addEventListener("mousemove", (e) => {
+    if (e.clientY <= 80) {
+        navbar.classList.remove("hide");
+    } else {
+        navbar.classList.add("hide");
+    }
+});
+
+/* Smart Blur عند التمرير */
+window.addEventListener("scroll", () => {
+
+    /* تفعيل الـ Glass Effect */
+    if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
 
     /* SCROLL PROGRESS */
     const progress=document.querySelector(".scroll-progress");
