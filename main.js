@@ -50,16 +50,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    /* STAGGER TITLE SPLIT */
-    document.querySelectorAll(".reveal-title").forEach(title=>{
-        const text=title.innerText;
-        title.innerHTML="";
-        text.split("").forEach((char,i)=>{
-            const span=document.createElement("span");
-            span.innerText=char;
-            span.style.transitionDelay=(i*0.04)+"s";
-            title.appendChild(span);
-        });
+   /* STAGGER TITLE SPLIT (WORD SAFE VERSION) */
+document.querySelectorAll(".reveal-title").forEach(title=>{
+    const words = title.innerText.split(" ");
+    title.innerHTML = "";
+
+    words.forEach((word,i)=>{
+        const span = document.createElement("span");
+        span.innerText = word;
+        span.style.transitionDelay = (i * 0.12) + "s";
+        span.style.display = "inline-block";
+        span.style.marginRight = "8px"; // يحافظ على المسافة
+        title.appendChild(span);
     });
+});
 
 });
