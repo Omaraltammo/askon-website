@@ -70,11 +70,18 @@
     transform:translateY(-100%);
 }
 
-        .navbar a{
-            margin-left:25px;
-            text-decoration:none;
-            color:var(--primary);
-        }
+       .navbar a{
+    margin-left:25px;
+    text-decoration:none;
+    color:white;
+    transition:color .4s ease;
+}
+
+/* عند التمرير */
+.navbar.scrolled a{
+    color:var(--primary);
+}
+
         
         /* HERO */
         .hero{
