@@ -546,3 +546,54 @@ body{
     font-size:14px;
     opacity:.6;
 }
+/* ===============================
+   ABOUT SECTION REFINED DESIGN
+================================ */
+
+.about-section{
+    background:#f7f5f3;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:80px;
+    max-width:1100px;
+    margin:auto;
+    align-items:start;
+    text-align:left;
+}
+
+.about-left h2{
+    margin-bottom:30px;
+}
+
+.about-lead{
+    font-size:20px;
+    line-height:1.7;
+    font-weight:500;
+    color:var(--primary);
+}
+
+.about-right{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.06),
+        0 10px 20px rgba(185,166,123,.08);
+}
+
+.about-right p{
+    margin-bottom:20px;
+    line-height:1.7;
+    color:#555;
+}
+
+/* Responsive */
+@media (max-width:900px){
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+}
