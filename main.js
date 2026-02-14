@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ================= EMAILJS ================= */
-
     emailjs.init("Hfom3ZLXXLSCkZRcL");
 
     const form = document.getElementById("contact-form");
@@ -35,13 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* ================= NAVBAR CURTAIN ================= */
 
+    /* ================= NAVBAR CURTAIN ================= */
     const navbar = document.querySelector(".navbar");
 
-    setTimeout(() => {
-        navbar.classList.add("hide");
-    }, 800);
+    setTimeout(() => navbar.classList.add("hide"), 800);
 
     document.addEventListener("mousemove", function (e) {
         if (e.clientY <= 80) {
@@ -51,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* ================= REVEAL ON SCROLL ================= */
 
+    /* ================= REVEAL ON SCROLL ================= */
     const reveals = document.querySelectorAll(".section, .service-card, .hero-content");
 
     function revealOnScroll() {
@@ -66,41 +63,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
-    /* DEPTH PARALLAX */
-
-window.addEventListener("scroll", () => {
-    document.querySelectorAll("[data-parallax]").forEach(el => {
-        const speed = el.getAttribute("data-parallax");
-        const offset = window.scrollY * speed;
-        el.style.transform = `translateY(${offset}px)`;
-    });
-});
 
 
-    /* ================= ICON PARALLAX ================= */
+    /* ================= MAGNETIC + 3D PARALLAX (APPLE GRADE) ================= */
 
-    const cards = document.querySelectorAll("[data-parallax]");
+    const cards = document.querySelectorAll(".service-card");
 
     cards.forEach(card => {
 
         const icon = card.querySelector(".icon-svg");
-        const strength = parseFloat(card.dataset.parallax) || 0.05;
+        let rafId = null;
 
-        card.addEventListener("mousemove", (e) => {
+        function animate(e) {
 
             const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
 
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            const rotateX = (-y / rect.height) * 12;
+            const rotateY = (x / rect.width) * 12;
 
-            const moveX = (x - rect.width / 2) * strength;
-            const moveY = (y - rect.height / 2) * strength;
+            card.style.transform =
+                `translateY(-18px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-            icon.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            if (icon) {
+                icon.style.transform =
+                    `translate(${x * 0.06}px, ${y * 0.06}px)`;
+            }
+        }
+
+        card.addEventListener("mousemove", (e) => {
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => animate(e));
         });
 
         card.addEventListener("mouseleave", () => {
-            icon.style.transform = "translate(0,0)";
+            card.style.transform = "";
+            if (icon) icon.style.transform = "";
         });
 
     });
