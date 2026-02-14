@@ -27,10 +27,13 @@ style-src 'self';
 
 <body>
 
-<!-- 🔥 CINEMATIC LAYERS -->
-<div class="light-streak"></div>
-<div class="gold-particles"></div>
+<!-- 🔥 SCROLL PROGRESS -->
+<div class="scroll-progress"></div>
 
+<!-- 🔥 AMBIENT LIGHT -->
+<div class="ambient-light"></div>
+
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <div class="logo">ASKON</div>
     <nav>
@@ -40,36 +43,48 @@ style-src 'self';
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-overlay"></div>
-
-    <!-- 3D depth wrapper -->
-    <div class="hero-depth">
-        <div class="hero-content">
-            <h1>Askon for Consultancies</h1>
-            <p>Integrated Event, Media & Interpretation Services</p>
-        </div>
+    <div class="hero-content">
+        <h1>Askon for Consultancies</h1>
+        <p>Integrated Event, Media & Interpretation Services</p>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section glass">
     <h2>Who We Are</h2>
     <p>
         Professional integrated solutions for conferences, media production,
         interpretation and corporate events delivered with precision and excellence.
     </p>
+
+    <!-- COUNTERS -->
+    <div class="counters">
+        <div>
+            <span class="counter" data-target="150">0</span>
+            <p>Events</p>
+        </div>
+        <div>
+            <span class="counter" data-target="40">0</span>
+            <p>Partners</p>
+        </div>
+        <div>
+            <span class="counter" data-target="12">0</span>
+            <p>Years</p>
+        </div>
+    </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 <section id="services" class="section">
     <h2>Our Services</h2>
 
     <div class="services-container">
 
         <!-- 1 -->
-        <div class="service-card" data-parallax="0.05">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <rect x="3" y="5" width="18" height="4"/>
                 <rect x="5" y="11" width="14" height="8"/>
@@ -81,7 +96,7 @@ style-src 'self';
         </div>
 
         <!-- 2 -->
-        <div class="service-card" data-parallax="0.08">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <path d="M4 12a8 8 0 0 1 16 0"/>
                 <rect x="3" y="12" width="4" height="6"/>
@@ -93,7 +108,7 @@ style-src 'self';
         </div>
 
         <!-- 3 -->
-        <div class="service-card" data-parallax="0.06">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <rect x="9" y="3" width="6" height="10" rx="3"/>
                 <line x1="12" y1="13" x2="12" y2="18"/>
@@ -104,7 +119,7 @@ style-src 'self';
         </div>
 
         <!-- 4 -->
-        <div class="service-card" data-parallax="0.09">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <rect x="3" y="7" width="18" height="12" rx="2"/>
                 <circle cx="12" cy="13" r="4"/>
@@ -115,7 +130,7 @@ style-src 'self';
         </div>
 
         <!-- 5 -->
-        <div class="service-card" data-parallax="0.07">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <rect x="3" y="8" width="14" height="8" rx="2"/>
                 <polygon points="17,9 22,7 22,17 17,15"/>
@@ -126,7 +141,7 @@ style-src 'self';
         </div>
 
         <!-- 6 -->
-        <div class="service-card" data-parallax="0.1">
+        <div class="service-card">
             <svg class="icon-svg" viewBox="0 0 24 24">
                 <circle cx="6" cy="6" r="2"/>
                 <circle cx="18" cy="6" r="2"/>
@@ -140,7 +155,7 @@ style-src 'self';
     </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <section id="contact" class="section">
     <h2>Contact Us</h2>
 
@@ -152,6 +167,7 @@ style-src 'self';
     </form>
 </section>
 
+<!-- ================= SCRIPTS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei" defer></script>
 <script src="main.js" defer></script>
