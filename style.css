@@ -745,3 +745,35 @@ body{
         filter .6s ease,
         stroke .3s ease;
 }
+/* =====================================================
+   HERO CINEMATIC SOFT GLOW
+===================================================== */
+
+.hero-content h1{
+    position:relative;
+    z-index:2;
+}
+
+/* طبقة توهج خلف العنوان */
+.hero-content h1::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:140%;
+    height:160%;
+
+    background:radial-gradient(
+        circle,
+        rgba(185,166,123,.35) 0%,
+        rgba(185,166,123,.18) 35%,
+        transparent 70%
+    );
+
+    filter:blur(40px);
+    z-index:-1;
+    opacity:.6;
+    pointer-events:none;
+}
+
