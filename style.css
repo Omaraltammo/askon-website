@@ -258,3 +258,62 @@
             transition:.2s ease;
             z-index:0;
         }
+        /* ===============================
+   CINEMATIC LIGHT SWEEP
+================================ */
+
+.services-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* طبقة الضوء */
+.services-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 120%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(185,166,123,0.08),
+        transparent 60%
+    );
+
+    transform: rotate(12deg);
+    animation: lightSweep 28s ease-in-out infinite;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* تأكد أن المحتوى فوق الإضاءة */
+.services-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes lightSweep {
+    0% {
+        transform: translateX(-40%) rotate(12deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: .6;
+    }
+    50% {
+        transform: translateX(40%) rotate(12deg);
+        opacity: .8;
+    }
+    80% {
+        opacity: .6;
+    }
+    100% {
+        transform: translateX(80%) rotate(12deg);
+        opacity: 0;
+    }
+}
+
