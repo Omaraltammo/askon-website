@@ -906,55 +906,50 @@ body{scroll-timeline-name:--page-scroll;}
         font-size:90px;
     }
 }
-
 /* =====================================================
-   OUR VISION – SPLIT LUXURY
+   OUR VISION – SPLIT ARCHITECTURAL
 ===================================================== */
 
-.vision-split{
+.vision-section{
     padding:240px 10%;
-    background:#f6f4f2;
+    background:#f5f3f1;
 }
 
 .vision-grid{
     display:grid;
-    grid-template-columns:1fr 1.5fr;
-    gap:80px;
-    max-width:1200px;
-    margin:auto;
+    grid-template-columns:1fr 1px 2fr;
+    gap:60px;
     align-items:center;
+    max-width:1100px;
+    margin:auto;
 }
 
-.vision-left h2{
-    font-size:32px;
+.vision-title{
+    font-size:36px;
+    font-weight:600;
     color:var(--primary);
-    position:relative;
-    padding-left:30px;
 }
 
-/* gold vertical line */
-.vision-left h2::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    height:100%;
-    width:3px;
+.vision-divider{
+    width:1px;
+    height:120px;
     background:var(--accent);
+    opacity:.4;
 }
 
-.vision-right p{
+.vision-text p{
     font-size:18px;
     line-height:1.9;
     color:#555;
     margin-bottom:25px;
 }
 
-.vision-right p:last-child{
+.vision-text p:last-child{
     margin-bottom:0;
 }
 
-/* motion */
+/* Motion */
+
 .vision-grid{
     opacity:0;
     transform:translateY(var(--motion-distance));
@@ -966,12 +961,5 @@ body{scroll-timeline-name:--page-scroll;}
 .section.active .vision-grid{
     opacity:1;
     transform:translateY(0);
-}
-
-@media(max-width:900px){
-    .vision-grid{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
 }
 
