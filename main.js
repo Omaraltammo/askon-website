@@ -111,6 +111,6 @@ window.addEventListener("scroll", () => {
     const divider = document.querySelector(".vision-divider");
     if(!divider) return;
 
-    const offset = window.scrollY * 0.08;
+    const offset = window.scrollY * 0.01;
     divider.style.transform = `translateY(${offset}px)`;
 });
