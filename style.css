@@ -820,7 +820,8 @@ body{scroll-timeline-name:--page-scroll;}
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%) translateY(0);
+    will-change:transform;
     font-size:180px;
     font-weight:700;
     letter-spacing:10px;
