@@ -451,7 +451,7 @@ body{scroll-timeline-name:--page-scroll;}
     content:"";
     position:absolute;
     left:50%;
-    bottom:0px;
+    bottom:2px;
     width:0;
     height:2px;
     background:linear-gradient(to right,transparent,var(--accent),transparent);
