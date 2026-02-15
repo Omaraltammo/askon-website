@@ -87,3 +87,23 @@ document.querySelectorAll(".reveal-title").forEach(title=>{
 });
 
 });
+/* APPROACH PARALLAX */
+
+const approachBg = document.querySelector(".approach-bg-title");
+
+window.addEventListener("scroll", () => {
+
+    const section = document.querySelector(".approach-editorial");
+    const rect = section.getBoundingClientRect();
+
+    const windowHeight = window.innerHeight;
+
+    if(rect.top < windowHeight && rect.bottom > 0){
+
+        const offset = (windowHeight - rect.top) * 0.08;
+
+        approachBg.style.transform =
+            `translate(-50%, -50%) translateY(${offset}px)`;
+    }
+
+});
