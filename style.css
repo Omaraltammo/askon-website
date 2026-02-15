@@ -7,6 +7,8 @@
     --motion-ease:cubic-bezier(.22,1,.36,1);
     --motion-distance:60px;
     --motion-duration:1.1s;
+    --section-space: clamp(100px, 10vw, 150px);
+    --section-space-small: clamp(80px, 8vw, 110px);
 }
 
 /* GLOBAL */
@@ -131,7 +133,7 @@ body{
 /* SECTION */
 
 .section{
-    padding:clamp(100px, 12vw, 150px) 10%;
+    padding: var(--section-space) 10%;
     text-align:center;
    /* opacity:0;
     transform:translateY(60px);
@@ -406,7 +408,7 @@ body{
 /* SECTION HEADER */
 
 .section-header{
-    margin-bottom:70px;
+    margin-bottom: clamp(40px, 5vw, 70px);
     position:relative;
     display:block;       
     text-align:center;   
@@ -1051,4 +1053,45 @@ body{scroll-timeline-name:--page-scroll;}
         left:50%;
         transform:translateX(-50%);
     }
+}
+/* CONTACT DEPTH REFINEMENT */
+.contact-item:hover h4{
+    color:var(--accent);
+}
+
+
+/* ======================================
+   SECTION VISUAL SEPARATION
+====================================== */
+
+/* Light Sections subtle elevation */
+.section:not(.contact-section){
+    position:relative;
+}
+
+.section:not(.contact-section)::after{
+    content:"";
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    width:100%;
+    height:60px;
+    background:linear-gradient(to bottom, rgba(0,0,0,.03), transparent);
+    pointer-events:none;
+}
+
+/* Dark Section subtle glow separation */
+.contact-section{
+    position:relative;
+}
+
+.contact-section::before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    left:0;
+    width:100%;
+    height:60px;
+    background:linear-gradient(to bottom, transparent, rgba(0,0,0,.25));
+    pointer-events:none;
 }
