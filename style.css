@@ -907,50 +907,103 @@ body{scroll-timeline-name:--page-scroll;}
     }
 }
 /* =====================================================
-   OUR VISION – SPLIT ARCHITECTURAL
+   OUR VISION – LUXURY CORPORATE IDENTITY
 ===================================================== */
 
 .vision-section{
     padding:240px 10%;
-    background:#f5f3f1;
+    background:#f3f0ed;
+    overflow:hidden;
 }
 
 .vision-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
-    grid-template-columns:1fr 1px 2fr;
+    grid-template-columns:1fr 2px 1.2fr;
     gap:60px;
     align-items:center;
-    max-width:1100px;
-    margin:auto;
 }
 
-.vision-title{
-    font-size:36px;
+/* LEFT SIDE */
+
+.vision-left h2{
+    font-size:38px;
     font-weight:600;
     color:var(--primary);
+    position:relative;
+    display:inline-block;
+    padding-bottom:20px;
 }
+
+/* Gold underline animated */
+
+.vision-left h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:2px;
+    background:var(--accent);
+    transition:width 1.2s var(--motion-ease);
+}
+
+.section.active .vision-left h2::after{
+    width:90px;
+}
+
+/* DIVIDER */
 
 .vision-divider{
-    width:1px;
-    height:120px;
-    background:var(--accent);
-    opacity:.4;
+    position:relative;
+    width:2px;
+    height:160px;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        var(--accent),
+        transparent
+    );
 }
 
-.vision-text p{
-    font-size:18px;
+/* Gold glow */
+
+.vision-divider::after{
+    content:"";
+    position:absolute;
+    inset:-20px;
+    background:radial-gradient(
+        circle,
+        rgba(185,166,123,.35),
+        transparent 70%
+    );
+    filter:blur(30px);
+    opacity:.35;
+    pointer-events:none;
+}
+
+/* RIGHT SIDE TEXT */
+
+.vision-primary{
+    font-size:22px;
+    line-height:1.8;
+    color:#3a0f1d;
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+.vision-secondary{
+    font-size:17px;
     line-height:1.9;
-    color:#555;
-    margin-bottom:25px;
+    color:#666;
 }
 
-.vision-text p:last-child{
-    margin-bottom:0;
-}
+/* REVEAL MOTION */
 
-/* Motion */
-
-.vision-grid{
+.vision-left,
+.vision-right,
+.vision-divider{
     opacity:0;
     transform:translateY(var(--motion-distance));
     transition:
@@ -958,8 +1011,45 @@ body{scroll-timeline-name:--page-scroll;}
         transform var(--motion-duration) var(--motion-ease);
 }
 
-.section.active .vision-grid{
+.section.active .vision-left,
+.section.active .vision-right,
+.section.active .vision-divider{
     opacity:1;
     transform:translateY(0);
 }
 
+/* Stagger subtle */
+
+.section.active .vision-divider{
+    transition-delay:.15s;
+}
+
+.section.active .vision-right{
+    transition-delay:.25s;
+}
+
+/* HOVER DEPTH */
+
+.vision-right:hover{
+    transform:translateY(-4px);
+    transition:transform .6s var(--motion-ease);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .vision-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .vision-divider{
+        display:none;
+    }
+
+    .vision-left h2::after{
+        left:50%;
+        transform:translateX(-50%);
+    }
+}
