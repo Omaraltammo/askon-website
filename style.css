@@ -825,7 +825,7 @@ body{scroll-timeline-name:--page-scroll;}
     font-size:180px;
     font-weight:700;
     letter-spacing:10px;
-    color:var(--primary);
+    color:#B9A67B;
     opacity:.05;
     white-space:nowrap;
     pointer-events:none;
@@ -842,13 +842,14 @@ body{scroll-timeline-name:--page-scroll;}
     margin-bottom:40px;
     font-weight:600;
     letter-spacing:-0.3px;
+    color:#5A162C;
 }
 
 .approach-content p{
     font-size:18px;
     line-height:1.9;
-    color:#444;
-}
+    color:#3E3E3E;
+    }
 
 /* Reveal Animation */
 .approach-content{
