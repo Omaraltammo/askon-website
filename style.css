@@ -776,4 +776,95 @@ body{
     opacity:.6;
     pointer-events:none;
 }
+/* =====================================================
+   OUR APPROACH – DARK SPLIT
+===================================================== */
+
+.approach-section{
+    background:linear-gradient(135deg,var(--dark),#3a1422);
+    color:white;
+    padding:180px 10%;
+}
+
+.approach-container{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+}
+
+.approach-accent{
+    width:3px;
+    height:120px;
+    background:var(--accent);
+    opacity:.8;
+}
+
+.approach-content h2{
+    margin-bottom:30px;
+    font-weight:600;
+}
+
+.approach-content p{
+    line-height:1.9;
+    font-size:17px;
+    color:rgba(255,255,255,.85);
+}
+
+
+/* =====================================================
+   OUR VISION – LIGHT SPLIT
+===================================================== */
+
+.vision-section{
+    background:#f8f6f4;
+    padding:180px 10%;
+}
+
+.vision-container{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+}
+
+.vision-accent{
+    width:3px;
+    height:120px;
+    background:var(--accent);
+    opacity:.7;
+}
+
+.vision-content h2{
+    margin-bottom:30px;
+    font-weight:600;
+}
+
+.vision-content p{
+    line-height:1.9;
+    font-size:17px;
+    color:#444;
+    margin-bottom:25px;
+}
+
+.vision-content p:last-child{
+    margin-bottom:0;
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+    .approach-container,
+    .vision-container{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .approach-accent,
+    .vision-accent{
+        height:60px;
+    }
+}
 
