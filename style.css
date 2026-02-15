@@ -107,7 +107,7 @@ body{
     padding:200px 10% 160px;
     text-align:center;
     opacity:0;
-    transform:translateY(90px);
+    transform:translateY(60px);
     transition:all 1s cubic-bezier(.16,1,.3,1);
     position:relative;
 }
@@ -221,8 +221,9 @@ body{
 /* CONTACT SECTION */
 
 .contact-section{
-    background:linear-gradient(180deg,#f6f6f6 0%,#f1f1f1 100%);
+    background:linear-gradient(135deg,#3a0f1d,var(--primary));
 }
+
 
 .contact-container{
     display:grid;
@@ -378,8 +379,10 @@ body{
 .section-header{
     margin-bottom:90px;
     position:relative;
-    display:inline-block;
+    display:block;       
+    text-align:center;   
 }
+
 
 .section-label{
     display:block;
@@ -448,7 +451,7 @@ body{scroll-timeline-name:--page-scroll;}
     content:"";
     position:absolute;
     left:50%;
-    bottom:-2px;
+    bottom:8px;
     width:0;
     height:2px;
     background:linear-gradient(to right,transparent,var(--accent),transparent);
@@ -518,7 +521,7 @@ body{scroll-timeline-name:--page-scroll;}
 }
 
 .about-header{
-    margin-bottom:50px;
+    margin-bottom:35px;
     position:relative;
 }
 
@@ -539,7 +542,7 @@ body{scroll-timeline-name:--page-scroll;}
 
 .about-content{
     background:white;
-    padding:60px;
+    padding:50px;
     border-radius:14px;
     box-shadow:
         0 30px 60px rgba(0,0,0,.06),
