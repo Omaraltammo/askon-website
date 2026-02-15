@@ -873,7 +873,7 @@ body{scroll-timeline-name:--page-scroll;}
 }
 
 
-.approach-section.active .approach-content h2::after{
+.section.active .approach-content h2::after{
     width:100px;
 }
 
