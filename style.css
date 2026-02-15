@@ -928,7 +928,6 @@ body{scroll-timeline-name:--page-scroll;}
 /* LEFT SIDE */
 
 .vision-left h2{
-    font-size:38px;
     font-weight:600;
     color:var(--primary);
     position:relative;
