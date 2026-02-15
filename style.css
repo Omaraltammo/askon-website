@@ -908,49 +908,54 @@ body{scroll-timeline-name:--page-scroll;}
 }
 
 /* =====================================================
-   OUR VISION – DRAMATIC STATEMENT
+   OUR VISION – SPLIT LUXURY
 ===================================================== */
 
-.vision-dramatic{
-    padding:260px 10%;
-    background:#f5f2ef;
-    text-align:center;
+.vision-split{
+    padding:240px 10%;
+    background:#f6f4f2;
 }
 
-.vision-dramatic h2{
-    font-size:34px;
-    font-weight:600;
+.vision-grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:80px;
+    max-width:1200px;
+    margin:auto;
+    align-items:center;
+}
+
+.vision-left h2{
+    font-size:32px;
     color:var(--primary);
-    margin-bottom:60px;
-    letter-spacing:-1px;
+    position:relative;
+    padding-left:30px;
 }
 
-.vision-dramatic p{
-    max-width:1000px;
-    margin:0 auto 35px;
-    font-size:22px;
-    line-height:1.8;
-    color:#3f3f3f;
-    font-weight:300;
-}
-
-.vision-dramatic p:first-of-type{
-    font-size:24px;
-}
-
-/* subtle gold divider */
-.vision-dramatic::after{
+/* gold vertical line */
+.vision-left h2::before{
     content:"";
-    display:block;
-    width:80px;
-    height:2px;
-    margin:70px auto 0;
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:3px;
     background:var(--accent);
-    opacity:.7;
+}
+
+.vision-right p{
+    font-size:18px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.vision-right p:last-child{
+    margin-bottom:0;
 }
 
 /* motion */
-.vision-dramatic{
+.vision-grid{
     opacity:0;
     transform:translateY(var(--motion-distance));
     transition:
@@ -958,7 +963,15 @@ body{scroll-timeline-name:--page-scroll;}
         transform var(--motion-duration) var(--motion-ease);
 }
 
-.section.active.vision-dramatic{
+.section.active .vision-grid{
     opacity:1;
     transform:translateY(0);
 }
+
+@media(max-width:900px){
+    .vision-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+}
+
