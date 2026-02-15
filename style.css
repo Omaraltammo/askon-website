@@ -114,7 +114,7 @@ body{
     background:
         radial-gradient(circle at 25% 30%, rgba(185,166,123,.18), transparent 50%),
         radial-gradient(circle at 75% 70%, rgba(255,255,255,.05), transparent 60%),
-        linear-gradient(135deg,#2e0c17,var(--primary));
+        linear-gradient(135deg,#3a0f1d,var(--primary));
 }
 
 .hero-overlay{
@@ -719,19 +719,23 @@ body{scroll-timeline-name:--page-scroll;}
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    width:140%;
-    height:160%;
+    width:170%;
+    height:190%;
+
     background:radial-gradient(
         circle,
-        rgba(185,166,123,.35) 0%,
-        rgba(185,166,123,.18) 35%,
-        transparent 70%
+        rgba(185,166,123,.55) 0%,
+        rgba(185,166,123,.35) 35%,
+        rgba(185,166,123,.15) 55%,
+        transparent 75%
     );
-    filter:blur(40px);
+
+    filter:blur(55px);
     z-index:-1;
-    opacity:.6;
+    opacity:.85;
     pointer-events:none;
 }
+
 /* =====================================================
    GLOBAL MOTION REFINEMENT
    (Unified easing everywhere)
