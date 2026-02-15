@@ -906,3 +906,59 @@ body{scroll-timeline-name:--page-scroll;}
         font-size:90px;
     }
 }
+
+/* =====================================================
+   OUR VISION – DRAMATIC STATEMENT
+===================================================== */
+
+.vision-dramatic{
+    padding:260px 10%;
+    background:#f5f2ef;
+    text-align:center;
+}
+
+.vision-dramatic h2{
+    font-size:34px;
+    font-weight:600;
+    color:var(--primary);
+    margin-bottom:60px;
+    letter-spacing:-1px;
+}
+
+.vision-dramatic p{
+    max-width:1000px;
+    margin:0 auto 35px;
+    font-size:22px;
+    line-height:1.8;
+    color:#3f3f3f;
+    font-weight:300;
+}
+
+.vision-dramatic p:first-of-type{
+    font-size:24px;
+}
+
+/* subtle gold divider */
+.vision-dramatic::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:2px;
+    margin:70px auto 0;
+    background:var(--accent);
+    opacity:.7;
+}
+
+/* motion */
+.vision-dramatic{
+    opacity:0;
+    transform:translateY(var(--motion-distance));
+    transition:
+        opacity var(--motion-duration) var(--motion-ease),
+        transform var(--motion-duration) var(--motion-ease);
+}
+
+.section.active.vision-dramatic{
+    opacity:1;
+    transform:translateY(0);
+}
