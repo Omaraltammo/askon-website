@@ -847,6 +847,37 @@ body{scroll-timeline-name:--page-scroll;}
 
 }
 
+.approach-content h2{
+    position:relative;
+    display:inline-block;
+    padding-bottom:18px;
+}
+
+.approach-content h2::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--accent),
+        transparent
+    );
+
+    transform:translateX(-50%);
+    transition:width 1.2s var(--motion-ease);
+}
+
+
+.approach-section.active .approach-content h2::after{
+    width:100px;
+}
+
+
 .approach-content p{
     font-size:18px;
     line-height:1.9;
