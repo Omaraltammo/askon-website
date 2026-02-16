@@ -1123,7 +1123,7 @@ body{scroll-timeline-name:--page-scroll;}
 
         transform .6s var(--motion-ease),
 
-        max-height .8s var(--motion-ease);
+        max-height .6s var(--motion-ease);
 
 }
 
