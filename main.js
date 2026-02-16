@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
@@ -111,6 +112,6 @@ window.addEventListener("scroll", () => {
     const divider = document.querySelector(".vision-divider");
     if(!divider) return;
 
-    const offset = window.scrollY * 0.01;
+    const offset = window.scrollY * 0.04;
     divider.style.transform = `translateY(${offset}px)`;
 });
