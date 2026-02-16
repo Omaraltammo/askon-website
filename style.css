@@ -806,11 +806,77 @@ body{scroll-timeline-name:--page-scroll;}
 }
 
 .icon-svg{
+
+    width:52px;
+    height:52px;
+    margin-bottom:30px;
+
+    stroke:var(--accent);
+    fill:none;
+    stroke-width:1.8;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    stroke-dasharray:200;
+    stroke-dashoffset:200;
+
+    transform:translateY(0) scale(1);
+
+    will-change:transform;
+
     transition:
-        transform 1s var(--motion-ease),
-        filter .6s var(--motion-ease),
-        stroke .3s var(--motion-ease);
+
+        transform .7s var(--motion-ease),
+
+        filter .7s var(--motion-ease),
+
+        stroke .4s var(--motion-ease);
+
 }
+/* Floating effect */
+
+.service-card:hover .icon-svg{
+
+    transform:
+
+        translateY(-10px)
+
+        scale(1.12);
+
+    stroke:var(--primary);
+
+    filter:
+
+        drop-shadow(0 10px 20px rgba(0,0,0,.15))
+
+        drop-shadow(0 0 20px rgba(185,166,123,.45))
+
+        drop-shadow(0 0 40px rgba(185,166,123,.25));
+
+}
+.service-card:hover .icon-svg{
+
+    animation:iconFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes iconFloat{
+
+    0%,100%{
+
+        transform:translateY(-10px) scale(1.12);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px) scale(1.12);
+
+    }
+
+}
+
 
 .section-header::after{
     transition:width 1.2s var(--motion-ease);
