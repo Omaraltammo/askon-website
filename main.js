@@ -1,3 +1,4 @@
+
 "use strict";
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -114,4 +115,15 @@ window.addEventListener("scroll", () => {
 
     const offset = window.scrollY * 0.04;
     divider.style.transform = `translateY(${offset}px)`;
+});
+/* LOADER */
+
+window.addEventListener("load", () => {
+
+const loader = document.getElementById("loader");
+
+setTimeout(()=>{
+loader.classList.add("hidden");
+}, 800);
+
 });
