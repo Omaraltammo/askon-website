@@ -819,7 +819,7 @@ body{scroll-timeline-name:--page-scroll;}
     stroke-linejoin:round;
 
     stroke-dasharray:200;
-    stroke-dashoffset:200;
+    stroke-dashoffset:0;
 
     transform:translateY(0) scale(1);
 
@@ -1331,5 +1331,16 @@ body{scroll-timeline-name:--page-scroll;}
     background:var(--accent);
 
     box-shadow:0 0 8px rgba(185,166,123,.5);
+
+}
+/* FLOAT ICON EFFECT */
+
+.service-card:hover .icon-svg{
+
+    transform:
+        translateY(-12px)
+        scale(1.12);
+
+    transition:.6s cubic-bezier(.22,1,.36,1);
 
 }
