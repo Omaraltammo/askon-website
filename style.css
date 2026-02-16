@@ -148,6 +148,7 @@ body{
     letter-spacing:-0.3px;
     position:relative;
     z-index:2;
+    color: var(--primary);
 }
 
 .section.active{
@@ -608,6 +609,7 @@ body{scroll-timeline-name:--page-scroll;}
 .about-header h2{
     font-weight:600;
     letter-spacing:-0.3px;
+    color: var(--primary);
 }
 
 .about-header::after{
@@ -968,6 +970,7 @@ body{scroll-timeline-name:--page-scroll;}
     position:relative;
     display:inline-block;
     padding-bottom:18px;
+
 }
 
 .approach-content h2::after{
@@ -1410,4 +1413,3 @@ body{scroll-timeline-name:--page-scroll;}
     }
 
 }
-
