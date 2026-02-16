@@ -1417,3 +1417,32 @@ body{scroll-timeline-name:--page-scroll;}
     }
 
 }
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:#2a0e18;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+transition:opacity .8s ease, visibility .8s ease;
+}
+
+#loader.hidden{
+opacity:0;
+visibility:hidden;
+}
+
+.loader-logo{
+color:white;
+font-size:42px;
+letter-spacing:8px;
+animation:loaderFade 1.5s ease infinite;
+}
+
+@keyframes loaderFade{
+0%,100%{opacity:.3;}
+50%{opacity:1;}
+}
