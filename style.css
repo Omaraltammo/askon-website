@@ -1345,10 +1345,10 @@ body{scroll-timeline-name:--page-scroll;}
 
 }
 /* ==========================================
-   APPLE-STYLE ICON ANIMATION – ULTRA PREMIUM
+   APPLE ICON ANIMATION – FIXED (VISIBLE)
 ========================================== */
 
-/* الحالة الطبيعية */
+/* الحالة الطبيعية – الأيقونة ظاهرة */
 
 .icon-svg{
 
@@ -1361,27 +1361,6 @@ body{scroll-timeline-name:--page-scroll;}
         filter .6s var(--motion-ease),
 
         stroke .4s var(--motion-ease);
-
-}
-
-
-/* رسم الخط */
-
-.icon-svg path,
-.icon-svg rect,
-.icon-svg circle,
-.icon-svg line,
-.icon-svg polygon{
-
-    stroke-dasharray:120;
-
-    stroke-dashoffset:120;
-
-    transition:
-
-        stroke-dashoffset 1.2s var(--motion-ease),
-
-        transform .6s var(--motion-ease);
 
 }
 
@@ -1401,20 +1380,7 @@ body{scroll-timeline-name:--page-scroll;}
 }
 
 
-/* تشغيل الرسم */
-
-.service-card:hover .icon-svg path,
-.service-card:hover .icon-svg rect,
-.service-card:hover .icon-svg circle,
-.service-card:hover .icon-svg line,
-.service-card:hover .icon-svg polygon{
-
-    stroke-dashoffset:0;
-
-}
-
-
-/* Floating subtle motion */
+/* floating motion */
 
 .service-card:hover .icon-svg{
 
@@ -1427,7 +1393,7 @@ body{scroll-timeline-name:--page-scroll;}
 
     0%{
 
-        transform:scale(1.12) translateY(0px);
+        transform:scale(1.12) translateY(0);
 
     }
 
@@ -1439,7 +1405,7 @@ body{scroll-timeline-name:--page-scroll;}
 
     100%{
 
-        transform:scale(1.12) translateY(0px);
+        transform:scale(1.12) translateY(0);
 
     }
 
