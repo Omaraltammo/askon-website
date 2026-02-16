@@ -1095,3 +1095,39 @@ body{scroll-timeline-name:--page-scroll;}
     background:linear-gradient(to bottom, transparent, rgba(0,0,0,.25));
     pointer-events:none;
 }
+/* =====================================
+   SERVICE DESCRIPTION HIDDEN REVEAL
+===================================== */
+
+.service-description{
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+
+        opacity .6s var(--motion-ease),
+
+        transform .6s var(--motion-ease),
+
+        max-height .6s var(--motion-ease);
+
+}
+
+
+/* عند hover */
+
+.service-card:hover .service-description{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    max-height:200px;
+
+}
