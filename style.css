@@ -273,6 +273,10 @@ body{
     background:linear-gradient(135deg,#3a0f1d,var(--primary));
     color:white;
 }
+#contact h2{
+    color:white;
+}
+
 
 #contact-form{
     max-width:520px;
@@ -323,7 +327,7 @@ body{
 
 .contact-item h4{
     font-weight:600;
-    color:var(--primary);
+    color:var(--accent);
     margin-bottom:10px;
     letter-spacing:-0.2px;
 }
