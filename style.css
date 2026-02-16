@@ -1344,3 +1344,104 @@ body{scroll-timeline-name:--page-scroll;}
     transition:.4s cubic-bezier(.22,1,.36,1);
 
 }
+/* ==========================================
+   APPLE-STYLE ICON ANIMATION – ULTRA PREMIUM
+========================================== */
+
+/* الحالة الطبيعية */
+
+.icon-svg{
+
+    transform-origin:center;
+
+    transition:
+
+        transform .6s var(--motion-ease),
+
+        filter .6s var(--motion-ease),
+
+        stroke .4s var(--motion-ease);
+
+}
+
+
+/* رسم الخط */
+
+.icon-svg path,
+.icon-svg rect,
+.icon-svg circle,
+.icon-svg line,
+.icon-svg polygon{
+
+    stroke-dasharray:120;
+
+    stroke-dashoffset:120;
+
+    transition:
+
+        stroke-dashoffset 1.2s var(--motion-ease),
+
+        transform .6s var(--motion-ease);
+
+}
+
+
+/* عند hover */
+
+.service-card:hover .icon-svg{
+
+    transform:scale(1.12);
+
+    filter:
+
+        drop-shadow(0 6px 12px rgba(185,166,123,.25))
+
+        drop-shadow(0 0 18px rgba(185,166,123,.35));
+
+}
+
+
+/* تشغيل الرسم */
+
+.service-card:hover .icon-svg path,
+.service-card:hover .icon-svg rect,
+.service-card:hover .icon-svg circle,
+.service-card:hover .icon-svg line,
+.service-card:hover .icon-svg polygon{
+
+    stroke-dashoffset:0;
+
+}
+
+
+/* Floating subtle motion */
+
+.service-card:hover .icon-svg{
+
+    animation:iconFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes iconFloat{
+
+    0%{
+
+        transform:scale(1.12) translateY(0px);
+
+    }
+
+    50%{
+
+        transform:scale(1.12) translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:scale(1.12) translateY(0px);
+
+    }
+
+}
+
