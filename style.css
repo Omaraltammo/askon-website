@@ -1,1346 +1,337 @@
-:root {
-    --primary:#6D1B35;
-    --accent:#B9A67B;
-    --dark:#2a0e18;
-    --gray:#666; 
-
-    --motion-ease:cubic-bezier(.22,1,.36,1);
-    --motion-distance:60px;
-    --motion-duration:1.1s;
-    --section-space: clamp(100px, 10vw, 150px);
-    --section-space-small: clamp(80px, 8vw, 110px);
-}
-
-/* GLOBAL */
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:#f4f1ee;
-    color:#1f1f1f;
-    scroll-behavior:smooth;
-}
-
-/* SCROLL BAR */
-.scroll-progress{
-    position:fixed;
-    top:0;
-    left:0;
-    height:3px;
-    width:0%;
-    background:linear-gradient(to right,var(--accent),var(--primary));
-    z-index:2000;
-}
-
-/* =====================================================
-   SMART BLUR PREMIUM NAVBAR
-===================================================== */
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    padding:22px 10%;
-    position:fixed;
-    width:100%;
-    z-index:1000;
-    backdrop-filter:blur(0px);
-    -webkit-backdrop-filter:blur(0px);
-    background:rgba(255,255,255,0);
-    border-bottom:1px solid rgba(255,255,255,0);
-    transition:
-        transform .6s cubic-bezier(.22,1,.36,1),
-        backdrop-filter .6s cubic-bezier(.22,1,.36,1),
-        background .6s cubic-bezier(.22,1,.36,1),
-        border-color .6s cubic-bezier(.22,1,.36,1),
-        box-shadow .6s cubic-bezier(.22,1,.36,1);
-}
-
-.navbar.scrolled{
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    background:rgba(255,255,255,.65);
-    border-bottom:1px solid rgba(185,166,123,.15);
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05),
-        0 4px 12px rgba(0,0,0,.04);
-}
-
-.navbar.hide{
-    transform:translateY(-100%);
-}
-
-.navbar a{
-    margin-left:25px;
-    text-decoration:none;
-    color:white;
-    position:relative;
-    transition:
-        color .4s var(--motion-ease),
-        transform .4s var(--motion-ease);
-}
-.navbar a::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transform:translateX(-50%);
-    transition:width .4s var(--motion-ease);
-}
-.navbar a:hover{
-    transform:translateY(-2px);
-}
-
-.navbar a:hover::after{
-    width:70%;
-}
-
-
-.navbar.scrolled a{
-    color:var(--primary);
-}
-
-/* HERO */
-
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-    position:relative;
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta http-equiv="Content-Security-Policy"
+        content="
+        default-src 'self';
+        img-src 'self' https:;
+        script-src 'self'
+        https://cdn.jsdelivr.net
+        https://www.google.com
+        https://www.gstatic.com;
+        connect-src 'self'
+        https://api.emailjs.com
+        https://www.google.com
+        https://www.gstatic.com;
+        frame-src https://www.google.com;
+        style-src 'self';
+        ">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Askon for Consultancies</title>
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="data:,">
+        </head>
+        
+        <body>
+        
+        <!-- Scroll Progress -->
+        <div class="scroll-progress"></div>
+        
+        <!-- Ambient Light -->
+        <div class="ambient-light"></div>
+    
+        <div class="motion-spine"></div>
+    
+        
+        <header class="navbar">
+            <div class="logo">ASKON</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Askon for Consultancies</h1>
+                <p>Integrated Event, Media & Interpretation Services</p>
+            </div>
+        </section>
+        
+      <section id="about" class="section about-section">
+
+    <div class="about-container">
+
+        <div class="about-header">
+            <h2>Who We Are</h2>
+        </div>
+
+       <div class="about-content">
+
+    <div class="about-line">
+        Askon for Consultancies is a specialized team providing professional solutions for events, conferences, and media production. By combining expertise in interpretation, audio engineer- ing, visual production, and logistics, we deliver fully coordinated services that meet both technical and creative needs.
+    </div>
+
+    <div class="about-line">
+        Our work focuses on supporting organizations and institutions in executing high-quality events and communication activities with efficiency, precision, and professionalism.
+    </div>
+
+</div>
+
+</section>
+
+
+        
+        <!-- SERVICES -->
+        <section id="services" class="section services-section">
+           <div class="section-header">
+        <span class="section-label">WHAT WE DO</span>
+        <h2 class="reveal-title">Our Services</h2>
+    </div>
+    
+        
+            <div class="services-container">
+        
+                <!-- 1 -->
+               <div class="service-card">
+
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="4"/>
+        <rect x="5" y="11" width="14" height="8"/>
+        <line x1="9" y1="11" x2="9" y2="19"/>
+        <line x1="15" y1="11" x2="15" y2="19"/>
+    </svg>
+
+    <h3>Event Planning & Coordination</h3>
 
-    background:
-        radial-gradient(circle at 25% 30%, rgba(185,166,123,.18), transparent 50%),
-        radial-gradient(circle at 75% 70%, rgba(255,255,255,.05), transparent 60%),
-        linear-gradient(135deg,#3a0f1d,var(--primary));
-}
+    <p class="service-description">
+       Venue sourcing and preparation<br>
+       Event setup and logistics<br>
+       Technical coordination for conferences On-site event management
+    </p>
 
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.55));
-}
+</div>
 
-.hero-content{
-    position:relative;
-    z-index:2;
-}
+               <!-- 2 -->
+<div class="service-card">
 
-/* SECTION */
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M4 12a8 8 0 0 1 16 0"/>
+        <rect x="3" y="12" width="4" height="6"/>
+        <rect x="17" y="12" width="4" height="6"/>
+        <line x1="12" y1="14" x2="12" y2="20"/>
+    </svg>
 
-.section{
-    padding: var(--section-space) 10%;
-    text-align:center;
-   /* opacity:0;
-    transform:translateY(60px);
-    transition:all 1s cubic-bezier(.16,1,.3,1);
-    */
-    position:relative;
-}
+    <h3>Interpretation & Conference Solutions</h3>
 
-.section h2{
-    margin-bottom:90px;
-    font-weight:600;
-    letter-spacing:-0.3px;
-    position:relative;
-    z-index:2;
-}
+    <p class="service-description">
+        Simultaneous and consecutive interpretation<br>
+        Interpretation booths and receivers<br>
+        Conference audio systems<br>
+        Technical supervision and operation
+    </p>
 
-.section.active{
-    opacity:1;
-    transform:translateY(0);
-}
+</div>
 
-/* SERVICES */
 
-.services-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:50px;
-    align-items:start;
-}
+<!-- 3 -->
+<div class="service-card">
 
-.service-card{
-    background:white;
-    padding:50px 35px;
-    border-radius:24px;
-    border-top:4px solid var(--primary);
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect x="9" y="3" width="6" height="10" rx="3"/>
+        <line x1="12" y1="13" x2="12" y2="18"/>
+        <line x1="8" y1="18" x2="16" y2="18"/>
+    </svg>
 
-    position:relative;
-    overflow:hidden;
+    <h3>Audio & Acoustic Services</h3>
 
-    transform:translateY(0) scale(1);
-    will-change:transform;
-    isolation:isolate;
+    <p class="service-description">
+        Sound setup for events and conferences<br>
+        Microphone and speaker management<br>
+        Audio recording<br>
+        Post-production and sound optimization
+    </p>
 
-    transition:
-        transform .7s var(--motion-ease),
-        box-shadow .7s var(--motion-ease),
-        border-top-color .4s var(--motion-ease);
-}
+</div>
 
-
-
-.service-card:hover{
-
-    transform:
-        translateY(-18px)
-        scale(1.035);
-
-    border-top-color:var(--accent);
-
-    box-shadow:
-
-        0 80px 140px rgba(0,0,0,.12),
-
-        0 30px 60px rgba(185,166,123,.18),
-
-        0 0 0 1px rgba(185,166,123,.15);
-
-}
-.service-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-40px;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(185,166,123,.25),
-            transparent 60%
-        );
-
-    opacity:0;
-
-    transition:opacity .7s var(--motion-ease);
-
-    pointer-events:none;
-
-}
-
-.service-card:hover::before{
-
-    opacity:.6;
-
-}
-
-
-
-/* ICONS */
-
-.icon-svg{
-    width:52px;
-    height:52px;
-    margin-bottom:30px;
-    stroke:var(--accent);
-    fill:none;
-    stroke-width:1.8;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    stroke-dasharray:200;
-    stroke-dashoffset:200;
-    transition:
-        transform 1s cubic-bezier(.22,1,.36,1),
-        filter .6s ease,
-        stroke .3s ease;
-}
-
-.service-card.active .icon-svg{
-    animation:draw 1.2s cubic-bezier(.16,1,.3,1) forwards;
-}
-
-.service-card:hover .icon-svg{
-    stroke:var(--primary);
-    filter:
-        drop-shadow(0 0 12px rgba(185,166,123,.5))
-        drop-shadow(0 0 25px rgba(185,166,123,.3));
-}
-
-@keyframes draw{
-    to{stroke-dashoffset:0;}
-}
-/* CONTACT */
-#contact{
-    background:linear-gradient(135deg,#3a0f1d,var(--primary));
-    color:white;
-}
-
-#contact-form{
-    max-width:520px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-}
-
-#contact-form input,
-#contact-form textarea{
-    padding:18px;
-    margin-bottom:22px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.1);
-    color:white;
-    font-size:15px;
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(185,166,123,.25);
-    outline:none;
-}
-
-/* CONTACT SECTION */
-
-.contact-section{
-    background:linear-gradient(135deg,#3a0f1d,var(--primary));
-}
-
-
-.contact-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    max-width:1100px;
-    margin:auto;
-    text-align:left;
-}
-
-.contact-info{
-    display:flex;
-    flex-direction:column;
-    gap:40px;
-}
-
-.contact-item h4{
-    font-weight:600;
-    color:var(--primary);
-    margin-bottom:10px;
-    letter-spacing:-0.2px;
-}
-
-.contact-item p{
-    color:var(--gray);
-    line-height:1.7;
-}
-
-.contact-form-wrapper{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:
-        0 30px 60px rgba(0,0,0,.08),
-        0 10px 20px rgba(185,166,123,.15);
-}
-
-@media (max-width:900px){
-    .contact-container{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
-}
-
-.btn-gold{
-    padding:16px;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    border:none;
-    border-radius:40px;
-    color:white;
-    cursor:pointer;
-}
-
-/* AMBIENT LIGHT */
-
-.ambient-light{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:radial-gradient(circle at 50% 50%, rgba(185,166,123,.08), transparent 60%);
-    transition:.2s ease;
-    z-index:0;
-}
-
-/* ===============================
-   CINEMATIC LIGHT SWEEP
-================================ */
-
-.services-section{
-    position:relative;
-    overflow:hidden;
-}
-
-.services-section::before{
-    content:"";
-    position:absolute;
-    top:-50%;
-    left:-60%;
-    width:120%;
-    height:200%;
-    background:linear-gradient(
-        120deg,
-        transparent 40%,
-        rgba(185,166,123,0.08),
-        transparent 60%
-    );
-    transform:rotate(12deg);
-    animation:lightSweep 28s ease-in-out infinite;
-    pointer-events:none;
-    z-index:0;
-}
-
-.services-section > *{
-    position:relative;
-    z-index:2;
-}
-
-@keyframes lightSweep{
-    0%{transform:translateX(-40%) rotate(12deg);opacity:0;}
-    20%{opacity:.6;}
-    50%{transform:translateX(40%) rotate(12deg);opacity:.8;}
-    80%{opacity:.6;}
-    100%{transform:translateX(80%) rotate(12deg);opacity:0;}
-}
-
-/* ===============================
-   VERTICAL MOTION SPINE
-================================ */
-
-.motion-spine{
-    position:fixed;
-    top:0;
-    left:50%;
-    transform:translateX(-50%);
-    width:2px;
-    height:100vh;
-    background:linear-gradient(
-        to bottom,
-        transparent,
-        rgba(185,166,123,.15),
-        rgba(185,166,123,.25),
-        rgba(185,166,123,.15),
-        transparent
-    );
-    opacity:.4;
-    pointer-events:none;
-    z-index:0;
-    animation:spineMove 12s ease-in-out infinite;
-}
-
-@keyframes spineMove{
-    0%{opacity:.25;transform:translateX(-50%) scaleY(.9);}
-    50%{opacity:.5;transform:translateX(-50%) scaleY(1.05);}
-    100%{opacity:.25;transform:translateX(-50%) scaleY(.9);}
-}
-
-/* SECTION TRANSITION FADE */
-
-.section::before{
-    content:"";
-    position:absolute;
-    top:-120px;
-    left:0;
-    width:100%;
-    height:120px;
-    background:linear-gradient(to bottom,rgba(0,0,0,.05),transparent);
-    opacity:.2;
-    pointer-events:none;
-}
-
-/* SECTION HEADER */
-
-.section-header{
-    margin-bottom: clamp(40px, 5vw, 70px);
-    position:relative;
-    display:block;       
-    text-align:center;   
-}
-
-
-.section-label{
-    display:block;
-    font-size:12px;
-    letter-spacing:3px;
-    color:var(--accent);
-    margin-bottom:12px;
-    opacity:.7;
-}
-
-.reveal-title span{
-    display:inline-block;
-    transform:translateY(40px);
-    opacity:0;
-    transition:all .8s cubic-bezier(.16,1,.3,1);
-}
-
-.section.active .reveal-title span{
-    transform:translateY(0);
-    opacity:1;
-}
-
-.reveal-title span:hover{
-    transform:translateY(-3px);
-    color:var(--accent);
-}
-
-/* BACKGROUND DEPTH GRID */
-
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-image:radial-gradient(rgba(185,166,123,.05) 1px, transparent 1px);
-    background-size:40px 40px;
-    pointer-events:none;
-    z-index:-1;
-}
-
-/* DYNAMIC BORDER */
-
-.service-card::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:50%;
-    width:0;
-    height:4px;
-    background:var(--accent);
-    transition:all .6s cubic-bezier(.16,1,.3,1);
-    transform:translateX(-50%);
-}
-
-.service-card:hover::after{
-    width:100%;
-}
-
-/* SMOOTH SCROLL DAMPING */
-
-html{scroll-behavior:auto;}
-body{scroll-timeline-name:--page-scroll;}
-
-/* GOLD UNDERLINE */
-
-.section-header::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:linear-gradient(to right,transparent,var(--accent),transparent);
-    transform:translateX(-50%);
-    transition:width 1.2s cubic-bezier(.16,1,.3,1);
-}
-
-.section.active .section-header::after{
-    width:120px;
-}
-
-/* FOOTER */
-
-.footer{
-    background:var(--dark);
-    color:white;
-    padding:80px 10%;
-}
-
-.footer-container{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:40px;
-}
-
-.footer-brand h3{
-    color:var(--accent);
-    margin-bottom:15px;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    opacity:.7;
-    transition:.3s ease;
-}
-
-.footer-links a:hover{
-    opacity:1;
-    color:var(--accent);
-}
-
-.footer-copy{
-    width:100%;
-    margin-top:40px;
-    font-size:14px;
-    opacity:.6;
-}
-
-/* ABOUT SECTION */
-
-.about-section{
-    background:#f7f5f3;
-}
-
-.about-container{
-    max-width:1000px;
-    margin:auto;
-    text-align:left;
-}
-
-.about-header{
-    margin-bottom:35px;
-    position:relative;
-}
-
-.about-header h2{
-    font-weight:600;
-    letter-spacing:-0.3px;
-}
-
-.about-header::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-18px;
-    width:60px;
-    height:2px;
-    background:var(--accent);
-}
-
-.about-content{
-    background:white;
-    padding:50px;
-    border-radius:14px;
-    box-shadow:
-        0 30px 60px rgba(0,0,0,.06),
-        0 10px 20px rgba(185,166,123,.08);
-    line-height:1.9;
-    font-size:17px;
-    color:#444;
-}
-
-.about-content p{margin-bottom:25px;}
-.about-content p:last-child{margin-bottom:0;}
-
-@media (max-width:768px){
-    .about-content{padding:40px;}
-}
-
-/* ABOUT ANIMATION 
-
-.about-line{
-    opacity:0;
-    transform:translateY(25px);
-    transition:
-        opacity 1s cubic-bezier(.22,1,.36,1),
-        transform 1s cubic-bezier(.22,1,.36,1);
-}
-
-.about-line:nth-child(2){transition-delay:.35s;}
-
-.about-section.active .about-line{
-    opacity:1;
-    transform:translateY(0);
-}
-*/
-/* PREMIUM MOTION SYSTEM 
-
-.section,
-.hero-content{
-    opacity:0;
-    transform:translateY(60px);
-    transition:
-        opacity 1.1s cubic-bezier(.22,1,.36,1),
-        transform 1.1s cubic-bezier(.22,1,.36,1);
-}
-
-.section.active,
-.hero-content.active{
-    opacity:1;
-    transform:translateY(0);
-}
-    */
-
-/* SERVICES REVEAL
-
-.service-card{
-    opacity:0;
-    transform:translateY(35px);
-    transition:
-        opacity 1.1s cubic-bezier(.22,1,.36,1),
-        transform 1.1s cubic-bezier(.22,1,.36,1),
-        box-shadow 1.05s cubic-bezier(.22,1,.36,1),
-        border-top-color .4s ease;
-}
-
-.service-card.active{
-    opacity:1;
-    transform:translateY(0);
-}
- */
- /* =====================================================
-   MOTION SYSTEM – CLEAN ENGINEERED VERSION
-===================================================== */
-
-/* SECTION REVEAL */
-
-.section,
-.hero-content{
-    opacity:0;
-    transform:translateY(var(--motion-distance));
-    transition:
-        opacity var(--motion-duration) var(--motion-ease),
-        transform var(--motion-duration) var(--motion-ease);
-}
-
-.section.active,
-.hero-content.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* SERVICE CARDS */
-
-.service-card{
-    opacity:0;
-    transform:translateY(40px);
-    transition:
-        opacity var(--motion-duration) var(--motion-ease),
-        transform var(--motion-duration) var(--motion-ease),
-        box-shadow 1.05s var(--motion-ease),
-        border-top-color .4s ease;
-}
-
-.service-card.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* STAGGER */
-
-.service-card:nth-child(1){transition-delay:.05s;}
-.service-card:nth-child(2){transition-delay:.12s;}
-.service-card:nth-child(3){transition-delay:.19s;}
-.service-card:nth-child(4){transition-delay:.26s;}
-.service-card:nth-child(5){transition-delay:.33s;}
-.service-card:nth-child(6){transition-delay:.40s;}
-
-/* ABOUT */
-
-.about-line{
-    opacity:0;
-    transform:translateY(30px);
-    transition:
-        opacity var(--motion-duration) var(--motion-ease),
-        transform var(--motion-duration) var(--motion-ease);
-}
-
-.about-line:nth-child(2){
-    transition-delay:.25s;
-}
-
-.about-section.active .about-line{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* HERO GLOW */
-
-.hero-content h1{
-    position:relative;
-    z-index:2;
-}
-
-.hero-content h1::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:170%;
-    height:190%;
-
-    background:radial-gradient(
-        circle,
-        rgba(185,166,123,.55) 0%,
-        rgba(185,166,123,.35) 35%,
-        rgba(185,166,123,.15) 55%,
-        transparent 75%
-    );
-
-    filter:blur(55px);
-    z-index:-1;
-    opacity:.85;
-    pointer-events:none;
-}
-
-/* =====================================================
-   GLOBAL MOTION REFINEMENT
-   (Unified easing everywhere)
-===================================================== */
-
-
-.navbar a{
-    transition:color .4s var(--motion-ease);
-}
-
-.service-card{
-    transition:
-        opacity 1.1s var(--motion-ease),
-        transform 1.1s var(--motion-ease),
-        box-shadow 1.05s var(--motion-ease),
-        border-top-color .4s var(--motion-ease);
-}
-
-.icon-svg{
-
-    width:52px;
-    height:52px;
-    margin-bottom:30px;
-
-    stroke:var(--accent);
-    fill:none;
-    stroke-width:1.8;
-
-    stroke-linecap:round;
-    stroke-linejoin:round;
-
-    stroke-dasharray:200;
-    stroke-dashoffset:0;
-
-    transform:translateY(0) scale(1);
-
-    will-change:transform;
-
-    transition:
-
-        transform .7s var(--motion-ease),
-
-        filter .7s var(--motion-ease),
-
-        stroke .4s var(--motion-ease);
-
-}
-/* Floating effect */
-
-.service-card:hover .icon-svg{
-
-    transform:
-
-        translateY(-10px)
-
-        scale(1.12);
-
-    stroke:var(--primary);
-
-    filter:
-
-        drop-shadow(0 10px 20px rgba(0,0,0,.15))
-
-        drop-shadow(0 0 20px rgba(185,166,123,.45))
-
-        drop-shadow(0 0 40px rgba(185,166,123,.25));
-
-}
-.service-card:hover .icon-svg{
-
-    animation:iconFloat 3s ease-in-out infinite;
-
-}
-
-@keyframes iconFloat{
-
-    0%,100%{
-
-        transform:translateY(-10px) scale(1.12);
-
-    }
-
-    50%{
-
-        transform:translateY(-14px) scale(1.12);
-
-    }
-
-}
-
-
-.section-header::after{
-    transition:width 1.2s var(--motion-ease);
-}
-
-.btn-gold{
-    transition:
-        transform .6s var(--motion-ease),
-        box-shadow .6s var(--motion-ease);
-}
-
-.btn-gold:hover{
-    transform:translateY(-3px);
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.12),
-        0 5px 15px rgba(185,166,123,.25);
-}
-/* =====================================================
-   CONTACT DEPTH REFINEMENT
-   (No color changes – only depth enhancement)
-===================================================== */
-
-.contact-form-wrapper{
-    transition:
-        transform .8s var(--motion-ease),
-        box-shadow .8s var(--motion-ease);
-
-    box-shadow:
-        0 40px 80px rgba(0,0,0,.08),
-        0 15px 35px rgba(185,166,123,.15);
-}
-
-.contact-form-wrapper:hover{
-    transform:translateY(-6px);
-}
-
-.contact-item h4{
-    transition:color .5s var(--motion-ease);
-}
-
-.contact-item:hover h4{
-    color:var(--accent);
-}
-/* =====================================================
-   OUR APPROACH – LUXURY EDITORIAL STYLE
-===================================================== */
-
-.approach-editorial{
-    position:relative;
-    padding:240px 10%;
-    background:#f6f4f2;
-    overflow:hidden;
-    text-align:center;
-}
-
-/* العنوان الضخم بالخلفية */
-.approach-bg-title{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) translateY(0);
-    will-change:transform;
-    font-size:180px;
-    font-weight:700;
-    letter-spacing:10px;
-    color:#B9A67B;
-    opacity:.08;
-    white-space:nowrap;
-    pointer-events:none;
-}
-
-/* المحتوى الحقيقي */
-.approach-content{
-    position:relative;
-    max-width:800px;
-    margin:auto;
-}
-
-.approach-content h2{
-    margin-bottom:40px;
-    font-weight:600;
-    letter-spacing:-0.3px;
-    color:var(--primary);
-    letter-spacing:-1px;
-
-}
-
-.approach-content h2{
-    position:relative;
-    display:inline-block;
-    padding-bottom:18px;
-}
-
-.approach-content h2::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:0;
-    width:0;
-    height:2px;
-
-    background:linear-gradient(
-        to right,
-        transparent,
-        var(--accent),
-        transparent
-    );
-
-    transform:translateX(-50%);
-    transition:width 1.2s var(--motion-ease);
-}
-
-
-.section.active .approach-content h2::after{
-    width:100px;
-}
-
-
-.approach-content p{
-    font-size:18px;
-    line-height:1.9;
-    color:#555;
-    font-weight:400;
-
-    }
-
-/* Reveal Animation */
-.approach-content{
-    opacity:0;
-    transform:translateY(var(--motion-distance));
-    transition:
-        opacity var(--motion-duration) var(--motion-ease),
-        transform var(--motion-duration) var(--motion-ease);
-}
-
-.section.active .approach-content{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* Responsive */
-@media (max-width:900px){
-    .approach-bg-title{
-        font-size:90px;
-    }
-}
-/* =====================================================
-   OUR VISION – LUXURY CORPORATE IDENTITY
-===================================================== */
-
-.vision-section{
-    padding:240px 10%;
-    background:#f3f0ed;
-    overflow:hidden;
-}
-
-.vision-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 2px 1.2fr;
-    gap:60px;
-    align-items:center;
-}
-
-/* LEFT SIDE */
-
-.vision-left h2{
-    font-weight:600;
-    color:var(--primary);
-    position:relative;
-    display:inline-block;
-    padding-bottom:20px;
-}
-
-/* Gold underline animated */
-
-.vision-left h2::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transition:width 1.2s var(--motion-ease);
-}
-
-.section.active .vision-left h2::after{
-    width:90px;
-}
-
-/* DIVIDER */
-
-.vision-divider{
-    position:relative;
-    width:2px;
-    height:160px;
-    background:linear-gradient(
-        to bottom,
-        transparent,
-        var(--accent),
-        transparent
-    );
-}
-
-/* Gold glow */
-
-.vision-divider::after{
-    content:"";
-    position:absolute;
-    inset:-20px;
-    background:radial-gradient(
-        circle,
-        rgba(185,166,123,.35),
-        transparent 70%
-    );
-    filter:blur(30px);
-    opacity:.35;
-    pointer-events:none;
-}
-
-/* RIGHT SIDE TEXT */
-
-.vision-primary{
-    font-size:22px;
-    line-height:1.8;
-    color:#3a0f1d;
-    font-weight:400;
-    margin-bottom:30px;
-}
-
-.vision-secondary{
-    font-size:17px;
-    line-height:1.9;
-    color:#666;
-}
-
-/* REVEAL MOTION */
-
-.vision-left,
-.vision-right,
-.vision-divider{
-    opacity:0;
-    transform:translateY(var(--motion-distance));
-    transition:
-        opacity var(--motion-duration) var(--motion-ease),
-        transform var(--motion-duration) var(--motion-ease);
-}
-
-.section.active .vision-left,
-.section.active .vision-right,
-.section.active .vision-divider{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* Stagger subtle */
-
-.section.active .vision-divider{
-    transition-delay:.15s;
-}
-
-.section.active .vision-right{
-    transition-delay:.25s;
-}
-
-/* HOVER DEPTH */
-
-.vision-right:hover{
-    transform:translateY(-4px);
-    transition:transform .6s var(--motion-ease);
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-    .vision-grid{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .vision-divider{
-        display:none;
-    }
-
-    .vision-left h2::after{
-        left:50%;
-        transform:translateX(-50%);
-    }
-}
-/* CONTACT DEPTH REFINEMENT */
-.contact-item:hover h4{
-    color:var(--accent);
-}
-
-
-/* ======================================
-   SECTION VISUAL SEPARATION
-====================================== */
-
-/* Light Sections subtle elevation */
-.section:not(.contact-section){
-    position:relative;
-}
-
-.section:not(.contact-section)::after{
-    content:"";
-    position:absolute;
-    bottom:-1px;
-    left:0;
-    width:100%;
-    height:60px;
-    background:linear-gradient(to bottom, rgba(0,0,0,.03), transparent);
-    pointer-events:none;
-}
-
-/* Dark Section subtle glow separation */
-.contact-section{
-    position:relative;
-}
-
-.contact-section::before{
-    content:"";
-    position:absolute;
-    top:-60px;
-    left:0;
-    width:100%;
-    height:60px;
-    background:linear-gradient(to bottom, transparent, rgba(0,0,0,.25));
-    pointer-events:none;
-}
-/* =====================================
-   SERVICE DESCRIPTION HIDDEN REVEAL
-===================================== */
-
-.service-description{
-
-    list-style:none;
-
-    padding:0;
-
-    margin-top:20px;
-
-    text-align:left;
-
-    opacity:0;
-
-    transform:translateY(10px);
-
-    max-height:0;
-
-    overflow:hidden;
-
-    transition:
-
-        opacity .6s var(--motion-ease),
-
-        transform .6s var(--motion-ease),
-
-        max-height .8s var(--motion-ease);
-
-}
-
-/* عند hover */
-.service-card:hover li{
-
-    transform:translateX(0);
-
-    opacity:1;
-
-}
-
-.service-description li{
-
-    transform:translateX(-10px);
-
-    opacity:.6;
-
-    transition:
-
-        transform .6s var(--motion-ease),
-
-        opacity .6s var(--motion-ease);
-
-}
-
-.service-card:hover .service-description{
-
-    opacity:1;
-
-    transform:translateY(0);
-
-    max-height:400px;
-
-}
-/* =====================================
-   SERVICE DESCRIPTION – PREMIUM LIST
-===================================== */
-
-.service-description{
-
-    list-style:none;
-
-    padding:0;
-
-    margin-top:20px;
-
-    text-align:left;
-
-}
-
-
-/* كل سطر */
-
-.service-description li{
-
-    position:relative;
-
-    padding-left:22px;
-
-    margin-bottom:12px;
-
-    font-size:15px;
-
-    color:#666;
-
-    line-height:1.7;
-
-}
-
-
-/* النقطة الذهبية */
-
-.service-description li::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    top:10px;
-
-    width:6px;
-
-    height:6px;
-
-    border-radius:50%;
-
-    background:var(--accent);
-
-    box-shadow:0 0 8px rgba(185,166,123,.5);
-
-}
-/* FLOAT ICON EFFECT */
-
-.service-card:hover .icon-svg{
-
-    transform:
-        translateY(-12px)
-        scale(1.12);
-
-    transition:.4s cubic-bezier(.22,1,.36,1);
-
-}
+
+<!-- 4 -->
+<div class="service-card">
+
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="12" rx="2"/>
+        <circle cx="12" cy="13" r="4"/>
+        <line x1="8" y1="7" x2="10" y2="4"/>
+    </svg>
+
+    <h3>Photography</h3>
+
+    <p class="service-description">
+        Event photography<br>
+        Photo documentation<br>
+        Product and promotional photography
+    </p>
+
+</div>
+
+
+<!-- 5 -->
+<div class="service-card">
+
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <rect x="3" y="8" width="14" height="8" rx="2"/>
+        <polygon points="17,9 22,7 22,17 17,15"/>
+        <circle cx="7" cy="6" r="2"/>
+    </svg>
+
+    <h3>Video Production</h3>
+
+    <p class="service-description">
+     Event coverage<br>
+     Corporate and promotional videos<br>
+     Interviews and documentation<br>
+     Editing and post-production
+    </p>
+
+</div>
+
+
+<!-- 6 -->
+<div class="service-card">
+
+    <svg class="icon-svg" viewBox="0 0 24 24">
+        <circle cx="6" cy="6" r="2"/>
+        <circle cx="18" cy="6" r="2"/>
+        <circle cx="12" cy="18" r="2"/>
+        <path d="M6 6 L18 6 L12 18 Z"/>
+    </svg>
+
+    <h3>Graphic Design & Printing</h3>
+
+    <p class="service-description">
+      Event branding and visual identity<br>
+      Brochures, booklets, and reports<br>
+      Posters and promotional materials<br>
+      Social media visuals
+    </p>
+
+</div>
+
+        
+            </div>
+        </section>
+        
+       <section class="approach-editorial section">
+
+    <div class="approach-bg-title">
+        ASKON
+    </div>
+
+    <div class="approach-content">
+        <h2>Our Approach</h2>
+        <p>
+            At Askon, we provide integrated solutions that combine technical accuracy, creative qualiسty, and organized execution. Every service we offer is designed to ensure that events run smoothly and communication is delivered clearly and professionally.
+        </p>
+    </div>
+
+</section>
+
+<section class="vision-section section">
+
+    <div class="vision-grid">
+
+        <div class="vision-left">
+            <h2>Our Vision</h2>
+        </div>
+
+        <div class="vision-divider"></div>
+
+        <div class="vision-right">
+            <p class="vision-primary">
+            To provide integrated event and media solutions that elevate communication, ensure clarity across languages, and create strong, professional visual presence.
+            </p>
+
+            <p class="vision-secondary">
+            We are committed to delivering work that combines precision, creativity, and technical excellence while maintaining high standards of quality, organization, and reliability.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+           <div class="section-header">
+    <span class="section-label">CONTACT</span>
+    <h2 class="reveal-title">Get In Touch</h2>
+</div>
+
+        
+            <div class="contact-container">
+        
+                <div class="contact-info">
+        
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p>info@askonltd.com</p>
+                    </div>
+        
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p>+963 959 654 951</p>
+                        <p>+963 959 401 656</p>
+                    </div>
+        
+                    <div class="contact-item">
+                        <h4>Office Address</h4>
+                        <p>
+                            Al-Adawi District<br>
+                            Damascus, Syria
+                        </p>
+                    </div>
+        
+                </div>
+        
+                <div class="contact-form-wrapper">
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn-gold">Send Message</button>
+                    </form>
+                </div>
+        
+            </div>
+        </section>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei" defer></script>
+        <script src="main.js" defer></script>
+                <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h3>ASKON</h3>
+            <p>Integrated Event, Media & Interpretation Services.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-copy">
+            © 2025 Askon. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+        
+        </body>
+        </html>
+        
+
