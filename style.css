@@ -1101,6 +1101,14 @@ body{scroll-timeline-name:--page-scroll;}
 
 .service-description{
 
+    list-style:none;
+
+    padding:0;
+
+    margin-top:20px;
+
+    text-align:left;
+
     opacity:0;
 
     transform:translateY(10px);
@@ -1119,8 +1127,28 @@ body{scroll-timeline-name:--page-scroll;}
 
 }
 
-
 /* عند hover */
+.service-card:hover li{
+
+    transform:translateX(0);
+
+    opacity:1;
+
+}
+
+.service-description li{
+
+    transform:translateX(-10px);
+
+    opacity:.6;
+
+    transition:
+
+        transform .6s var(--motion-ease),
+
+        opacity .6s var(--motion-ease);
+
+}
 
 .service-card:hover .service-description{
 
@@ -1129,5 +1157,64 @@ body{scroll-timeline-name:--page-scroll;}
     transform:translateY(0);
 
     max-height:200px;
+
+}
+/* =====================================
+   SERVICE DESCRIPTION – PREMIUM LIST
+===================================== */
+
+.service-description{
+
+    list-style:none;
+
+    padding:0;
+
+    margin-top:20px;
+
+    text-align:left;
+
+}
+
+
+/* كل سطر */
+
+.service-description li{
+
+    position:relative;
+
+    padding-left:22px;
+
+    margin-bottom:12px;
+
+    font-size:15px;
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+
+/* النقطة الذهبية */
+
+.service-description li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:10px;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    box-shadow:0 0 8px rgba(185,166,123,.5);
 
 }
