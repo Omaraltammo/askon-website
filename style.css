@@ -169,22 +169,70 @@ body{
     padding:50px 35px;
     border-radius:24px;
     border-top:4px solid var(--primary);
+
     position:relative;
     overflow:hidden;
 
-    transform:translateY(0);   
-    will-change:transform;    
-    isolation:isolate;         
+    transform:translateY(0) scale(1);
+    will-change:transform;
+    isolation:isolate;
+
+    transition:
+        transform .7s var(--motion-ease),
+        box-shadow .7s var(--motion-ease),
+        border-top-color .4s var(--motion-ease);
 }
+
 
 
 .service-card:hover{
-    transform:translateY(-15px);
+
+    transform:
+        translateY(-18px)
+        scale(1.035);
+
     border-top-color:var(--accent);
+
     box-shadow:
-        0 60px 120px rgba(0,0,0,.12),
-        0 30px 60px rgba(185,166,123,.2);
+
+        0 80px 140px rgba(0,0,0,.12),
+
+        0 30px 60px rgba(185,166,123,.18),
+
+        0 0 0 1px rgba(185,166,123,.15);
+
 }
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-40px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(185,166,123,.25),
+            transparent 60%
+        );
+
+    opacity:0;
+
+    transition:opacity .7s var(--motion-ease);
+
+    pointer-events:none;
+
+}
+
+.service-card:hover::before{
+
+    opacity:.6;
+
+}
+
+
 
 /* ICONS */
 
