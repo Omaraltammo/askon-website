@@ -127,5 +127,3 @@ loader.classList.add("hidden");
 }, 800);
 
 });
-
-
