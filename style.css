@@ -1497,18 +1497,11 @@ opacity:1;
 }
 
 }
-.contact-info a{
-
-color:var(--accent);
-
-text-decoration:none;
-
-transition:.25s;
-
+.contact-info a {
+color: --gray;
+text-decoration: none;
 }
 
-.contact-info a:hover{
-
-opacity:.7;
-
+.contact-info a:hover {
+color: --gray;
 }
