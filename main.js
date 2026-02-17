@@ -127,46 +127,5 @@ loader.classList.add("hidden");
 }, 800);
 
 });
-/* MOUSE GLOW */
 
-const glow = document.querySelector(".mouse-glow");
-
-let mouseX=0;
-let mouseY=0;
-
-document.addEventListener("mousemove",(e)=>{
-mouseX=e.clientX;
-mouseY=e.clientY;
-});
-
-function animateGlow(){
-glow.style.transform=
-`translate(${mouseX}px,${mouseY}px)`;
-
-requestAnimationFrame(animateGlow);
-}
-
-animateGlow();
-
-
-/* CUSTOM CURSOR */
-
-const cursor=document.querySelector(".custom-cursor");
-
-let cursorX=0;
-let cursorY=0;
-
-document.addEventListener("mousemove",(e)=>{
-cursorX=e.clientX;
-cursorY=e.clientY;
-});
-
-function animateCursor(){
-cursor.style.transform=
-`translate(${cursorX}px,${cursorY}px)`;
-
-requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
 
