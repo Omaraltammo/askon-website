@@ -128,7 +128,7 @@ loader.classList.add("hidden");
 
 });
 /* =====================================================
-   TURNSTILE + EMAILJS FINAL VERSION
+   TURNSTILE + EMAILJS FINAL VERSION (FIXED)
 ===================================================== */
 
 const form = document.getElementById("contact-form");
@@ -139,8 +139,10 @@ form.addEventListener("submit", async function(e){
 
 e.preventDefault();
 
+/* ✅ TURNSTILE FIX */
+
 const turnstileResponse =
-document.querySelector(".cf-turnstile textarea")?.value;
+document.querySelector('[name="cf-turnstile-response"]')?.value;
 
 if(!turnstileResponse){
 
@@ -152,7 +154,8 @@ return;
 
 /* Honeypot */
 
-const honeypot = form.querySelector('input[name="website"]').value;
+const honeypot =
+form.querySelector('input[name="website"]').value;
 
 if(honeypot){
 
@@ -180,6 +183,14 @@ alert("Message sent successfully");
 
 form.reset();
 
+/* Reset Turnstile */
+
+if(window.turnstile){
+
+turnstile.reset();
+
+}
+
 })
 
 .catch(function(error){
@@ -193,5 +204,4 @@ console.log(error);
 });
 
 }
-
 
