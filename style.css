@@ -1498,10 +1498,16 @@ opacity:1;
 
 }
 .contact-info a {
-color: --gray;
+
+color: var(--gray);
+
 text-decoration: none;
+
 }
 
 .contact-info a:hover {
-color: --gray;
+
+color: white;
+
 }
+
