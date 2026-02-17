@@ -138,4 +138,36 @@ glow.style.left=e.clientX+"px";
 glow.style.top=e.clientY+"px";
 
 });
+/* SMOOTH SCROLL */
+
+let currentScroll=0;
+
+let targetScroll=0;
+
+const ease=0.08;
+
+function smoothScroll(){
+
+targetScroll=window.scrollY;
+
+currentScroll += (targetScroll-currentScroll)*ease;
+
+window.scrollTo(0,currentScroll);
+
+requestAnimationFrame(smoothScroll);
+
+}
+
+smoothScroll();
+/* CUSTOM CURSOR */
+
+const cursor=document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
+
+});
 
