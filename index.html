@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="data:,">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-        
+
         </head>
                 
         
@@ -370,8 +370,24 @@
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" placeholder="Your Message" required></textarea>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACewk_qC2RQSIRfS"></div>
+
                         <button type="submit" class="btn-gold">Send Message</button>
                     </form>
+                    <p style="font-size:12px; opacity:.6; margin-top:10px;">
+
+                            This site is protected by reCAPTCHA and the Google
+
+                            <a href="https://policies.google.com/privacy">Privacy Policy</a>
+
+                            and
+
+                            <a href="https://policies.google.com/terms">Terms of Service</a>
+
+                            apply.
+
+                            </p>
+
                 </div>
         
             </div>
@@ -379,7 +395,9 @@
         
         
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LeTTmksAAAAANn8qp-8DKoUxA4HFKc54Hd0oEei" defer></script>
+        
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+
         <script src="main.js" defer></script>
                 <!-- FOOTER -->
 <footer class="footer">
