@@ -1542,3 +1542,117 @@ opacity:1;
 transition:background-color 9999s ease-in-out 0s;
 
 }
+/* =====================================
+   APPLE LEVEL CONTACT FORM
+   CLEAN — SAFE — PREMIUM
+===================================== */
+
+/* Container refinement */
+
+.contact-form-wrapper{
+
+background:rgba(255,255,255,0.75);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(0,0,0,0.06);
+
+box-shadow:
+
+0 40px 80px rgba(0,0,0,0.08),
+
+0 10px 30px rgba(0,0,0,0.04);
+
+transition:all .4s ease;
+
+}
+
+/* Inputs */
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea{
+
+background:rgba(255,255,255,0.6);
+
+border:1px solid rgba(0,0,0,0.08);
+
+color:#1d1d1f;
+
+font-size:15px;
+
+border-radius:12px;
+
+transition:all .25s ease;
+
+caret-color:#6D1B35;
+
+}
+
+/* Focus */
+
+.contact-form-wrapper input:focus,
+.contact-form-wrapper textarea:focus{
+
+background:white;
+
+border-color:#6D1B35;
+
+box-shadow:
+
+0 0 0 4px rgba(109,27,53,0.08);
+
+transform:translateY(-1px);
+
+}
+
+/* Placeholder */
+
+.contact-form-wrapper input::placeholder,
+.contact-form-wrapper textarea::placeholder{
+
+color:#999;
+
+}
+
+/* Button Apple Style */
+
+.contact-form-wrapper .btn-gold{
+
+background:#6D1B35;
+
+border-radius:12px;
+
+font-weight:500;
+
+letter-spacing:.3px;
+
+transition:all .3s ease;
+
+}
+
+/* Button hover */
+
+.contact-form-wrapper .btn-gold:hover{
+
+background:#7d2240;
+
+transform:translateY(-2px);
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* Textarea resize clean */
+
+.contact-form-wrapper textarea{
+
+resize:vertical;
+
+min-height:140px;
+
+}
+
