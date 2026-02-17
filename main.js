@@ -127,3 +127,47 @@ loader.classList.add("hidden");
 }, 800);
 
 });
+
+/* =====================================================
+   TURNSTILE PROTECTED CONTACT FORM
+===================================================== */
+
+const form = document.getElementById("contact-form");
+
+if(form){
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const turnstileResponse =
+document.querySelector(".cf-turnstile textarea")?.value;
+
+if(!turnstileResponse){
+
+alert("Please verify you are human");
+
+return;
+
+}
+
+/* Honeypot protection */
+
+const honeypot = form.querySelector('input[name="website"]').value;
+
+if(honeypot){
+
+return;
+
+}
+
+/* Simulate success (or connect EmailJS here) */
+
+alert("Message sent successfully");
+
+form.reset();
+
+});
+
+}
+
