@@ -285,23 +285,38 @@ body{
     flex-direction:column;
 }
 
+
 #contact-form input,
 #contact-form textarea{
-    padding:18px;
-    margin-bottom:22px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.1);
-    color:white;
-    font-size:15px;
+
+padding:18px;
+margin-bottom:22px;
+border-radius:12px;
+
+border:1px solid rgba(0,0,0,0.08);
+
+background:#ffffff;
+
+color:#1d1d1f;
+
+font-size:15px;
+
+caret-color:#6D1B35;
+
 }
+
 
 #contact-form input:focus,
 #contact-form textarea:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(185,166,123,.25);
-    outline:none;
+
+border-color:#6D1B35;
+
+box-shadow:0 0 0 4px rgba(109,27,53,0.08);
+
+outline:none;
+
 }
+
 
 /* CONTACT SECTION */
 
