@@ -204,4 +204,15 @@ console.log(error);
 });
 
 }
+/* FORCE HOME URL ON RELOAD */
+
+window.addEventListener("load", function(){
+
+if(window.location.hash){
+
+history.replaceState(null, null, " ");
+
+}
+
+});
 
