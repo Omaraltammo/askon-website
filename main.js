@@ -131,43 +131,42 @@ loader.classList.add("hidden");
 
 const glow = document.querySelector(".mouse-glow");
 
+let mouseX=0;
+let mouseY=0;
+
 document.addEventListener("mousemove",(e)=>{
-
-glow.style.left=e.clientX+"px";
-
-glow.style.top=e.clientY+"px";
-
+mouseX=e.clientX;
+mouseY=e.clientY;
 });
-/* SMOOTH SCROLL */
 
-let currentScroll=0;
+function animateGlow(){
+glow.style.transform=
+`translate(${mouseX}px,${mouseY}px)`;
 
-let targetScroll=0;
-
-const ease=0.08;
-
-function smoothScroll(){
-
-targetScroll=window.scrollY;
-
-currentScroll += (targetScroll-currentScroll)*ease;
-
-window.scrollTo(0,currentScroll);
-
-requestAnimationFrame(smoothScroll);
-
+requestAnimationFrame(animateGlow);
 }
 
-smoothScroll();
+animateGlow();
+
+
 /* CUSTOM CURSOR */
 
 const cursor=document.querySelector(".custom-cursor");
 
+let cursorX=0;
+let cursorY=0;
+
 document.addEventListener("mousemove",(e)=>{
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
+cursorX=e.clientX;
+cursorY=e.clientY;
 });
+
+function animateCursor(){
+cursor.style.transform=
+`translate(${cursorX}px,${cursorY}px)`;
+
+requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
 
