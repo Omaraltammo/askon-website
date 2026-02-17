@@ -1497,3 +1497,18 @@ opacity:1;
 }
 
 }
+.contact-info a{
+
+color:var(--accent);
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.contact-info a:hover{
+
+opacity:.7;
+
+}
