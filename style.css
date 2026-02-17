@@ -15,7 +15,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-family:'Inter',sans-serif;
     background:#f4f1ee;
     color:#1f1f1f;
     scroll-behavior:smooth;
@@ -354,13 +354,41 @@ body{
 }
 
 .btn-gold{
-    padding:16px;
-    background:linear-gradient(135deg,var(--primary),var(--accent));
-    border:none;
-    border-radius:40px;
-    color:white;
-    cursor:pointer;
+
+padding:16px;
+
+background:linear-gradient(135deg,var(--primary),var(--accent));
+
+border:none;
+
+border-radius:40px;
+
+color:white;
+
+cursor:pointer;
+
+transition:
+
+transform .25s ease,
+
+box-shadow .25s ease,
+
+background .25s ease;
+
 }
+
+.btn-gold:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.15),
+
+0 5px 15px rgba(185,166,123,.25);
+
+}
+
 
 /* AMBIENT LIGHT */
 
@@ -1445,4 +1473,27 @@ animation:loaderFade 1.5s ease infinite;
 @keyframes loaderFade{
 0%,100%{opacity:.3;}
 50%{opacity:1;}
+}
+/* 1 PAGE FADE */
+
+body{
+
+animation:pageFade .6s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
 }
