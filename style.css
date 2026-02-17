@@ -1769,3 +1769,41 @@ min-height:140px;
 
 }
 
+/* ==========================================
+   FINAL REAL FIX — FORCE APPLE INPUT STYLE
+========================================== */
+
+#contact-form input,
+#contact-form textarea{
+
+color:#1d1d1f !important;
+
+background:#ffffff !important;
+
+caret-color:#6D1B35 !important;
+
+border:1px solid rgba(0,0,0,0.08) !important;
+
+}
+
+
+/* focus */
+
+#contact-form input:focus,
+#contact-form textarea:focus{
+
+border-color:#6D1B35 !important;
+
+box-shadow:0 0 0 4px rgba(109,27,53,0.08) !important;
+
+}
+
+
+/* placeholder */
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder{
+
+color:#999 !important;
+
+}
