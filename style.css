@@ -1467,11 +1467,17 @@ transform:translate(-50%,-50%);
 z-index:0;
 
 }
+
 html{
 
 scroll-behavior:smooth;
 
 }
+html{
+scroll-behavior:smooth;
+}
+
+
 /* CUSTOM CURSOR */
 
 body{
@@ -1501,4 +1507,3 @@ z-index:9999;
 transition:transform .15s ease;
 
 }
-
