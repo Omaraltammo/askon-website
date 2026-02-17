@@ -1498,25 +1498,47 @@ opacity:1;
 
 }
 .contact-info a {
-color: --gray;
+color: var(--gray);
 text-decoration: none;
 }
 
 .contact-info a:hover {
-color: --gray;
+color: var(--gray;
 }
-.contact-form-wrapper textarea,
-.contact-form-wrapper input {
+/* =====================================================
+   FINAL CONTACT FORM VISIBILITY FIX
+   (Does NOT remove or break any existing code)
+===================================================== */
 
-color:#2a0e18;
+/* Force readable text */
 
-background:#ffffff;
+#contact .contact-form-wrapper #contact-form input,
+#contact .contact-form-wrapper #contact-form textarea{
+
+color:#2a0e18 !important;
+
+background:#ffffff !important;
 
 }
 
-.contact-form-wrapper textarea::placeholder,
-.contact-form-wrapper input::placeholder {
+/* Placeholder color */
 
-color:#888;
+#contact .contact-form-wrapper #contact-form input::placeholder,
+#contact .contact-form-wrapper #contact-form textarea::placeholder{
+
+color:#888 !important;
+
+opacity:1;
+
+}
+
+/* Fix autofill white text bug */
+
+#contact input:-webkit-autofill,
+#contact textarea:-webkit-autofill{
+
+-webkit-text-fill-color:#2a0e18 !important;
+
+transition:background-color 9999s ease-in-out 0s;
 
 }
