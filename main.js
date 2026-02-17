@@ -127,9 +127,8 @@ loader.classList.add("hidden");
 }, 800);
 
 });
-
 /* =====================================================
-   TURNSTILE PROTECTED CONTACT FORM
+   TURNSTILE + EMAILJS FINAL VERSION
 ===================================================== */
 
 const form = document.getElementById("contact-form");
@@ -151,7 +150,7 @@ return;
 
 }
 
-/* Honeypot protection */
+/* Honeypot */
 
 const honeypot = form.querySelector('input[name="website"]').value;
 
@@ -161,13 +160,38 @@ return;
 
 }
 
-/* Simulate success (or connect EmailJS here) */
+/* EMAILJS SEND */
+
+emailjs.sendForm(
+
+"service_6t9szgi",
+
+"template_1fs4hrl",
+
+this,
+
+"Hfom3ZLXXLSCkZRcL"
+
+)
+
+.then(function(){
 
 alert("Message sent successfully");
 
 form.reset();
 
+})
+
+.catch(function(error){
+
+alert("Error sending message");
+
+console.log(error);
+
+});
+
 });
 
 }
+
 
