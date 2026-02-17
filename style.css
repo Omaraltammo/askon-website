@@ -1467,3 +1467,38 @@ transform:translate(-50%,-50%);
 z-index:0;
 
 }
+html{
+
+scroll-behavior:smooth;
+
+}
+/* CUSTOM CURSOR */
+
+body{
+
+cursor:none;
+
+}
+
+.custom-cursor{
+
+position:fixed;
+
+width:20px;
+
+height:20px;
+
+border:2px solid var(--accent);
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:9999;
+
+transition:transform .15s ease;
+
+}
+
