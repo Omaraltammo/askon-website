@@ -1498,23 +1498,25 @@ opacity:1;
 
 }
 .contact-info a {
-
-color: var(--gray);
-
+color: --gray;
 text-decoration: none;
-
 }
 
 .contact-info a:hover {
+color: --gray;
+}
+.contact-form-wrapper textarea,
+.contact-form-wrapper input {
 
-color: white;
+color:#2a0e18;
+
+background:#ffffff;
 
 }
-.grecaptcha-badge {
 
-visibility: hidden;
+.contact-form-wrapper textarea::placeholder,
+.contact-form-wrapper input::placeholder {
 
-opacity: 0;
+color:#888;
 
 }
-
