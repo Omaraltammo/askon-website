@@ -1807,3 +1807,16 @@ box-shadow:0 0 0 4px rgba(109,27,53,0.08) !important;
 color:#999 !important;
 
 }
+/* FINAL FIX — DO NOT CHANGE */
+
+#contact-form textarea{
+color:#1d1d1f !important;
+-webkit-text-fill-color:#1d1d1f !important;
+caret-color:#6D1B35 !important;
+}
+
+#contact-form input{
+color:#1d1d1f !important;
+-webkit-text-fill-color:#1d1d1f !important;
+caret-color:#6D1B35 !important;
+}
