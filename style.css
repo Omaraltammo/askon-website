@@ -1844,36 +1844,26 @@ opacity:1 !important;
 transform:none !important;
 
 }
-/* FINAL LINK COLOR FIX — SERVICES */
-.service-card a{
+/* FINAL REAL FIX */
 
+a.service-card{
+
+display:block;
+color:var(--primary);
 text-decoration:none;
-color:inherit;
 
 }
 
-.service-card a:visited{
+a.service-card h3{
 
-color:inherit;
-
-}
-
-.service-card a h3{
-
-color:var(--primary) !important;
-text-decoration:none !important;
+color:var(--primary);
 
 }
 
-.service-card a:visited h3{
+a.service-card:visited h3{
 
-color:var(--primary) !important;
-
-}
-
-.service-card a:hover h3{
-
-color:var(--primary) !important;
+color:var(--primary);
 
 }
+
 
