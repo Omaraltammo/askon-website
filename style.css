@@ -1518,7 +1518,7 @@ text-decoration: none;
 }
 
 .contact-info a:hover {
-color: var(--gray;
+color: var(--gray);
 }
 /* =====================================================
    FINAL CONTACT FORM VISIBILITY FIX
@@ -1846,6 +1846,18 @@ transform:none !important;
 }
 /* FINAL REAL FIX */
 
+.service-card a{
+
+text-decoration:none;
+color:inherit;
+
+}
+
+.service-card a:visited{
+
+color:inherit;
+
+}
 a.service-card{
 
 display:block;
@@ -1861,6 +1873,12 @@ color:var(--primary);
 }
 
 a.service-card:visited h3{
+
+color:var(--primary);
+
+}
+
+a.service-card:hover h3{
 
 color:var(--primary);
 
