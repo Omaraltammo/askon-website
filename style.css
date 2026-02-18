@@ -1835,3 +1835,12 @@ color:#1d1d1f !important;
 -webkit-text-fill-color:#1d1d1f !important;
 caret-color:#6D1B35 !important;
 }
+/* FIX WHITE PAGE FOR INNER PAGES */
+
+body:not(.home) .section{
+
+opacity:1 !important;
+
+transform:none !important;
+
+}
