@@ -1844,15 +1844,24 @@ opacity:1 !important;
 transform:none !important;
 
 }
-.service-card a{
+/* FINAL LINK COLOR FIX — SERVICES */
 
-text-decoration:none;
-color:inherit;
+.service-card a h3{
+
+color:var(--primary) !important;
+text-decoration:none !important;
+
+}
+
+.service-card a:visited h3{
+
+color:var(--primary) !important;
 
 }
 
-.service-card a:visited{
+.service-card a:hover h3{
 
-color:inherit;
+color:var(--primary) !important;
 
 }
+
