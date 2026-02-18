@@ -3,11 +3,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-
 <loc>https://askonltd.com/</loc>
+</url>
 
-<priority>1.0</priority>
+<url>
+<loc>https://askonltd.com/services</loc>
+</url>
 
+<url>
+<loc>https://askonltd.com/audio-services</loc>
+</url>
+
+<url>
+<loc>https://askonltd.com/event-planning</loc>
+</url>
+
+<url>
+<loc>https://askonltd.com/interpretation</loc>
+</url>
+
+<url>
+<loc>https://askonltd.com/photography</loc>
+</url>
+
+<url>
+<loc>https://askonltd.com/video-production</loc>
+</url>
+
+<url>
+<loc>https://askonltd.com/graphic-design</loc>
 </url>
 
 </urlset>
