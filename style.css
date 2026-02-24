@@ -1717,108 +1717,181 @@ color:var(--primary);
 
 }
 /* =====================================
-   LOCATIONS DIRECTORY LIST VIEW (ALT 2)
+   LOCATIONS BENTO GRID WITH IMAGES
 ===================================== */
-.locations-directory {
-    max-width: 1050px;
+.locations-intro {
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.locations-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: left;
-    border-top: 1px solid rgba(109, 27, 53, 0.15); /* Primary color low opacity */
 }
 
-.dir-row {
-    display: flex;
-    align-items: center;
-    padding: 55px 0;
-    border-bottom: 1px solid rgba(109, 27, 53, 0.15);
-    transition: padding-left 0.5s var(--motion-ease), background 0.5s var(--motion-ease);
+.loc-card {
+    border-radius: 20px;
     position: relative;
+    overflow: hidden;
+    min-height: 380px; /* لضمان مساحة كافية للصورة */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* لإنزال النص للأسفل */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.6s var(--motion-ease), box-shadow 0.6s var(--motion-ease);
 }
 
-/* Hover Effect - Slight shift and background highlight */
-.dir-row:hover {
-    padding-left: 25px;
-    background: linear-gradient(to right, rgba(185, 166, 123, 0.04), transparent);
+.loc-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 15px 25px rgba(185,166,123,0.15);
 }
 
-/* Golden vertical line on hover */
-.dir-row::before {
-    content: "";
+/* Background Image Layer */
+.loc-bg {
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transition: transform 0.5s var(--motion-ease);
-    transform-origin: center;
+    inset: -2px; /* لتجنب الحواف البيضاء عند الحركة */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: transform 1.2s var(--motion-ease);
 }
 
-.dir-row:hover::before {
-    transform: scaleY(1);
+.loc-card:hover .loc-bg {
+    transform: scale(1.06); /* تأثير الزوم البطيء الاحترافي */
 }
 
-.dir-header {
-    flex: 0 0 40%;
-    padding-right: 50px;
+/* Dark Gradient Overlay (من لونك العنابي الداكن للشفاف) */
+.loc-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(42, 14, 24, 0.95) 0%, rgba(42, 14, 24, 0.4) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 2;
+    transition: opacity 0.6s var(--motion-ease);
 }
 
-.dir-header h3 {
-    font-size: 28px;
-    color: var(--primary);
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    margin: 0;
-    transition: color 0.4s var(--motion-ease);
+.loc-card:hover .loc-overlay {
+    background: linear-gradient(to top, rgba(109, 27, 53, 0.95) 0%, rgba(42, 14, 24, 0.5) 50%, rgba(0,0,0,0.2) 100%);
 }
 
-.dir-badge {
+/* Content Container */
+.loc-content {
+    position: relative;
+    z-index: 3;
+    padding: 40px;
+    color: white;
+}
+
+.loc-badge {
     display: inline-block;
+    background: var(--accent);
+    color: white;
     font-size: 11px;
     font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: var(--accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.loc-card h3 {
+    font-size: 26px;
+    color: white;
     margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.dir-content {
-    flex: 1;
-}
-
-.dir-content p {
-    font-size: 17px;
-    color: var(--gray);
-    line-height: 1.8;
+.loc-card p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    font-size: 16px;
     margin: 0;
 }
 
-/* Make Headquarters row stand out slightly */
-.hq-row .dir-header h3 {
-    font-size: 34px;
+/* Damascus Headquarters - Large Banner */
+.loc-card.hq {
+    grid-column: span 2;
+    min-height: 450px;
 }
 
-.hq-row .dir-content p {
+.loc-card.hq h3 {
+    font-size: 36px;
+}
+
+.loc-card.hq p {
+    font-size: 18px;
+    max-width: 700px;
+}
+
+/* Nationwide Banner (Solid Gold Color - No Image) */
+.loc-card.nationwide {
+    grid-column: span 2;
+    min-height: auto;
+    background: var(--accent);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
+}
+
+.loc-card.nationwide .loc-bg,
+.loc-card.nationwide .loc-overlay {
+    display: none; /* إخفاء الصورة والطبقة الشفافة هنا */
+}
+
+.loc-card.nationwide .loc-content {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.loc-card.nationwide h3 {
     color: var(--dark);
-    font-weight: 500;
+    margin-bottom: 0;
+    white-space: nowrap;
+    text-shadow: none;
+    font-size: 28px;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 800px) {
-    .dir-row {
+.loc-card.nationwide p {
+    color: rgba(42, 14, 24, 0.85);
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .locations-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+    .loc-card.hq, .loc-card.nationwide {
+        grid-column: span 1;
+    }
+    .loc-card {
+        min-height: 350px;
+    }
+    .loc-card.nationwide .loc-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-        padding: 40px 0;
     }
-    .dir-row:hover {
-        padding-left: 15px;
-    }
-    .dir-header {
-        padding-right: 0;
-    }
-    .hq-row .dir-header h3 {
-        font-size: 28px;
+    .loc-card.nationwide h3 {
+        white-space: normal;
     }
 }
