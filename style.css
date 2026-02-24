@@ -1716,3 +1716,144 @@ a.service-card:hover h3{
 color:var(--primary);
 
 }
+/* =====================================
+   LOCATIONS EDITORIAL PAGE
+===================================== */
+.locations-intro {
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.locations-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.loc-card {
+    background: white;
+    border-radius: 20px;
+    padding: 45px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.6s var(--motion-ease), box-shadow 0.6s var(--motion-ease);
+}
+
+.loc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 10px 20px rgba(185,166,123,0.1);
+}
+
+/* Damascus Headquarters - Large Banner */
+.loc-card.hq {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #3a0f1d, var(--primary));
+    color: white;
+}
+
+.loc-card.hq h3 {
+    color: white;
+    font-size: 28px;
+}
+
+.loc-card.hq p {
+    color: rgba(255,255,255,0.85);
+    max-width: 700px;
+    font-size: 17px;
+}
+
+.loc-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.loc-card h3 {
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.loc-card p {
+    color: var(--gray);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Decorative Glow inside cards */
+.loc-card::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(185,166,123,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.loc-card.hq::after {
+    background: radial-gradient(circle, rgba(185,166,123,0.2) 0%, transparent 70%);
+    width: 300px;
+    height: 300px;
+    right: -50px;
+    top: -50px;
+}
+
+/* Nationwide capabilities footer card */
+.loc-card.nationwide {
+    grid-column: span 2;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.loc-card.nationwide h3 {
+    color: #2a0e18;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.loc-card.nationwide p {
+    color: rgba(42, 14, 24, 0.85);
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .locations-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+    .loc-card.hq, .loc-card.nationwide {
+        grid-column: span 1;
+    }
+    .loc-card.nationwide {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .loc-card.nationwide h3 {
+        white-space: normal;
+    }
+}
