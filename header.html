@@ -1,22 +1,28 @@
-<header class="navbar">
-
-<div class="logo">ASKON</div>
-
-<nav>
-
-<a href="/">Home</a>
-
-<a href="/services">Services</a>
-<!-- UPdate 
-<a href="/locations">Locations</a>
-
-<a href="/portfolio">Portfolio</a>
-
-<a href="/blog">Blog</a>
--->
-<a href="/#contact">Contact</a>
-
-</nav>
+<header class="navbar curtain-navbar">
+    
+    <div class="logo">ASKON</div>
+    
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
 
 </header>
 
+<div class="curtain-overlay" id="curtainMenu">
+    <div class="curtain-bg"></div>
+    
+    <nav class="curtain-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/locations">Locations</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/blog">Blog</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+
+    <div class="curtain-footer">
+        <p>Integrated Event & Media Services</p>
+        <p style="color: var(--accent); margin-top: 5px;">Damascus, Syria</p>
+    </div>
+</div>
