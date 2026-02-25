@@ -137,6 +137,7 @@
         const serviceOpts = document.querySelectorAll('.service-opt');
         const hiddenInput = document.getElementById('selected-services-input');
         
+        // 1. برمجة الكروت لتضوي عند الاختيار
         serviceOpts.forEach(opt => {
             opt.addEventListener('click', () => {
                 opt.classList.toggle('selected');
@@ -151,20 +152,65 @@
             });
             hiddenInput.value = selected.join(', ');
             
-            // إزالة رسالة الخطأ لو اختار خدمة
             if(selected.length > 0) {
                 hiddenInput.setCustomValidity('');
             }
         }
 
-        // إجبار المستخدم على اختيار خدمة واحدة على الأقل
-        const form = document.getElementById('quote-form');
-        form.addEventListener('submit', (e) => {
-            if(hiddenInput.value.trim() === '') {
+        // 2. برمجة إرسال الفورم عبر EmailJS
+        const quoteForm = document.getElementById('quote-form');
+        
+        if(quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Please select at least one service from Step 1.');
-            }
-        });
+
+                // التأكد من اختيار خدمة واحدة على الأقل
+                if(hiddenInput.value.trim() === '') {
+                    alert('Please select at least one service from Step 1.');
+                    return;
+                }
+
+                // حماية Turnstile
+                const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]')?.value;
+                if(!turnstileResponse){
+                    alert("Please verify you are human");
+                    return;
+                }
+
+                // حماية Honeypot
+                const honeypot = quoteForm.querySelector('input[name="website"]').value;
+                if(honeypot){
+                    return;
+                }
+
+               
+                const submitBtn = quoteForm.querySelector('.submit-quote-btn');
+                const originalText = submitBtn.innerText;
+                submitBtn.innerText = "Sending...";
+
+            
+                emailjs.sendForm(
+                    "service_6t9szgi",         // Service ID الخاص بك
+                    "template_6akujta", 
+                    this,
+                    "Hfom3ZLXXLSCkZRcL"        // Public Key الخاص بك
+                )
+                .then(function() {
+                    alert("Your request has been sent successfully. We will contact you soon!");
+                    quoteForm.reset();
+                    // إزالة التحديد عن الكروت
+                    document.querySelectorAll('.service-opt').forEach(opt => opt.classList.remove('selected'));
+                    hiddenInput.value = '';
+                    submitBtn.innerText = originalText;
+                    if(window.turnstile) turnstile.reset();
+                })
+                .catch(function(error) {
+                    alert("There was an error sending your request. Please try again.");
+                    console.log(error);
+                    submitBtn.innerText = originalText;
+                });
+            });
+        }
     });
 </script>
 
