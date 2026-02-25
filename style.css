@@ -32,74 +32,195 @@ body{
     z-index:2000;
 }
 
-/* =====================================================
-   SMART BLUR PREMIUM NAVBAR
-===================================================== */
+/* =====================================
+   LUXURY CURTAIN HEADER & MENU
+===================================== */
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    padding:22px 10%;
-    position:fixed;
-    width:100%;
-    z-index:1000;
-    backdrop-filter:blur(0px);
-    -webkit-backdrop-filter:blur(0px);
-    background:rgba(255,255,255,0);
-    border-bottom:1px solid rgba(255,255,255,0);
-    transition:
-        transform .6s cubic-bezier(.22,1,.36,1),
-        backdrop-filter .6s cubic-bezier(.22,1,.36,1),
-        background .6s cubic-bezier(.22,1,.36,1),
-        border-color .6s cubic-bezier(.22,1,.36,1),
-        box-shadow .6s cubic-bezier(.22,1,.36,1);
+.curtain-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    transition: all 0.6s var(--motion-ease);
+    background: transparent;
 }
 
-.navbar.scrolled{
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    background:rgba(255,255,255,.65);
-    border-bottom:1px solid rgba(185,166,123,.15);
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05),
-        0 4px 12px rgba(0,0,0,.04);
+/* تأثير التغبيش عند النزول بالماوس */
+.curtain-navbar.scrolled {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(185, 166, 123, 0.15);
 }
 
-.navbar.hide{
-    transform:translateY(-100%);
+.curtain-navbar .logo {
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 2px;
+    z-index: 2001;
+    transition: color 0.4s ease;
 }
 
-.navbar a{
-    margin-left:25px;
-    text-decoration:none;
-    color:white;
-    position:relative;
-    transition:
-        color .4s var(--motion-ease),
-        transform .4s var(--motion-ease);
-}
-.navbar a::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transform:translateX(-50%);
-    transition:width .4s var(--motion-ease);
-}
-.navbar a:hover{
-    transform:translateY(-2px);
+.curtain-navbar.scrolled .logo {
+    color: var(--primary);
 }
 
-.navbar a:hover::after{
-    width:70%;
+/* زر القائمة (الهمبرغر) */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* لجعله غير متناظر وأنيق */
+    gap: 8px;
+    outline: none;
 }
 
+.menu-toggle .line {
+    display: block;
+    height: 2px;
+    background: white;
+    transition: all 0.5s var(--motion-ease);
+}
 
-.navbar.scrolled a{
-    color:var(--primary);
+.curtain-navbar.scrolled .line {
+    background: var(--primary);
+}
+
+.menu-toggle .line:nth-child(1) { width: 35px; }
+.menu-toggle .line:nth-child(2) { width: 25px; }
+
+/* تأثير جميل عند تمرير الماوس على الزر */
+.menu-toggle:hover .line:nth-child(2) { width: 35px; }
+
+/* =====================================
+   حالة "فتح الستارة" (MENU OPEN STATE)
+===================================== */
+body.menu-open {
+    overflow: hidden; /* لمنع السكرول والموقع مفتوح */
+}
+
+body.menu-open .curtain-navbar .logo {
+    color: white !important; /* إجبار اللوغو يصير أبيض */
+}
+
+body.menu-open .menu-toggle .line {
+    background: white !important;
+}
+
+/* تحويل الزر إلى إشارة X للإنهاء */
+body.menu-open .menu-toggle .line:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+    width: 35px;
+}
+body.menu-open .menu-toggle .line:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
+    width: 35px;
+}
+
+/* =====================================
+   THE CURTAIN (الستارة نفسها)
+===================================== */
+.curtain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* خلفية الستارة (عنابي متدرج فخم) */
+.curtain-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, var(--dark), var(--primary));
+    transform: translateY(-100%); /* البداية من الأعلى مخفية */
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1); /* حركة مسرحية سينمائية */
+    will-change: transform;
+}
+
+body.menu-open .curtain-overlay {
+    pointer-events: all;
+}
+
+body.menu-open .curtain-bg {
+    transform: translateY(0); /* نزول الستارة */
+}
+
+/* الروابط داخل الستارة */
+.curtain-nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+}
+
+.curtain-nav a {
+    color: white;
+    font-size: clamp(36px, 6vw, 64px); /* خط ضخم فخم */
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: -1.5px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.4s, transform 0.8s var(--motion-ease), color 0.3s;
+}
+
+body.menu-open .curtain-nav a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثير التتابع بالظهور (Stagger) */
+body.menu-open .curtain-nav a:nth-child(1) { transition-delay: 0.20s; }
+body.menu-open .curtain-nav a:nth-child(2) { transition-delay: 0.28s; }
+body.menu-open .curtain-nav a:nth-child(3) { transition-delay: 0.36s; }
+body.menu-open .curtain-nav a:nth-child(4) { transition-delay: 0.44s; }
+body.menu-open .curtain-nav a:nth-child(5) { transition-delay: 0.52s; }
+body.menu-open .curtain-nav a:nth-child(6) { transition-delay: 0.60s; }
+
+/* تأثير الهوفر على الروابط */
+.curtain-nav a:hover {
+    color: var(--accent); /* يتلون بالذهبي */
+    transform: scale(1.05) translateX(10px);
+}
+
+/* تذييل الستارة (إيميل وموقع) */
+.curtain-footer {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s var(--motion-ease);
+    transition-delay: 0.7s;
+}
+
+body.menu-open .curtain-footer {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* HERO */
