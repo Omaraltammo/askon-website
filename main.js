@@ -236,3 +236,22 @@ document.body.insertAdjacentHTML("beforeend", data);
 });
 
 });
+// Curtain Menu Toggle Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const curtainMenu = document.getElementById('curtainMenu');
+    
+    if(menuToggle && curtainMenu) {
+        menuToggle.addEventListener('click', () => {
+            document.body.classList.toggle('menu-open');
+        });
+
+        // إغلاق الستارة عند الضغط على أي رابط بداخلها
+        const curtainLinks = curtainMenu.querySelectorAll('a');
+        curtainLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+});
