@@ -2023,3 +2023,15 @@ color:var(--primary);
         white-space: normal;
     }
 }
+/* =====================================
+   INNER PAGES HEADER COLOR FIX 
+===================================== */
+
+/* تغيير لون اللوغو وخطوط القائمة للعنابي في الصفحات الداخلية */
+body.inner-page .curtain-navbar .logo {
+    color: var(--primary);
+}
+
+body.inner-page .menu-toggle .line {
+    background: var(--primary);
+}
