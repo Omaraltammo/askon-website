@@ -1717,13 +1717,13 @@ color:var(--primary);
 
 }
 /* =====================================
-   LOCATIONS BENTO GRID WITH IMAGES
+   LOCATIONS BENTO GRID WITH IMAGES (SCALED TO MATCH SITE)
 ===================================== */
 .locations-intro {
     max-width: 650px;
     margin: 0 auto 50px auto;
     color: var(--gray);
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.8;
 }
 
@@ -1737,26 +1737,26 @@ color:var(--primary);
 }
 
 .loc-card {
-    border-radius: 20px;
+    border-radius: 24px; /* متناسق مع انحناء كروت الخدمات */
     position: relative;
     overflow: hidden;
-    min-height: 380px; /* لضمان مساحة كافية للصورة */
+    min-height: 300px; /* حجم أصغر وأنعم */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* لإنزال النص للأسفل */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    justify-content: flex-end;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
     transition: transform 0.6s var(--motion-ease), box-shadow 0.6s var(--motion-ease);
 }
 
 .loc-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 15px 25px rgba(185,166,123,0.15);
+    transform: translateY(-6px); /* حركة رفع أنعم */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12), 0 10px 20px rgba(185,166,123,0.1);
 }
 
 /* Background Image Layer */
 .loc-bg {
     position: absolute;
-    inset: -2px; /* لتجنب الحواف البيضاء عند الحركة */
+    inset: -2px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1765,10 +1765,10 @@ color:var(--primary);
 }
 
 .loc-card:hover .loc-bg {
-    transform: scale(1.06); /* تأثير الزوم البطيء الاحترافي */
+    transform: scale(1.05); /* تقريب أخف للصورة */
 }
 
-/* Dark Gradient Overlay (من لونك العنابي الداكن للشفاف) */
+/* Dark Gradient Overlay */
 .loc-overlay {
     position: absolute;
     inset: 0;
@@ -1785,7 +1785,7 @@ color:var(--primary);
 .loc-content {
     position: relative;
     z-index: 3;
-    padding: 40px;
+    padding: 35px 30px; /* مساحات داخلية أقل */
     color: white;
 }
 
@@ -1793,44 +1793,48 @@ color:var(--primary);
     display: inline-block;
     background: var(--accent);
     color: white;
-    font-size: 11px;
+    font-size: 10px; /* تصغير الوسم */
     font-weight: 600;
     letter-spacing: 1.5px;
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .loc-card h3 {
-    font-size: 26px;
+    font-size: 22px; /* متطابق مع حجم عناوين كروت الخدمات */
     color: white;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-weight: 600;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .loc-card p {
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 15px; /* متطابق مع حجم خط الموقع */
     margin: 0;
 }
 
 /* Damascus Headquarters - Large Banner */
 .loc-card.hq {
     grid-column: span 2;
-    min-height: 450px;
+    min-height: 380px; /* تقليل الارتفاع بشكل متناسق */
+}
+
+.loc-card.hq .loc-content {
+    padding: 45px 40px; 
 }
 
 .loc-card.hq h3 {
-    font-size: 36px;
+    font-size: 28px; /* تصغير العنوان الرئيسي */
 }
 
 .loc-card.hq p {
-    font-size: 18px;
+    font-size: 16px;
     max-width: 700px;
 }
 
@@ -1843,20 +1847,19 @@ color:var(--primary);
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 45px;
 }
 
 .loc-card.nationwide .loc-bg,
 .loc-card.nationwide .loc-overlay {
-    display: none; /* إخفاء الصورة والطبقة الشفافة هنا */
+    display: none;
 }
 
 .loc-card.nationwide .loc-content {
-    padding: 0;
+    padding: 35px 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     width: 100%;
 }
 
@@ -1865,14 +1868,14 @@ color:var(--primary);
     margin-bottom: 0;
     white-space: nowrap;
     text-shadow: none;
-    font-size: 28px;
+    font-size: 24px; /* تصغير عنوان التغطية الشاملة */
 }
 
 .loc-card.nationwide p {
     color: rgba(42, 14, 24, 0.85);
     margin-bottom: 0;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 /* Responsive adjustments */
@@ -1883,10 +1886,14 @@ color:var(--primary);
     .loc-card.hq, .loc-card.nationwide {
         grid-column: span 1;
     }
-    .loc-card {
-        min-height: 350px;
+    .loc-card, .loc-card.hq {
+        min-height: 300px;
+    }
+    .loc-card.hq .loc-content {
+        padding: 30px;
     }
     .loc-card.nationwide .loc-content {
+        padding: 30px;
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
