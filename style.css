@@ -2035,196 +2035,79 @@ body.inner-page .curtain-navbar .logo {
 body.inner-page .menu-toggle .line {
     background: var(--primary);
 }
+
 /* =====================================
-   REQUEST A PROPOSAL FORM (APPLE STYLE)
+   QUOTE PAGE AMBIENT WARMTH & MOTION
 ===================================== */
-.quote-intro {
-    max-width: 600px;
-    margin: 0 auto 50px auto;
-    color: var(--gray);
-    font-size: 16px;
-    line-height: 1.8;
-}
 
-.quote-form-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.05), 0 10px 20px rgba(185,166,123,0.08);
-    border-radius: 24px;
-    padding: 50px;
-    text-align: left;
-}
-
-.form-step {
-    margin-bottom: 50px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.form-step:last-of-type {
-    border-bottom: none;
-    margin-bottom: 30px;
-    padding-bottom: 0;
-}
-
-.form-step h3 {
-    font-size: 20px;
-    color: var(--primary);
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.form-step h3 .required { color: #d93025; font-size: 16px; }
-
-/* Interactive Service Cards */
-.services-selector {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.service-opt {
-    background: white;
-    border: 2px solid rgba(0,0,0,0.05);
-    border-radius: 14px;
-    padding: 20px 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    transition: all 0.3s var(--motion-ease);
-    user-select: none;
-}
-
-.service-opt:hover {
-    border-color: rgba(185,166,123,0.4);
-    transform: translateY(-2px);
-}
-
-.service-opt.selected {
-    border-color: var(--accent);
-    background: rgba(185,166,123,0.05);
-    box-shadow: 0 10px 20px rgba(185,166,123,0.1);
-}
-
-.opt-check {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
+/* إخفاء أي تمدد للإضاءة خارج قسم الفورم */
+.quote-section {
     position: relative;
-    transition: all 0.3s ease;
+    overflow: hidden; 
 }
 
-.service-opt.selected .opt-check {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-.service-opt.selected .opt-check::after {
-    content: "✓";
+/* 1. الإضاءة السينمائية العائمة في الخلفية */
+.quote-ambient-glow {
     position: absolute;
-    color: white;
-    font-size: 14px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
+    width: 60vw;
+    height: 60vw;
+    max-width: 800px;
+    max-height: 800px;
+    background: radial-gradient(circle, rgba(109,27,53,0.06) 0%, transparent 60%); /* لون عنابي دافئ وخفيف */
+    top: -10%;
+    left: -10%;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    animation: floatGlow 18s ease-in-out infinite alternate;
+    pointer-events: none; /* عشان ما تأثر على ضغطات الماوس */
 }
 
-.service-opt span {
-    font-size: 15px;
-    color: #333;
-    font-weight: 500;
+/* الإضاءة الذهبية المعاكسة */
+.quote-ambient-glow.glow-2 {
+    background: radial-gradient(circle, rgba(185,166,123,0.06) 0%, transparent 60%); /* لون ذهبي */
+    top: 40%;
+    left: 60%;
+    animation-duration: 25s; /* حركة أبطأ لكسر التزامن */
+    animation-direction: alternate-reverse;
 }
 
-/* Form Grid & Inputs */
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+/* حركة السباحة البطيئة */
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(15vw, 10vh) scale(1.15); }
 }
 
-.input-group.full-width {
-    grid-column: span 2;
+/* ضمان بقاء الفورم والنصوص فوق الإضاءة */
+.quote-section .section-header,
+.quote-form-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
-.input-group label {
-    display: block;
-    font-size: 13px;
-    color: var(--gray);
-    margin-bottom: 8px;
-    font-weight: 500;
+/* =====================================
+   2. حركة الدخول المتدرج لأقسام الفورم (Staggered Entrance)
+===================================== */
+.form-step {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: stepFadeIn 0.9s var(--motion-ease) forwards;
 }
 
-.input-group .optional {
-    color: #999;
-    font-size: 11px;
-    font-weight: normal;
-}
-
-.quote-form-wrapper input,
-.quote-form-wrapper select,
-.quote-form-wrapper textarea {
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.1);
-    color: #1d1d1f;
-    font-size: 15px;
-    border-radius: 12px;
-    padding: 16px;
-    transition: all 0.3s ease;
-    caret-color: var(--primary);
-    font-family: inherit;
-}
-
-.quote-form-wrapper input:focus,
-.quote-form-wrapper select:focus,
-.quote-form-wrapper textarea:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(109,27,53,0.08);
-    outline: none;
-}
-
-.quote-form-wrapper select {
-    appearance: none;
-    cursor: pointer;
-}
-
-.quote-form-wrapper textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* Date Field Styling */
-.quote-form-wrapper input[type="date"] {
-    color: #666;
-    cursor: text;
-}
-.quote-form-wrapper input[type="date"]:valid {
-    color: #1d1d1f;
-}
-
+/* برمجة التتابع (كل قسم بيظهر بعد التاني بجزء من الثانية) */
+.form-step:nth-child(1) { animation-delay: 0.1s; }
+.form-step:nth-child(2) { animation-delay: 0.25s; }
+.form-step:nth-child(3) { animation-delay: 0.4s; }
 .form-submit-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: stepFadeIn 0.9s var(--motion-ease) forwards;
+    animation-delay: 0.55s;
 }
 
-.submit-quote-btn {
-    width: 100%;
-    max-width: 300px;
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    .quote-form-wrapper { padding: 30px 20px; }
-    .form-grid { grid-template-columns: 1fr; }
-    .input-group.full-width { grid-column: span 1; }
+@keyframes stepFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
