@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Request a Proposal | Askon</title>
+
+<meta name="description" content="Request a professional quote for event planning, audio, interpretation, video, and design services from Askon.">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="inner-page">
+
+<section class="section quote-section">
+
+    <div class="section-header">
+        <span class="section-label">GET STARTED</span>
+        <h2>Request a Proposal</h2>
+        <p class="quote-intro">Please provide the details below to help us understand your project. We will get back to you with a comprehensive proposal.</p>
+    </div>
+
+    <form id="quote-form" class="quote-form-wrapper">
+        <input type="text" name="website" style="display:none"> <div class="form-step">
+            <h3>1. Select Required Services <span class="required">*</span></h3>
+            <div class="services-selector" id="servicesGrid">
+                
+                <div class="service-opt" data-service="Event Planning">
+                    <div class="opt-check"></div>
+                    <span>Event Planning</span>
+                </div>
+                
+                <div class="service-opt" data-service="Interpretation">
+                    <div class="opt-check"></div>
+                    <span>Interpretation</span>
+                </div>
+                
+                <div class="service-opt" data-service="Audio Services">
+                    <div class="opt-check"></div>
+                    <span>Audio Services</span>
+                </div>
+                
+                <div class="service-opt" data-service="Photography">
+                    <div class="opt-check"></div>
+                    <span>Photography</span>
+                </div>
+                
+                <div class="service-opt" data-service="Video Production">
+                    <div class="opt-check"></div>
+                    <span>Video Production</span>
+                </div>
+                
+                <div class="service-opt" data-service="Graphic Design">
+                    <div class="opt-check"></div>
+                    <span>Graphic Design</span>
+                </div>
+
+            </div>
+            <input type="hidden" id="selected-services-input" name="selected_services" required>
+        </div>
+
+        <div class="form-step">
+            <h3>2. Project / Event Details</h3>
+            
+            <div class="form-grid">
+                <div class="input-group full-width">
+                    <select name="project_type" required>
+                        <option value="" disabled selected>Project Type (Select an option) *</option>
+                        <option value="Conference / Summit">Conference / Summit</option>
+                        <option value="NGO / Humanitarian Event">NGO / Humanitarian Event</option>
+                        <option value="Corporate Media & Advertising">Corporate Media & Advertising</option>
+                        <option value="Workshop / Training">Workshop / Training</option>
+                        <option value="Branding & Print Production">Branding & Print Production</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Expected Date *</label>
+                    <input type="date" name="event_date" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Location / City *</label>
+                    <input type="text" name="location" placeholder="e.g. Damascus" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Expected Attendees <span class="optional">(Optional - Important for audio/interpretation)</span></label>
+                    <input type="number" name="attendees" placeholder="Number of attendees">
+                </div>
+
+                <div class="input-group full-width">
+                    <textarea name="project_description" placeholder="Project Requirements & Description *" required></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <h3>3. Client Information</h3>
+            
+            <div class="form-grid">
+                <div class="input-group">
+                    <input type="text" name="full_name" placeholder="Full Name *" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="company_name" placeholder="Company / NGO Name *" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Work Email *" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="phone" placeholder="Phone / WhatsApp *" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-submit-area">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACewk_qC2RQSIRfS"></div>
+            <button type="submit" class="btn-gold submit-quote-btn">Submit Request</button>
+        </div>
+
+    </form>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="main.js" defer></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const serviceOpts = document.querySelectorAll('.service-opt');
+        const hiddenInput = document.getElementById('selected-services-input');
+        
+        serviceOpts.forEach(opt => {
+            opt.addEventListener('click', () => {
+                opt.classList.toggle('selected');
+                updateSelectedServices();
+            });
+        });
+
+        function updateSelectedServices() {
+            const selected = [];
+            document.querySelectorAll('.service-opt.selected').forEach(el => {
+                selected.push(el.getAttribute('data-service'));
+            });
+            hiddenInput.value = selected.join(', ');
+            
+            // إزالة رسالة الخطأ لو اختار خدمة
+            if(selected.length > 0) {
+                hiddenInput.setCustomValidity('');
+            }
+        }
+
+        // إجبار المستخدم على اختيار خدمة واحدة على الأقل
+        const form = document.getElementById('quote-form');
+        form.addEventListener('submit', (e) => {
+            if(hiddenInput.value.trim() === '') {
+                e.preventDefault();
+                alert('Please select at least one service from Step 1.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
