@@ -2489,20 +2489,51 @@ body.inner-page .menu-toggle .line {
     left: 0;
     color: var(--accent);
 }
-
 /* =====================================================
-   3. THE BLUEPRINT (MINIMALIST & CLEAN)
+   3. THE BLUEPRINT (WARM & CONSISTENT)
 ===================================================== */
 .blueprint-minimal {
-    background: #ffffff; /* خلفية بيضاء نقية لكسر الجمود وإراحة العين */
+    background: #ffffff; 
     padding: 120px 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* الإضاءة المحيطية لكسر البرود */
+.soft-glow {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.glow-left {
+    background: radial-gradient(circle, rgba(185,166,123,0.15) 0%, transparent 70%);
+    top: -10%;
+    left: -10%;
+    animation: floatGlow 15s ease-in-out infinite alternate;
+}
+
+.glow-right {
+    background: radial-gradient(circle, rgba(109,27,53,0.08) 0%, transparent 70%);
+    bottom: -10%;
+    right: -10%;
+    animation: floatGlow 20s ease-in-out infinite alternate-reverse;
 }
 
 .blueprint-container-min {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* الصورة تأخذ مساحة أكبر قليلاً */
+    grid-template-columns: 1fr 1.2fr; 
     gap: 80px;
     align-items: center;
 }
@@ -2511,11 +2542,10 @@ body.inner-page .menu-toggle .line {
     text-align: left;
 }
 
-.blueprint-content-min h2 {
-    font-size: clamp(34px, 5vw, 48px);
-    color: var(--dark);
-    margin-bottom: 25px;
-    letter-spacing: -1px;
+/* التناسق مع عناوين الموقع وإلغاء التوسيط الإجباري */
+.blueprint-content-min .section-header::after {
+    left: 0;
+    transform: none;
 }
 
 .blueprint-content-min p {
@@ -2555,10 +2585,9 @@ body.inner-page .menu-toggle .line {
     height: 500px;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.06); /* ظل ناعم جداً */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08); 
 }
 
-/* مكان الصورة المؤقت */
 .bp-img-placeholder {
     width: 100%;
     height: 100%;
@@ -2578,10 +2607,48 @@ body.inner-page .menu-toggle .line {
 }
 
 /* =====================================================
-   4. ELEGANT CTA (SOFT TRANSITION TO FOOTER)
+   INFINITE MARQUEE (شريط متحرك)
+===================================================== */
+.infinite-marquee {
+    background: var(--dark);
+    color: var(--accent);
+    padding: 25px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(185,166,123,0.2);
+    border-bottom: 1px solid rgba(185,166,123,0.2);
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: scrollMarquee 25s linear infinite;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.marquee-track span {
+    margin: 0 15px;
+}
+
+.marquee-track .dot {
+    color: rgba(255,255,255,0.3);
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* يمشي للنص لأننا كررنا المحتوى مرتين */
+}
+
+/* =====================================================
+   4. ELEGANT CTA (WITH CONSISTENT HEADERS)
 ===================================================== */
 .elegant-cta-section {
-    background: #f4f1ee; /* لون رمادي/بيج فاتح جداً */
+    background: #f4f1ee; 
     padding: 100px 10% 120px 10%;
     display: flex;
     justify-content: center;
@@ -2595,14 +2662,7 @@ body.inner-page .menu-toggle .line {
     max-width: 800px;
     width: 100%;
     box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-    border-top: 3px solid var(--accent); /* لمسة ذهبية فخمة من الأعلى */
-}
-
-.cta-card h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    color: var(--dark);
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
+    border-top: 3px solid var(--accent);
 }
 
 .cta-card p {
@@ -2624,11 +2684,11 @@ body.inner-page .menu-toggle .line {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    .blueprint-image-min {
-        height: 350px;
+    .blueprint-image-min { height: 350px; }
+    .cta-card { padding: 50px 30px; }
+    .blueprint-content-min .section-header::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
-    .cta-card {
-        padding: 50px 30px;
-    }
+    .blueprint-content-min { text-align: center; }
 }
-
