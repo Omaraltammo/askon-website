@@ -2692,3 +2692,157 @@ body.inner-page .menu-toggle .line {
     }
     .blueprint-content-min { text-align: center; }
 }
+
+
+
+
+/* =====================================================
+   ABOUT US PAGE STYLES (REFINED CORPORATE LOOK)
+===================================================== */
+
+/* 1. About Hero */
+.about-hero {
+    padding-top: calc(var(--section-space) + 100px);
+    padding-bottom: 80px;
+    background: transparent;
+    text-align: center;
+    position: relative;
+}
+
+/* 2. The Story Section */
+.story-section {
+    background: #ffffff;
+    padding: 100px 10%;
+}
+
+.story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.story-content {
+    text-align: left;
+}
+
+.story-content h2 {
+    font-size: clamp(32px, 5vw, 42px);
+    color: var(--dark);
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    line-height: 1.25;
+}
+
+.story-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.story-image {
+    width: 100%;
+    height: 550px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    position: relative;
+}
+
+.story-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f4f1ee, #e8e4de);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-img-placeholder span {
+    color: rgba(109, 27, 53, 0.3);
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* 3. The Synergy Section (3 Pillars Grid) */
+.synergy-section {
+    background: #fdfcfb;
+    padding: 120px 10%;
+    border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.synergy-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 أعمدة لثلاثة أركان */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+}
+
+.synergy-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    text-align: left;
+    transition: transform 0.4s var(--motion-ease), box-shadow 0.4s var(--motion-ease);
+}
+
+.synergy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 5px 15px rgba(185,166,123,0.08);
+}
+
+.synergy-card h4 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+.synergy-card h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.synergy-card:hover h4::after {
+    width: 100%;
+}
+
+.synergy-card p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .story-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .story-image {
+        height: 350px;
+    }
+    .synergy-grid-3 {
+        grid-template-columns: 1fr; /* عمود واحد على الموبايل */
+        gap: 25px;
+    }
+}
