@@ -2303,3 +2303,66 @@ body.inner-page .menu-toggle .line {
         transform: translateY(0);
     }
 }
+/* =====================================
+   PORTFOLIO - METHODOLOGY GRID
+===================================== */
+.portfolio-intro {
+    max-width: 750px;
+    margin: 0 auto 60px auto;
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1050px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 60px;
+    text-align: left;
+}
+
+.method-step {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(185,166,123,0.3); /* خط ذهبي جانبي */
+    transition: border-color 0.4s ease;
+}
+
+.method-step:hover {
+    border-left-color: var(--primary);
+}
+
+.step-num {
+    display: block;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    opacity: 0.8;
+}
+
+.method-step h4 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.method-step p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .methodology-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
