@@ -2692,214 +2692,182 @@ body.inner-page .menu-toggle .line {
     }
     .blueprint-content-min { text-align: center; }
 }
-
 /* =====================================================
-   ABOUT US PAGE: UNIQUE IDENTITY & BALANCED TYPOGRAPHY
+   ABOUT US PAGE: WARM, PREMIUM & CINEMATIC CONTRAST
 ===================================================== */
-
-/* 1. Asymmetrical Hero */
-.about-hero-unique {
-    padding: calc(var(--section-space) + 120px) 10% 100px 10%;
-    background: #fdfcfb;
+/* =====================================================
+   FORCE GLOBAL FONT FAMILY (ضمان توحيد نوع الخط)
+===================================================== */
+.about-cinematic-hero,
+.editorial-journey,
+.formula-list-section,
+.refined-promise-section {
+    font-family: 'Inter', sans-serif !important; /* فرض خط الموقع الأساسي */
 }
 
-.ahu-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 80px;
+h1, h2, h3, h4, p, span, div {
+    font-family: inherit; /* إجبار كل العناصر على وراثة الخط الفخم */
 }
-
-.ahu-left {
-    flex: 1.2;
-}
-
-.ahu-title {
-    /* تم تصغير الحجم الأقصى ليكون متناسق مع باقي الموقع (من 85 إلى 60) */
-    font-size: clamp(38px, 5vw, 60px); 
-    font-weight: 600;
+.standard-h2 {
+    font-size: clamp(28px, 4vw, 40px) !important;
     color: var(--dark);
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin-top: 15px;
-}
-
-.ahu-right {
-    flex: 1;
-    padding-left: 50px;
-    border-left: 1px solid rgba(0,0,0,0.1); 
-    margin-top: 30px;
-}
-
-.ahu-right h2 {
-    font-size: 22px; /* تم التنعيم */
-    color: var(--primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
     margin-bottom: 20px;
-    font-style: italic;
-    font-weight: 500;
 }
-
-.ahu-right p {
-    font-size: 16px; /* حجم القراءة المريح والمعتمد */
-    line-height: 1.9;
+.standard-p {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
     color: var(--gray);
 }
 
-/* 2. Editorial Journey (Overlap) */
-.editorial-journey { background: #ffffff; padding: 100px 10%; }
-.ed-journey-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.ed-journey-content { text-align: left; padding-right: 20px; }
-
-.ed-journey-content .section-header h2 {
-    font-size: clamp(32px, 4vw, 42px); /* حجم متناسق مع عناوين الأقسام */
-}
-
-.ed-journey-content p { font-size: 16px; line-height: 1.9; color: var(--gray); margin-bottom: 25px; }
-.ed-journey-visual { position: relative; width: 100%; height: 500px; }
-.ed-visual-box { position: relative; width: 90%; height: 90%; border-radius: 20px; overflow: hidden; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
-.ed-placeholder { width: 100%; height: 100%; background: #f4f1ee; display: flex; align-items: center; justify-content: center; }
-.ed-visual-accent { position: absolute; bottom: 0; right: 0; width: 80%; height: 80%; border: 2px solid rgba(185,166,123,0.3); border-radius: 20px; z-index: 1; transition: transform 0.6s ease; }
-.ed-journey-visual:hover .ed-visual-accent { transform: translate(15px, 15px); }
-
-/* 3. The Formula (Horizontal Directory List) */
-.formula-list-section {
-    background: #fdfcfb;
-    padding: 120px 10%;
-}
-
-.formula-list-header {
-    text-align: left;
-    max-width: 1200px;
-    margin: 0 auto 60px auto;
-}
-
-.formula-list-header h2 {
-    font-size: clamp(32px, 4vw, 42px); /* ضبط حجم العنوان ليكون أنيقاً */
-    color: var(--dark);
-    margin: 15px 0 25px 0;
-    letter-spacing: -1px;
-}
-
-.formula-list-header p {
-    font-size: 16px;
-    color: var(--gray);
-    line-height: 1.8;
-    max-width: 650px;
-}
-
-.formula-directory {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-top: 2px solid rgba(0,0,0,0.08);
-}
-
-.fd-row {
-    display: flex;
-    align-items: flex-start;
-    padding: 45px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    transition: background 0.4s ease, padding-left 0.4s ease;
-    cursor: default;
-}
-
-.fd-row:hover {
-    background: #ffffff;
-    padding-left: 20px;
-    border-bottom-color: var(--accent);
-}
-
-.fd-num {
-    flex: 0 0 80px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 2px;
-}
-
-.fd-title {
-    flex: 1;
-    padding-right: 40px;
-}
-
-.fd-title h3 {
-    font-size: 22px; /* تم تنعيم الحجم ليتناسب مع القائمة الأفقية */
-    color: var(--dark);
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    margin: 0;
-}
-
-.fd-desc {
-    flex: 1.5;
-}
-
-.fd-desc p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--gray);
-    margin: 0;
-}
-
-/* 4. The Promise (بديل الـ CTA) */
-.askon-promise-section {
-    background: var(--dark);
-    padding: 120px 10%;
-    text-align: center;
+/* 1. Cinematic Dark Hero */
+.about-cinematic-hero {
     position: relative;
+    padding: 180px 10% 120px 10%;
+    background-color: var(--dark);
+    /* خلفية متدرجة فخمة تعطي عمق بدل اللون السادة */
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    text-align: center;
+    color: #ffffff;
     overflow: hidden;
 }
 
-.askon-promise-section::before {
-    content: "";
+/* وهج ذهبي وعنابي خفيف جداً في زوايا الهيرو */
+.about-cinematic-hero::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(109,27,53,0.12) 0%, transparent 60%);
+    top: -20%; left: -10%;
+    width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(185,166,123,0.1) 0%, transparent 70%);
     z-index: 0;
-    pointer-events: none;
+}
+.about-cinematic-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%; right: -10%;
+    width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(109,27,53,0.15) 0%, transparent 70%);
+    z-index: 0;
 }
 
-.promise-container {
+.ach-content {
     position: relative;
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
 }
 
-.promise-label {
-    display: block;
-    color: var(--accent);
-    font-size: 13px;
-    letter-spacing: 4px;
+.ach-title {
+    font-size: clamp(38px, 5vw, 60px);
     font-weight: 600;
-    margin-bottom: 25px;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 20px 0;
+    letter-spacing: -1px;
 }
 
-.promise-quote {
-    /* تم تخفيف الحجم ليكون درامياً ومقروءاً بدون صراخ */
-    font-size: clamp(28px, 4vw, 40px); 
-    color: #ffffff;
-    line-height: 1.4;
-    font-weight: 300;
-    font-style: italic;
-    margin: 0;
+.ach-intro {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
 }
+
+/* 2. Editorial Journey (Warm Alabaster Background) */
+.editorial-journey { 
+    /* هنا كسرنا الأبيض الساطع واستخدمنا لون عاجي دافئ جداً وفخم */
+    background: #FCFAF8; 
+    padding: 120px 10%; 
+    position: relative;
+}
+
+.ed-journey-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2;}
+.ed-journey-content { text-align: left; padding-right: 20px; }
+.ed-journey-content .standard-p { margin-bottom: 20px; color: #555; /* لون رمادي أدفأ */ }
+.ed-journey-visual { position: relative; width: 100%; height: 500px; }
+.ed-visual-box { position: relative; width: 90%; height: 90%; border-radius: 20px; overflow: hidden; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.06); }
+.ed-placeholder { width: 100%; height: 100%; background: #2a2a2a; display: flex; align-items: center; justify-content: center; }
+.ed-visual-accent { position: absolute; bottom: 0; right: 0; width: 80%; height: 80%; border: 2px solid rgba(185,166,123,0.4); border-radius: 20px; z-index: 1; transition: transform 0.6s ease; }
+.ed-journey-visual:hover .ed-visual-accent { transform: translate(15px, 15px); }
+
+/* 3. The Formula (Dark Section - كسر الجمود بالتباين الدرامي) */
+.formula-list-section {
+    background: var(--dark); /* تحويل القسم بالكامل للون الداكن */
+    padding: 120px 10%;
+    color: #fff;
+}
+
+.formula-list-header { text-align: left; max-width: 1200px; margin: 0 auto 60px auto; }
+.formula-list-header .standard-h2 { color: #ffffff; }
+.formula-list-header .standard-p { color: rgba(255,255,255,0.7); }
+
+.formula-directory { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+}
+
+.fd-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.4s ease, padding-left 0.4s ease;
+}
+
+/* تأثير التمرير في القسم الداكن */
+.fd-row:hover { 
+    background: rgba(255,255,255,0.03); 
+    padding-left: 20px; 
+    border-bottom-color: var(--accent); 
+}
+
+.fd-num { flex: 0 0 70px; font-size: 15px; font-weight: 600; color: var(--accent); letter-spacing: 2px; }
+.fd-title { flex: 1; padding-right: 30px; }
+.fd-title h3 { font-size: 22px; color: #ffffff; font-weight: 600; letter-spacing: -0.3px; margin: 0; }
+.fd-desc { flex: 1.5; }
+.fd-desc .standard-p { color: rgba(255,255,255,0.6) !important; }
+
+/* 4. Refined Commitment (Warm & Bright Again) */
+.refined-promise-section {
+    /* عودة للون العاجي الدافئ مع إضاءة محيطية عنابية خفيفة جداً بالوسط */
+    background: #FDFBF9;
+    padding: 120px 10%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.refined-promise-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(109,27,53,0.04) 0%, transparent 60%);
+    z-index: 0;
+}
+
+.rp-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rp-line { width: 1px; height: 60px; background: var(--accent); margin: 0 auto 30px auto; }
+.rp-label { display: block; font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 3px; margin-bottom: 30px; }
+.rp-quote { font-size: clamp(28px, 4vw, 42px); color: var(--dark); font-weight: 400; font-style: italic; line-height: 1.4; margin-bottom: 30px; letter-spacing: -0.5px; }
+.rp-signature { font-size: 15px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
-    .ahu-container { flex-direction: column; gap: 40px; }
-    .ahu-right { padding-left: 0; border-left: none; margin-top: 0; }
-    
     .ed-journey-container { grid-template-columns: 1fr; gap: 50px; }
     .ed-journey-visual { height: 350px; }
-    
     .fd-row { flex-direction: column; padding: 30px 0; }
     .fd-row:hover { padding-left: 0; }
-    .fd-num { margin-bottom: 15px; }
+    .fd-num { margin-bottom: 10px; }
     .fd-title { margin-bottom: 10px; padding-right: 0; }
 }
