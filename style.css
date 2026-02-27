@@ -2336,32 +2336,32 @@ body.inner-page .menu-toggle .line {
     margin: 0 auto;
 }
 
-/* تنسيق العنوان الرئيسي مطابق لـ About بالمليمتر */
+/* تنسيق العنوان الرئيسي مطابق لنعومة الموقع */
 .v2-title {
     font-family: 'Inter', sans-serif !important;
-    font-size: clamp(38px, 5vw, 60px); 
+    font-size: clamp(32px, 4.5vw, 48px) !important; /* تم تصغير الحجم ليتناسب مع فخامة باقي الأقسام */
     font-weight: 600;
     color: #ffffff;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin-bottom: 25px;
+    line-height: 1.2;
+    letter-spacing: -0.5px; /* تقليل تقارب الأحرف ليناسب الحجم الجديد */
+    margin-bottom: 20px;
 }
 
 /* الكلمة المميزة داخل العنوان */
 .v2-title span {
-    color: var(--accent); /* تحويلها للون الذهبي لتبرز على الخلفية الداكنة */
+    color: var(--accent); 
     font-style: italic;
     font-weight: 500;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
-/* النص التمهيدي مطابق لـ About */
+/* النص التمهيدي مطابق لفقرات الموقع الأساسية */
 .v2-intro {
     font-family: 'Inter', sans-serif !important;
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.75); /* رمادي فاتح لسهولة القراءة */
+    font-size: 16px !important; /* حجم القراءة الأساسي والمريح للموقع */
+    color: rgba(255, 255, 255, 0.75); 
     line-height: 1.8;
-    max-width: 650px;
+    max-width: 600px; /* تم تضييق المساحة ليكون النص متماسكاً أكثر */
     margin: 0 auto;
 }
 
