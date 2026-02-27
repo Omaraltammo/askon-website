@@ -2308,28 +2308,25 @@ body.inner-page .menu-toggle .line {
    FULL PORTFOLIO PAGE: REFINED CINEMATIC EXPERIENCE
 ===================================================== */
 
-/* --- 1. CINEMATIC HERO --- */
+/* --- 1. CINEMATIC HERO (Matched with About Page) --- */
 .portfolio-hero-v2 {
-    padding-top: calc(var(--section-space) + 80px); /* يراعي وجود الهيدر */
-    padding-bottom: var(--section-space);
-    background: transparent;
-    text-align: center;
     position: relative;
+    padding: 220px 10% 120px 10%; /* نفس مساحة واجهة About لمنع تداخل الهيدر */
+    background-color: var(--dark);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    text-align: center;
+    color: #ffffff;
     overflow: hidden;
 }
 
+/* الإضاءة المحيطية السينمائية (نفس هيبة About) */
 .portfolio-hero-v2::before {
-    content: "";
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(185,166,123,0.06) 0%, transparent 60%);
-    filter: blur(50px);
-    z-index: 0;
-    pointer-events: none;
+    content: ''; position: absolute; top: -20%; left: -10%; width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(185,166,123,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;
+}
+.portfolio-hero-v2::after {
+    content: ''; position: absolute; bottom: -20%; right: -10%; width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(109,27,53,0.15) 0%, transparent 70%); z-index: 0; pointer-events: none;
 }
 
 .hero-v2-container {
@@ -2339,26 +2336,31 @@ body.inner-page .menu-toggle .line {
     margin: 0 auto;
 }
 
+/* تنسيق العنوان الرئيسي مطابق لـ About بالمليمتر */
 .v2-title {
-    font-size: clamp(38px, 6vw, 64px); /* حجم متناسق مع الموقع */
+    font-family: 'Inter', sans-serif !important;
+    font-size: clamp(38px, 5vw, 60px); 
     font-weight: 600;
-    color: var(--dark);
+    color: #ffffff;
     line-height: 1.15;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     margin-bottom: 25px;
 }
 
+/* الكلمة المميزة داخل العنوان */
 .v2-title span {
-    color: var(--primary);
+    color: var(--accent); /* تحويلها للون الذهبي لتبرز على الخلفية الداكنة */
     font-style: italic;
     font-weight: 500;
     padding-right: 15px;
 }
 
+/* النص التمهيدي مطابق لـ About */
 .v2-intro {
+    font-family: 'Inter', sans-serif !important;
     font-size: 17px;
-    color: var(--gray);
-    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.75); /* رمادي فاتح لسهولة القراءة */
+    line-height: 1.8;
     max-width: 650px;
     margin: 0 auto;
 }
