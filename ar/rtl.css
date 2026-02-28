@@ -1,1 +1,29 @@
 
+/* =====================================================
+   ARABIC RTL STYLES (Alexandria Font & Adjustments)
+===================================================== */
+
+/* 1. فرض الخط العربي الهندسي الفخم على كامل النسخة العربية */
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, button, input, textarea {
+    font-family: 'Alexandria', sans-serif !important;
+}
+
+/* 2. إلغاء التباعد بين الأحرف (Letter Spacing) لأن الحروف العربية متصلة وتتكسر إذا تباعدت */
+h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .logo {
+    letter-spacing: normal !important;
+}
+
+/* 3. تعديل زر القائمة (الهمبرغر) ليصبح متناسقاً مع الاتجاه اليمين */
+.menu-toggle {
+    align-items: flex-start !important; 
+}
+
+/* 4. تعديلات المسافات الجانبية لتتناسب مع اليمين */
+.fd-row:hover { 
+    padding-left: 0 !important;
+    padding-right: 20px !important; 
+}
+.fd-title { 
+    padding-right: 0 !important;
+    padding-left: 30px !important; 
+}
