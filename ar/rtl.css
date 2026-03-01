@@ -21,12 +21,14 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 .about-header, .about-content, .vision-left, .vision-right {
     text-align: right !important;
 }
-#contact .section-header, .contact-info, .contact-item {
+
+/* معلومات التواصل فقط على اليمين (وترك العنوان في المنتصف) */
+.contact-info, .contact-item {
     text-align: right !important;
 }
 
-/* 5. نقل الخط الذهبي تحت العناوين لجهة اليمين بدلاً من اليسار/الوسط */
-.about-header::after, .vision-left h2::after, #contact .section-header::after {
+/* 5. نقل الخط الذهبي تحت العناوين لجهة اليمين */
+.about-header::after, .vision-left h2::after {
     left: auto !important;
     right: 0 !important;
     transform: none !important; 
@@ -50,7 +52,13 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
     align-items: flex-start !important; 
 }
 
-/* 8. قلب الأيقونات عند عمل Hover (إذا لزم الأمر) */
+/* 8. قلب الأيقونات عند عمل Hover */
 .service-card:hover .icon-svg {
     transform: translateY(-10px) scale(1.12) scaleX(-1) !important; 
+}
+
+/* 9. إصلاح اتجاه أرقام الهواتف لتظهر بشكل صحيح (+963) */
+.contact-item a[href^="tel"] {
+    direction: ltr !important;
+    display: inline-block;
 }
