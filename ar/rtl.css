@@ -1,29 +1,56 @@
-
 /* =====================================================
    ARABIC RTL STYLES (Alexandria Font & Adjustments)
 ===================================================== */
 
-/* 1. فرض الخط العربي الهندسي الفخم على كامل النسخة العربية */
+/* 1. فرض الخط العربي على كامل النسخة العربية */
 body, h1, h2, h3, h4, h5, h6, p, a, span, div, button, input, textarea {
     font-family: 'Alexandria', sans-serif !important;
 }
 
-/* 2. إلغاء التباعد بين الأحرف (Letter Spacing) لأن الحروف العربية متصلة وتتكسر إذا تباعدت */
+/* 2. إلغاء التباعد بين الأحرف للحفاظ على اتصال الكلمات العربية */
 h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .logo {
     letter-spacing: normal !important;
 }
 
-/* 3. تعديل زر القائمة (الهمبرغر) ليصبح متناسقاً مع الاتجاه اليمين */
+/* 3. إضافة مسافة في العنوان الرئيسي (Hero) بين اسم الشركة والوصف */
+.hero-content h1 {
+    margin-bottom: 25px !important; 
+}
+
+/* 4. إجبار العناوين والنصوص المطلوبة على المحاذاة لليمين */
+.about-header, .about-content, .vision-left, .vision-right {
+    text-align: right !important;
+}
+#contact .section-header, .contact-info, .contact-item {
+    text-align: right !important;
+}
+
+/* 5. نقل الخط الذهبي تحت العناوين لجهة اليمين بدلاً من اليسار/الوسط */
+.about-header::after, .vision-left h2::after, #contact .section-header::after {
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important; 
+}
+
+/* 6. نقل النقاط الذهبية في كروت الخدمات إلى اليمين */
+.service-description {
+    text-align: right !important;
+}
+.service-description li {
+    padding-left: 0 !important;
+    padding-right: 22px !important;
+}
+.service-description li::before {
+    left: auto !important;
+    right: 0 !important;
+}
+
+/* 7. تعديل زر القائمة (الهمبرغر) للاتجاه العربي */
 .menu-toggle {
     align-items: flex-start !important; 
 }
 
-/* 4. تعديلات المسافات الجانبية لتتناسب مع اليمين */
-.fd-row:hover { 
-    padding-left: 0 !important;
-    padding-right: 20px !important; 
-}
-.fd-title { 
-    padding-right: 0 !important;
-    padding-left: 30px !important; 
+/* 8. قلب الأيقونات عند عمل Hover (إذا لزم الأمر) */
+.service-card:hover .icon-svg {
+    transform: translateY(-10px) scale(1.12) scaleX(-1) !important; 
 }
