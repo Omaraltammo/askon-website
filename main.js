@@ -20,20 +20,28 @@ window.addEventListener("load", function(){
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
+       LANGUAGE CHECKER (التحقق من لغة الصفحة)
+    ===================================================== */
+    // هنا السكربت يفحص إذا كانت الصفحة عربية أو إنكليزية
+    const isArabic = document.documentElement.lang === "ar";
+    
+    // تحديد مسار الملفات بناءً على اللغة
+    const headerPath = isArabic ? "/ar/header.html" : "/header.html";
+    const footerPath = isArabic ? "/ar/footer.html" : "/footer.html";
+
+    /* =====================================================
        LOAD GLOBAL HEADER & FOOTER AND INIT MENU
     ===================================================== */
-    fetch("/header.html")
+    // جلب الهيدر المناسب للغة
+    fetch(headerPath)
     .then(res => res.text())
     .then(data => {
-        // 1. زرع الهيدر في الصفحة
         document.body.insertAdjacentHTML("afterbegin", data);
 
-        // 2. تعريف العناصر بعد ما صارت موجودة بالصفحة
         const navbar = document.querySelector(".navbar");
         const menuToggle = document.getElementById('menuToggle');
         const curtainMenu = document.getElementById('curtainMenu');
 
-        // 3. تأثير الـ Blur عند النزول (Scrolled)
         if(navbar) {
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 40) {
@@ -44,13 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // 4. تشغيل الستارة عند الضغط على الزر
         if(menuToggle && curtainMenu) {
             menuToggle.addEventListener('click', () => {
                 document.body.classList.toggle('menu-open');
             });
 
-            // إغلاق الستارة عند الضغط على أي رابط بداخلها
             const curtainLinks = curtainMenu.querySelectorAll('a');
             curtainLinks.forEach(link => {
                 link.addEventListener('click', () => {
@@ -60,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // جلب الفوتر
-    fetch("/footer.html")
+    // جلب الفوتر المناسب للغة
+    fetch(footerPath)
     .then(res => res.text())
     .then(data => {
         document.body.insertAdjacentHTML("beforeend", data);
@@ -149,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =====================================================
-       TURNSTILE + EMAILJS FINAL VERSION (FIXED)
+       TURNSTILE + EMAILJS FINAL VERSION (FIXED & TRANSLATED)
     ===================================================== */
     const form = document.getElementById("contact-form");
     if(form){
@@ -159,7 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
             /* TURNSTILE FIX */
             const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]')?.value;
             if(!turnstileResponse){
-                alert("Please verify you are human");
+                // رسالة منبثقة تتغير حسب اللغة
+                alert(isArabic ? "الرجاء التحقق من أنك لست روبوتاً" : "Please verify you are human");
                 return;
             }
 
@@ -172,14 +179,16 @@ document.addEventListener("DOMContentLoaded", function () {
             /* EMAILJS SEND */
             emailjs.sendForm("service_6t9szgi", "template_1fs4hrl", this, "Hfom3ZLXXLSCkZRcL")
             .then(function(){
-                alert("Message sent successfully");
+                // رسالة النجاح تتغير حسب اللغة
+                alert(isArabic ? "تم إرسال رسالتك بنجاح!" : "Message sent successfully");
                 form.reset();
                 if(window.turnstile){
                     turnstile.reset();
                 }
             })
             .catch(function(error){
-                alert("Error sending message");
+                // رسالة الخطأ تتغير حسب اللغة
+                alert(isArabic ? "حدث خطأ أثناء إرسال الرسالة، يرجى المحاولة لاحقاً." : "Error sending message");
                 console.log(error);
             });
         });
