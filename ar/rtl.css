@@ -69,3 +69,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 .footer-copy {
     direction: rtl;
 }
+/* 11. الحفاظ على اتجاه الهيدر الأساسي (الشعار يسار والقائمة يمين) */
+.navbar {
+    direction: ltr !important;
+}
