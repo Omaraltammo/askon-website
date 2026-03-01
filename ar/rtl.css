@@ -62,3 +62,10 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
     direction: ltr !important;
     display: inline-block;
 }
+/* 10. تعديلات الفوتر للغة العربية */
+.footer-container, .footer-brand, .footer-links {
+    text-align: right !important;
+}
+.footer-copy {
+    direction: rtl;
+}
