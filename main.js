@@ -1,15 +1,5 @@
 "use strict";
 
-/* LOADER */
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    if(loader) {
-        setTimeout(()=>{
-            loader.classList.add("hidden");
-        }, 800);
-    }
-});
-
 /* FORCE HOME URL ON RELOAD */
 window.addEventListener("load", function(){
     if(window.location.hash){
@@ -30,18 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const footerPath = isArabic ? "/ar/footer.html" : "/footer.html";
 
     /* =====================================================
-       LOAD GLOBAL HEADER & FOOTER AND INIT MENU
+       LOAD GLOBAL HEADER & FOOTER AND INIT MENU (النسخة المسرّعة)
     ===================================================== */
-    // جلب الهيدر المناسب للغة
-    fetch(headerPath)
-    .then(res => res.text())
-    .then(data => {
-        document.body.insertAdjacentHTML("afterbegin", data);
+    // جلب الهيدر والفوتر بنفس اللحظة، وإخفاء شاشة التحميل فقط بعد اكتمالهما
+    Promise.all([
+        fetch(headerPath).then(res => res.text()),
+        fetch(footerPath).then(res => res.text())
+    ])
+    .then(([headerData, footerData]) => {
+        // 1. زرع الهيدر والفوتر في الصفحة
+        document.body.insertAdjacentHTML("afterbegin", headerData);
+        document.body.insertAdjacentHTML("beforeend", footerData);
 
+        // 2. تعريف العناصر بعد ما صارت موجودة بالصفحة
         const navbar = document.querySelector(".navbar");
         const menuToggle = document.getElementById('menuToggle');
         const curtainMenu = document.getElementById('curtainMenu');
 
+        // 3. تأثير الـ Blur عند النزول (Scrolled)
         if(navbar) {
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 40) {
@@ -52,11 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        // 4. تشغيل الستارة عند الضغط على الزر
         if(menuToggle && curtainMenu) {
             menuToggle.addEventListener('click', () => {
                 document.body.classList.toggle('menu-open');
             });
 
+            // إغلاق الستارة عند الضغط على أي رابط بداخلها
             const curtainLinks = curtainMenu.querySelectorAll('a');
             curtainLinks.forEach(link => {
                 link.addEventListener('click', () => {
@@ -64,13 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         }
-    });
 
-    // جلب الفوتر المناسب للغة
-    fetch(footerPath)
-    .then(res => res.text())
-    .then(data => {
-        document.body.insertAdjacentHTML("beforeend", data);
+        // 5. إخفاء اللودر بسلاسة بعد أن أصبح الهيدر والفوتر جاهزين تماماً
+        const loader = document.getElementById("loader");
+        if(loader) {
+            setTimeout(()=>{
+                loader.classList.add("hidden");
+            }, 300); // 300 ملي ثانية كافية جداً لضمان نعومة الظهور
+        }
+    })
+    .catch(error => {
+        console.error("Error loading header/footer:", error);
+        // في حال حدوث خطأ بالإنترنت، نخفي اللودر حتى لا يعلق الموقع
+        const loader = document.getElementById("loader");
+        if(loader) loader.classList.add("hidden");
     });
 
     /* =====================================================
@@ -95,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     window.addEventListener("scroll",reveal);
-    reveal();
+    // تأخير بسيط لتشغيل الأنيميشن كي لا يسبق اختفاء اللودر
+    setTimeout(reveal, 400); 
 
     /* ICON PARALLAX */
     const cards=document.querySelectorAll(".service-card");
