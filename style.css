@@ -2870,3 +2870,184 @@ body.inner-page .menu-toggle .line {
     .fd-num { margin-bottom: 10px; }
     .fd-title { margin-bottom: 10px; padding-right: 0; }
 }
+/* =====================================================
+   MODERN ABOUT PAGE REDESIGN (PREMIUM AGENCY STYLE)
+===================================================== */
+/* 1. Modern Hero */
+.modern-about-hero {
+    padding: 200px 10% 120px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, var(--dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+.modern-about-hero::before {
+    content: ''; position: absolute; top: -20%; left: -10%; width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(185,166,123,0.1) 0%, transparent 70%); z-index: 0; pointer-events: none;
+}
+.modern-about-hero::after {
+    content: ''; position: absolute; bottom: -20%; right: -10%; width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(109,27,53,0.15) 0%, transparent 70%); z-index: 0; pointer-events: none;
+}
+.mah-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.mah-title {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.15;
+    margin: 20px 0;
+    color: #fff;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+.mah-intro {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. Overlapping Story Section */
+.modern-story-section {
+    padding: 120px 10%;
+    background: #FCFAF8;
+    position: relative;
+}
+.mss-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.mss-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+.mss-img-placeholder {
+    width: 90%;
+    height: 90%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+}
+.mss-accent-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border: 2px solid rgba(185,166,123,0.4);
+    border-radius: 20px;
+    z-index: 1;
+    transition: transform 0.6s var(--motion-ease);
+}
+.mss-image-wrapper:hover .mss-accent-box {
+    transform: translate(15px, 15px);
+}
+.mss-text-wrapper {
+    padding: 30px 0;
+}
+
+/* 3. Cards Methodology Section */
+.modern-method-section {
+    padding: 120px 10%;
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.mms-header {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+.mms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.mms-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 50px 30px;
+    border-radius: 20px;
+    transition: transform 0.4s var(--motion-ease), background 0.4s ease, border-color 0.4s ease;
+}
+.mms-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent);
+}
+.mms-card-num {
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-weight: 300;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+.mms-card-title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.mms-card-desc {
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* 4. Quote Banner */
+.modern-quote-section {
+    padding: 120px 10%;
+    text-align: center;
+    background: #FDFBF9;
+    position: relative;
+    overflow: hidden;
+}
+.modern-quote-section::before {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(109,27,53,0.04) 0%, transparent 60%);
+    z-index: 0; pointer-events: none;
+}
+.mqs-container {
+    position: relative;
+    z-index: 2;
+}
+.mqs-text {
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--dark);
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.5px;
+}
+.mqs-signature {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .mss-container { grid-template-columns: 1fr; gap: 40px; }
+    .mss-image-wrapper { height: 350px; }
+    .mss-accent-box { right: -10px; bottom: -10px; width: 95%; height: 95%; }
+    .mms-grid { grid-template-columns: 1fr; }
+}
