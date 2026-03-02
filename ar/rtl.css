@@ -73,3 +73,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 .navbar {
     direction: ltr !important;
 }
+/* 12. تعديلات صفحة (من نحن - About) */
+.formula-list-header, .ed-journey-content {
+    text-align: right !important;
+}
