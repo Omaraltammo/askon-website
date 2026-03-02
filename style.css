@@ -753,6 +753,57 @@ body{scroll-timeline-name:--page-scroll;}
     opacity:.6;
 }
 
+/* ABOUT SECTION */
+
+.about-section{
+    background:#f7f5f3;
+}
+
+.about-container{
+    max-width:1000px;
+    margin:auto;
+    text-align:left;
+}
+
+.about-header{
+    margin-bottom:35px;
+    position:relative;
+}
+
+.about-header h2{
+    font-weight:600;
+    letter-spacing:-0.3px;
+    color: var(--primary);
+}
+
+.about-header::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-18px;
+    width:60px;
+    height:2px;
+    background:var(--accent);
+}
+
+.about-content{
+    background:white;
+    padding:50px;
+    border-radius:14px;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.06),
+        0 10px 20px rgba(185,166,123,.08);
+    line-height:1.9;
+    font-size:17px;
+    color:#444;
+}
+
+.about-content p{margin-bottom:25px;}
+.about-content p:last-child{margin-bottom:0;}
+
+@media (max-width:768px){
+    .about-content{padding:40px;}
+}
 
 /* =====================================================
    MOTION SYSTEM – CLEAN ENGINEERED VERSION
@@ -800,6 +851,25 @@ body{scroll-timeline-name:--page-scroll;}
 .service-card:nth-child(4){transition-delay:.26s;}
 .service-card:nth-child(5){transition-delay:.33s;}
 .service-card:nth-child(6){transition-delay:.40s;}
+
+/* ABOUT */
+
+.about-line{
+    opacity:0;
+    transform:translateY(30px);
+    transition:
+        opacity var(--motion-duration) var(--motion-ease),
+        transform var(--motion-duration) var(--motion-ease);
+}
+
+.about-line:nth-child(2){
+    transition-delay:.25s;
+}
+
+.about-section.active .about-line{
+    opacity:1;
+    transform:translateY(0);
+}
 
 /* HERO GLOW */
 
