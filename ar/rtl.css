@@ -77,3 +77,36 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 .formula-list-header, .ed-journey-content {
     text-align: right !important;
 }
+/* =====================================================
+   تنسيقات صفحة About المودرن (النسخة العربية)
+===================================================== */
+
+/* 1. توحيد الخطوط للعناوين الجديدة */
+.mah-title, .mms-card-title, .mqs-text, .standard-h2 {
+    font-family: 'Alexandria', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: normal !important; /* إلغاء التباعد الأجنبي */
+    line-height: 1.5 !important;
+}
+
+/* 2. توحيد الخطوط للفقرات */
+.mah-intro, .mms-card-desc, .standard-p {
+    font-family: 'Alexandria', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: normal !important;
+    line-height: 1.8 !important;
+}
+
+/* 3. تعديل المحاذاة والاتجاهات لليمين */
+.mms-header {
+    text-align: right !important;
+}
+
+/* 4. عكس حركة الإطار الذهبي للصورة ليتناسب مع اليمين */
+.mss-accent-box {
+    right: auto;
+    left: 0;
+}
+.mss-image-wrapper:hover .mss-accent-box {
+    transform: translate(-15px, 15px);
+}
