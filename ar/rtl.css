@@ -110,3 +110,47 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 .mss-image-wrapper:hover .mss-accent-box {
     transform: translate(-15px, 15px);
 }
+/* =====================================================
+   تعديلات قسم "من نحن" التشويقي في الصفحة الرئيسية (Home Teaser)
+===================================================== */
+/* 1. ضبط النصوص لليمين */
+.hat-content {
+    padding-right: 0 !important;
+    padding-left: 20px;
+    text-align: right;
+}
+
+/* 2. نقل الشارة العائمة لليسار لتعاكس الصورة العربية */
+.hat-experience-badge {
+    right: auto !important;
+    left: -30px;
+    flex-direction: row-reverse; /* لقلب ترتيب الشارة */
+}
+
+.hat-text {
+    text-align: right;
+}
+
+/* 3. توحيد الخطوط */
+.hat-title, .hat-number {
+    font-family: 'Alexandria', sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+.hat-desc {
+    font-family: 'Alexandria', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.8 !important;
+}
+
+/* 4. تعديلات الجوال */
+@media (max-width: 900px) {
+    .hat-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    .hat-experience-badge {
+        left: 20px;
+        right: auto !important;
+    }
+}
