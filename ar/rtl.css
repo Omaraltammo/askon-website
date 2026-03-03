@@ -113,41 +113,53 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
 /* =====================================================
    تعديلات قسم "من نحن" التشويقي في الصفحة الرئيسية (Home Teaser)
 ===================================================== */
-/* 1. ضبط النصوص لليمين */
+/* 1. ضبط النصوص لليمين بقوة */
 .hat-content {
     padding-right: 0 !important;
     padding-left: 20px;
-    text-align: right;
+    text-align: right !important;
+}
+
+.hat-content .section-label {
+    text-align: right !important;
 }
 
 /* 2. نقل الشارة العائمة لليسار لتعاكس الصورة العربية */
 .hat-experience-badge {
     right: auto !important;
     left: -30px;
-    flex-direction: row-reverse; /* لقلب ترتيب الشارة */
+    flex-direction: row-reverse;
 }
 
 .hat-text {
     text-align: right;
 }
 
-/* 3. توحيد الخطوط */
-.hat-title, .hat-number {
+/* 3. توحيد الخطوط لتطابق باقي الموقع */
+.hat-title {
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 32px !important; /* حجم أنيق ومتناسق للعربي */
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+}
+
+.hat-number {
     font-family: 'Alexandria', sans-serif !important;
     letter-spacing: normal !important;
 }
 
 .hat-desc {
     font-family: 'Alexandria', sans-serif !important;
+    font-size: 16px !important; /* حجم القراءة الأساسي */
     font-weight: 400 !important;
-    line-height: 1.8 !important;
+    line-height: 1.9 !important;
 }
 
 /* 4. تعديلات الجوال */
 @media (max-width: 900px) {
-    .hat-content {
+    .hat-content, .hat-content .section-label {
         padding-left: 0;
-        text-align: center;
+        text-align: center !important;
     }
     .hat-experience-badge {
         left: 20px;
