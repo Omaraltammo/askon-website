@@ -166,3 +166,13 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
         right: auto !important;
     }
 }
+/* ضبط العنوان الجديد والخط الذهبي للغة العربية */
+.hat-main-title {
+    font-family: 'Alexandria', sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+.hat-main-title::after {
+    left: auto !important;
+    right: 0 !important;
+}
