@@ -176,3 +176,45 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
     left: auto !important;
     right: 0 !important;
 }
+/* =====================================================
+   تعديلات صفحة الأعمال والمنظومة (Portfolio)
+===================================================== */
+/* 1. الأكورديون (الأقسام الثلاثة) */
+.acc-content {
+    text-align: right !important;
+}
+
+.acc-list li {
+    padding-left: 0;
+    padding-right: 18px;
+}
+
+.acc-list li::before {
+    left: auto;
+    right: 0;
+}
+
+/* 2. المخطط الهندسي (Blueprint) */
+.blueprint-list li {
+    padding-left: 0;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.blueprint-list li::before {
+    left: auto;
+    right: 0;
+}
+
+.blueprint-content-min {
+    text-align: right;
+}
+
+/* 3. تعديلات الجوال لصفحة المنظومة */
+@media (max-width: 900px) {
+    .blueprint-content-min .section-header::after {
+        left: auto;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
