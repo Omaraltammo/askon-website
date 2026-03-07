@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        LANGUAGE CHECKER (التحقق من لغة الصفحة)
     ===================================================== */
-    // هنا السكربت يفحص إذا كانت الصفحة عربية أو إنكليزية
     const isArabic = document.documentElement.lang === "ar";
     
     // تحديد مسار الملفات بناءً على اللغة
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        LOAD GLOBAL HEADER & FOOTER AND INIT MENU (النسخة المسرّعة)
     ===================================================== */
-    // جلب الهيدر والفوتر بنفس اللحظة، وإخفاء شاشة التحميل فقط بعد اكتمالهما
     Promise.all([
         fetch(headerPath).then(res => res.text()),
         fetch(footerPath).then(res => res.text())
@@ -33,9 +31,30 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.insertAdjacentHTML("beforeend", footerData);
 
         // 2. تعريف العناصر بعد ما صارت موجودة بالصفحة
-        const navbar = document.querySelector(".navbar");
+        const navbar = document.querySelector(".navbar") || document.querySelector(".curtain-navbar");
         const menuToggle = document.getElementById('menuToggle');
         const curtainMenu = document.getElementById('curtainMenu');
+
+        // =====================================================
+        // إضافة زر "طلب عرض السعر" برمجياً للهيدر
+        // =====================================================
+        if (navbar && menuToggle) {
+            // إنشاء حاوية مرنة تجمع الزر والهمبرغر
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'header-actions';
+            
+            // إنشاء الزر الذهبي وتحديد لغته
+            const quoteBtn = document.createElement('a');
+            quoteBtn.href = isArabic ? "quote.html" : "quote.html";
+            quoteBtn.className = 'header-quote-btn';
+            quoteBtn.innerText = isArabic ? "اطلب عرض سعر" : "Get a Quote";
+
+            // ترتيب العناصر في الهيدر
+            navbar.insertBefore(actionsDiv, menuToggle);
+            actionsDiv.appendChild(quoteBtn);
+            actionsDiv.appendChild(menuToggle); // نقل زر القائمة لداخل الحاوية
+        }
+        // =====================================================
 
         // 3. تأثير الـ Blur عند النزول (Scrolled)
         if(navbar) {
@@ -68,12 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if(loader) {
             setTimeout(()=>{
                 loader.classList.add("hidden");
-            }, 300); // 300 ملي ثانية كافية جداً لضمان نعومة الظهور
+            }, 300); 
         }
     })
     .catch(error => {
         console.error("Error loading header/footer:", error);
-        // في حال حدوث خطأ بالإنترنت، نخفي اللودر حتى لا يعلق الموقع
         const loader = document.getElementById("loader");
         if(loader) loader.classList.add("hidden");
     });
@@ -100,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     window.addEventListener("scroll",reveal);
-    // تأخير بسيط لتشغيل الأنيميشن كي لا يسبق اختفاء اللودر
     setTimeout(reveal, 400); 
 
     /* ICON PARALLAX */
@@ -171,7 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
             /* TURNSTILE FIX */
             const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]')?.value;
             if(!turnstileResponse){
-                // رسالة منبثقة تتغير حسب اللغة
                 alert(isArabic ? "الرجاء التحقق من أنك لست روبوتاً" : "Please verify you are human");
                 return;
             }
@@ -185,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
             /* EMAILJS SEND */
             emailjs.sendForm("service_6t9szgi", "template_1fs4hrl", this, "Hfom3ZLXXLSCkZRcL")
             .then(function(){
-                // رسالة النجاح تتغير حسب اللغة
                 alert(isArabic ? "تم إرسال رسالتك بنجاح!" : "Message sent successfully");
                 form.reset();
                 if(window.turnstile){
@@ -193,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .catch(function(error){
-                // رسالة الخطأ تتغير حسب اللغة
                 alert(isArabic ? "حدث خطأ أثناء إرسال الرسالة، يرجى المحاولة لاحقاً." : "Error sending message");
                 console.log(error);
             });
