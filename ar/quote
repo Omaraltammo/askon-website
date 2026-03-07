@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>طلب عرض سعر | آسكُون للاستشارات</title>
+<meta name="description" content="اطلب عرض سعر احترافي لخدمات تنظيم الفعاليات، الترجمة، الصوتيات، الإنتاج المرئي، والتصميم من مؤسسة آسكون.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="rtl.css">
+
+</head>
+
+<body class="inner-page">
+
+<div id="loader">
+    <div class="loader-logo">ASKON</div>
+</div>
+
+<section class="section quote-section" style="padding-top: 180px;">
+
+    <div class="quote-ambient-glow"></div>
+    <div class="quote-ambient-glow glow-2"></div>
+
+    <div class="section-header">
+        <span class="section-label">ابدأ معنا</span>
+        <h2 class="reveal-title" style="font-family: 'Alexandria', sans-serif;">طلب عرض سعر</h2>
+        <p class="quote-intro" style="font-family: 'Alexandria', sans-serif;">يرجى تزويدنا بالتفاصيل أدناه لنتمكن من فهم مشروعك بشكل أفضل. سنقوم بالرد عليك بعرض سعر شامل ومخصص لاحتياجاتك.</p>
+    </div>
+
+    <form id="quote-form" class="quote-form-wrapper" style="text-align: right;">
+        <input type="text" name="website" style="display:none"> 
+        
+        <div class="form-step">
+            <h3 style="font-family: 'Alexandria', sans-serif;">1. اختر الخدمات المطلوبة <span class="required">*</span></h3>
+            <div class="services-selector" id="servicesGrid">
+                
+                <div class="service-opt" data-service="تنظيم الفعاليات">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">تنظيم وإدارة الفعاليات</span>
+                </div>
+                
+                <div class="service-opt" data-service="الترجمة الفورية">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">الترجمة الفورية وحلول المؤتمرات</span>
+                </div>
+                
+                <div class="service-opt" data-service="الهندسة الصوتية">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">الخدمات الصوتية</span>
+                </div>
+                
+                <div class="service-opt" data-service="التصوير الفوتوغرافي">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">التصوير الفوتوغرافي</span>
+                </div>
+                
+                <div class="service-opt" data-service="الإنتاج المرئي">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">الإنتاج المرئي والسينمائي</span>
+                </div>
+                
+                <div class="service-opt" data-service="التصميم الجرافيكي">
+                    <div class="opt-check"></div>
+                    <span style="font-family: 'Alexandria', sans-serif;">التصميم الجرافيكي والطباعة</span>
+                </div>
+
+            </div>
+            <input type="hidden" id="selected-services-input" name="selected_services" required>
+        </div>
+
+        <div class="form-step">
+            <h3 style="font-family: 'Alexandria', sans-serif;">2. تفاصيل المشروع / الفعالية</h3>
+            
+            <div class="form-grid">
+                <div class="input-group full-width">
+                    <select name="project_type" required style="font-family: 'Alexandria', sans-serif;">
+                        <option value="" disabled selected>نوع المشروع (اختر من القائمة) *</option>
+                        <option value="مؤتمر / قمة">مؤتمر / قمة دولية</option>
+                        <option value="فعالية إنسانية">فعالية إنسانية / منظمة غير ربحية</option>
+                        <option value="إنتاج إعلامي وإعلاني">إنتاج إعلامي وإعلاني للشركات</option>
+                        <option value="ورشة عمل / تدريب">ورشة عمل / دورة تدريبية</option>
+                        <option value="تصميم وهوية بصرية">تصميم وطباعة هوية بصرية</option>
+                        <option value="أخرى">أخرى</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label style="font-family: 'Alexandria', sans-serif;">تاريخ الفعالية المتوقع *</label>
+                    <input type="date" name="event_date" required style="font-family: 'Alexandria', sans-serif;">
+                </div>
+
+                <div class="input-group">
+                    <label style="font-family: 'Alexandria', sans-serif;">الموقع / المدينة *</label>
+                    <input type="text" name="location" placeholder="مثال: دمشق، فندق الداما روز" required style="font-family: 'Alexandria', sans-serif;">
+                </div>
+
+                <div class="input-group full-width">
+                    <label style="font-family: 'Alexandria', sans-serif;">عدد الحضور المتوقع <span class="optional">(اختياري - مهم لتقدير أجهزة الترجمة والصوت)</span></label>
+                    <input type="number" name="attendees" min="1" placeholder="أدخل العدد التقريبي" style="font-family: 'Alexandria', sans-serif;">
+                </div>
+
+                <div class="input-group full-width">
+                    <textarea name="project_description" placeholder="متطلبات ووصف المشروع * (يرجى تزويدنا بأكبر قدر ممكن من التفاصيل)" required style="font-family: 'Alexandria', sans-serif;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-step">
+            <h3 style="font-family: 'Alexandria', sans-serif;">3. معلومات العميل</h3>
+            
+            <div class="form-grid">
+                <div class="input-group">
+                    <input type="text" name="full_name" placeholder="الاسم الكامل *" required style="font-family: 'Alexandria', sans-serif;">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="company_name" placeholder="اسم الشركة / المنظمة *" required style="font-family: 'Alexandria', sans-serif;">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="البريد الإلكتروني للعمل *" required style="font-family: 'Alexandria', sans-serif; text-align: right;">
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="phone" placeholder="رقم الهاتف / واتساب *" required style="font-family: 'Alexandria', sans-serif; text-align: right; direction: rtl;">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-submit-area">
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAACewk_qC2RQSIRfS"></div>
+            <button type="submit" class="btn-gold submit-quote-btn" style="font-family: 'Alexandria', sans-serif;">إرسال الطلب</button>
+        </div>
+
+    </form>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="../main.js" defer></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const serviceOpts = document.querySelectorAll('.service-opt');
+        const hiddenInput = document.getElementById('selected-services-input');
+        
+        // 1. برمجة الكروت لتضوي عند الاختيار
+        serviceOpts.forEach(opt => {
+            opt.addEventListener('click', () => {
+                opt.classList.toggle('selected');
+                updateSelectedServices();
+            });
+        });
+
+        function updateSelectedServices() {
+            const selected = [];
+            document.querySelectorAll('.service-opt.selected').forEach(el => {
+                selected.push(el.getAttribute('data-service'));
+            });
+            hiddenInput.value = selected.join(', ');
+            
+            if(selected.length > 0) {
+                hiddenInput.setCustomValidity('');
+            }
+        }
+
+        // 2. برمجة إرسال الفورم عبر EmailJS
+        const quoteForm = document.getElementById('quote-form');
+        
+        if(quoteForm) {
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // التأكد من اختيار خدمة واحدة على الأقل
+                if(hiddenInput.value.trim() === '') {
+                    alert('يرجى اختيار خدمة واحدة على الأقل من الخطوة الأولى.');
+                    return;
+                }
+
+                // حماية Turnstile
+                const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]')?.value;
+                if(!turnstileResponse){
+                    alert("يرجى التحقق من الكابتشا لتأكيد أنك لست روبوتًا.");
+                    return;
+                }
+
+                // حماية Honeypot
+                const honeypot = quoteForm.querySelector('input[name="website"]').value;
+                if(honeypot){
+                    return;
+                }
+               
+                const submitBtn = quoteForm.querySelector('.submit-quote-btn');
+                const originalText = submitBtn.innerText;
+                submitBtn.innerText = "جاري الإرسال...";
+            
+                emailjs.sendForm(
+                    "service_6t9szgi",         // Service ID
+                    "template_6akujta", 
+                    this,
+                    "Hfom3ZLXXLSCkZRcL"        // Public Key
+                )
+                .then(function() {
+                    alert("تم إرسال طلبك بنجاح. سيقوم فريقنا بالتواصل معك قريباً!");
+                    quoteForm.reset();
+                    // إزالة التحديد عن الكروت
+                    document.querySelectorAll('.service-opt').forEach(opt => opt.classList.remove('selected'));
+                    hiddenInput.value = '';
+                    submitBtn.innerText = originalText;
+                    if(window.turnstile) turnstile.reset();
+                })
+                .catch(function(error) {
+                    alert("حدث خطأ أثناء إرسال طلبك. يرجى المحاولة مرة أخرى لاحقاً.");
+                    console.log(error);
+                    submitBtn.innerText = originalText;
+                });
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
