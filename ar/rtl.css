@@ -238,3 +238,9 @@ select[name="project_type"] {
     padding-right: 15px;
     padding-left: 40px;
 }
+/* زر الهيدر باللغة العربية */
+.header-quote-btn {
+    font-family: 'Alexandria', sans-serif !important;
+    letter-spacing: normal !important;
+    font-size: 13px !important;
+}
