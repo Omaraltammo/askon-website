@@ -3106,3 +3106,118 @@ body.menu-open .menu-toggle .line:nth-child(1) {
 body.menu-open .menu-toggle .line:nth-child(2) {
     transform: translateY(-4.5px) rotate(-45deg); /* تعديل المحور للتماثل */
 }
+/* =====================================================
+   MASTER SERVICE TEMPLATE (قالب الخدمات الموحد)
+===================================================== */
+/* 1. واجهة الخدمة */
+.master-service-hero {
+    padding: 200px 10% 100px;
+    background: #110408;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.master-hero-label {
+    display: block;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.master-hero-title {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+.master-hero-desc {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* 2. الفلسفة / الرؤية */
+.master-philosophy {
+    padding: 100px 10%;
+    background: #FDFBF9;
+    text-align: center;
+}
+.master-philosophy p {
+    font-size: 24px;
+    color: var(--primary);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* 3. الصفوف الأفقية (The Rows) */
+.master-rows-section {
+    padding: 80px 10%;
+    background: white;
+}
+.service-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+.service-row:first-child {
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.service-row:hover {
+    background: #faf9f7;
+    padding-left: 20px; /* تأثير حركة خفيف لليسار */
+    padding-right: 20px;
+}
+.row-num {
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    color: var(--accent);
+    font-weight: 300;
+    width: 15%;
+}
+.row-title {
+    font-size: 24px;
+    color: var(--primary);
+    width: 35%;
+    padding-right: 30px;
+    font-weight: 600;
+}
+.row-desc {
+    width: 50%;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* 4. الشريط التقني */
+.master-tech-bar {
+    background: #110408;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--accent);
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    word-spacing: 5px;
+}
+
+/* تجاوب الشاشات الصغيرة */
+@media (max-width: 900px) {
+    .service-row {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+    .service-row:hover { padding-left: 0; padding-right: 0; background: transparent; }
+    .row-num, .row-title, .row-desc {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    .master-hero-title { font-size: 36px; }
+    .master-philosophy p { font-size: 20px; }
+}
