@@ -218,3 +218,23 @@ h1, h2, h3, h4, h5, h6, p, a, span, .v2-title, .standard-h2, .section-label, .lo
         transform: translateX(50%);
     }
 }
+/* =====================================================
+   تعديلات صفحة طلب عرض سعر (Quote Form)
+===================================================== */
+.quote-form-wrapper input,
+.quote-form-wrapper select,
+.quote-form-wrapper textarea {
+    text-align: right !important;
+    direction: rtl;
+}
+
+.input-group label {
+    text-align: right !important;
+}
+
+/* لضبط اتجاه القوائم المنسدلة */
+select[name="project_type"] {
+    background-position: left 15px center !important;
+    padding-right: 15px;
+    padding-left: 40px;
+}
