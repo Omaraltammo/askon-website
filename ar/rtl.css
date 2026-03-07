@@ -244,3 +244,24 @@ select[name="project_type"] {
     letter-spacing: normal !important;
     font-size: 13px !important;
 }
+/* =====================================================
+   تعديلات قالب الخدمات الموحد (اللغة العربية)
+===================================================== */
+.master-hero-title, .master-philosophy p, .row-title {
+    font-family: 'Alexandria', sans-serif !important;
+}
+.row-title {
+    padding-right: 0 !important;
+    padding-left: 30px !important; /* عكس المسافة للعربية */
+}
+/* عكس تأثير الحركة عند الـ Hover لليمين بدلاً من اليسار */
+@media (min-width: 901px) {
+    .service-row:hover {
+        padding-right: 20px !important;
+        padding-left: 0 !important;
+    }
+}
+.master-tech-bar {
+    font-family: 'Alexandria', sans-serif !important;
+    letter-spacing: normal !important;
+}
