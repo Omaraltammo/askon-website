@@ -3221,3 +3221,103 @@ body.menu-open .menu-toggle .line:nth-child(2) {
     .master-hero-title { font-size: 36px; }
     .master-philosophy p { font-size: 20px; }
 }
+/* =====================================================
+   ARCHITECTURAL PILLARS TEMPLATE (القالب المعماري للخدمات)
+===================================================== */
+/* 1. الواجهة المدمجة بالصورة */
+.arch-hero {
+    position: relative;
+    padding: 220px 10% 120px;
+    text-align: center;
+    color: white;
+    background-color: #110408;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.arch-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(17,4,8,0.6) 0%, rgba(17,4,8,0.95) 100%);
+    z-index: 1;
+}
+.arch-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.arch-hero-label {
+    display: inline-block;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.arch-hero-title {
+    font-size: 52px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+.arch-hero-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+}
+
+/* 2. قسم الأعمدة والصور (الركائز) */
+.arch-pillars-section {
+    padding: 100px 10%;
+    background: #FDFBF9;
+}
+.arch-pillars-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.arch-pillar {
+    display: flex;
+    flex-direction: column;
+}
+.arch-pillar-img {
+    width: 100%;
+    aspect-ratio: 3/4; /* صورة طولية فخمة */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
+    background-color: #e5e0d8; /* لون بديل ريثما تضع صورك */
+}
+.arch-pillar:hover .arch-pillar-img {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(185,166,123,0.2);
+}
+.arch-pillar-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+.arch-pillar-title {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.arch-pillar-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* التجاوب مع الشاشات */
+@media (max-width: 1000px) {
+    .arch-pillars-container { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .arch-hero-title { font-size: 40px; }
+}
+@media (max-width: 600px) {
+    .arch-pillars-container { grid-template-columns: 1fr; }
+}
