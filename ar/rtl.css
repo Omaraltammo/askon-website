@@ -265,3 +265,4 @@ select[name="project_type"] {
     font-family: 'Alexandria', sans-serif !important;
     letter-spacing: normal !important;
 }
+.arch-hero-title, .arch-pillar-title { font-family: 'Alexandria', sans-serif !important; }
