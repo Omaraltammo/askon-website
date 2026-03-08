@@ -3276,13 +3276,32 @@ body.menu-open .menu-toggle .line:nth-child(2) {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
+
+/* =========================================
+   حركة الظهور المتتابع للأعمدة عند النزول
+========================================= */
 .arch-pillar {
     display: flex;
     flex-direction: column;
+    opacity: 0; /* مخفي بالبداية */
+    transform: translateY(50px); /* نازل لتحت شوي */
+    transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
 }
 
+/* لما يوصل السكرول للقسم، تظهر الأعمدة */
+.section.active .arch-pillar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* التتابع: كل عمود يتأخر أجزاء من الثانية عن اللي قبله */
+.section.active .arch-pillar:nth-child(1) { transition-delay: 0.1s; }
+.section.active .arch-pillar:nth-child(2) { transition-delay: 0.25s; }
+.section.active .arch-pillar:nth-child(3) { transition-delay: 0.4s; }
+.section.active .arch-pillar:nth-child(4) { transition-delay: 0.55s; }
+
 /* =========================================
-   التعديل الجديد: دمج الصورة والرقم معاً
+   دمج الصورة والرقم معاً (Watermark Effect)
 ========================================= */
 .arch-pillar-visual {
     position: relative;
@@ -3330,18 +3349,33 @@ body.menu-open .menu-toggle .line:nth-child(2) {
     color: rgba(185, 166, 123, 0.7); /* ذهبي شفاف عند مرور الماوس */
     transform: translateY(-5px);
 }
-/* ========================================= */
 
+/* =========================================
+   تأثيرات وحركة النصوص (Hover Reveal)
+========================================= */
 .arch-pillar-title {
     font-size: 20px;
     color: var(--primary);
     margin-bottom: 15px;
     font-weight: 600;
+    transition: all 0.5s ease; /* سر الحركة */
 }
+
 .arch-pillar-desc {
     font-size: 15px;
     color: #555;
     line-height: 1.7;
+    transition: all 0.5s ease;
+}
+
+/* حركة النصوص عند مرور الماوس (Hover) */
+.arch-pillar:hover .arch-pillar-title {
+    color: var(--accent); /* يتحول العنوان للذهبي */
+    transform: translateX(-8px); /* ينزاح بسلاسة لليسار */
+}
+
+.arch-pillar:hover .arch-pillar-desc {
+    color: #222; /* يصبح النص داكناً أكثر لتسهيل القراءة */
 }
 
 /* التجاوب مع الشاشات */
