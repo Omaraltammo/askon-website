@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخدمات الصوتية والهندسة السمعية | آسكُون</title>
+
+<meta name="description" content="حلول هندسية متكاملة للأنظمة الصوتية في سوريا. تجهيز الفعاليات، إدارة الميكروفونات، وتسجيل صوتي نقي مع معالجة احترافية لما بعد الإنتاج.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="rtl.css">
+</head>
+
+<body class="inner-page">
+
+<div id="loader"><div class="loader-logo">ASKON</div></div>
+<div class="scroll-progress"></div>
+
+<section class="arch-hero section" style="background-image: url('../images/audio-hero.jpg');">
+    <div class="arch-hero-content">
+        <span class="arch-hero-label" style="font-family: 'Alexandria', sans-serif;">خدمات آسكون</span>
+        
+        <h1 class="arch-hero-title reveal-title" style="margin-bottom: 20px;">الخدمات الصوتية والهندسة السمعية</h1>
+        
+        <p class="arch-hero-desc" style="font-family: 'Alexandria', sans-serif; font-weight: 300;">نقدم حلولاً هندسية متكاملة للأنظمة الصوتية، تضمن توزيعاً سمعياً نقياً وتغطية مثالية لجميع أنواع الفعاليات، مع دقة متناهية في التسجيل والمعالجة.</p>
+    </div>
+</section>
+
+<section class="arch-pillars-section section">
+    <div class="arch-pillars-container">
+        
+        <div class="arch-pillar">
+            <div class="arch-pillar-visual">
+                <img src="A1.png" class="arch-pillar-img" alt="تجهيز أنظمة الصوت للفعاليات">
+                <span class="arch-pillar-num">01</span>
+            </div>
+            <h3 class="arch-pillar-title">تجهيز أنظمة الصوت للفعاليات</h3>
+            <p class="arch-pillar-desc">دراسة صوتية شاملة للمكان وتصميم شبكات صوت متقدمة (Line-Array) توفر تغطية متوازنة ونقاءً عالياً في كافة زوايا القاعة.</p>
+        </div>
+
+        <div class="arch-pillar">
+            <div class="arch-pillar-visual">
+                <img src="A2.png" class="arch-pillar-img" alt="إدارة الميكروفونات والسماعات">
+                <span class="arch-pillar-num">02</span>
+            </div>
+            <h3 class="arch-pillar-title">إدارة الميكروفونات والسماعات</h3>
+            <p class="arch-pillar-desc">توزيع ذكي للميكروفونات السلكية واللاسلكية وشاشات المراقبة الصوتية، مع تحكم هندسي دقيق لمنع التداخل والصدى أثناء الفعالية.</p>
+        </div>
+
+        <div class="arch-pillar">
+            <div class="arch-pillar-visual">
+                <img src="A3.png" class="arch-pillar-img" alt="تسجيل صوتي احترافي">
+                <span class="arch-pillar-num">03</span>
+            </div>
+            <h3 class="arch-pillar-title">تسجيل صوتي احترافي</h3>
+            <p class="arch-pillar-desc">توثيق سمعي عالي الدقة للكلمات والنقاشات باستخدام معدات تسجيل متعددة المسارات (Multi-track)، لضمان حفظ الأرشيف الصوتي بأعلى جودة.</p>
+        </div>
+
+        <div class="arch-pillar">
+            <div class="arch-pillar-visual">
+                <img src="A4.png" class="arch-pillar-img" alt="معالجة وتنقية الصوت بعد الإنتاج">
+                <span class="arch-pillar-num">04</span>
+            </div>
+            <h3 class="arch-pillar-title">معالجة وتنقية الصوت بعد الإنتاج</h3>
+            <p class="arch-pillar-desc">هندسة صوتية لاحقة تشمل الفلترة، إزالة الضوضاء، وموازنة الترددات (Mastering)، لتسليم ملفات صوتية جاهزة للبث أو النشر المباشر.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section elegant-cta-section">
+    <div class="cta-card">
+        <div class="section-header" style="margin-bottom: 20px;">
+            <span class="section-label">الخطوة التالية</span>
+            <h2 class="standard-h2" style="font-family: 'Alexandria', sans-serif;">صوت نقي يعكس احترافية رسالتك.</h2>
+        </div>
+        <a href="quote.html" class="btn-gold cta-btn" style="font-family: 'Alexandria', sans-serif;">اطلب عرض سعر</a>
+    </div>
+</section>
+
+<script src="../main.js" defer></script>
+</body>
+</html>
